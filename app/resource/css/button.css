@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+:root {
+    --btn-primary-hover: #FF768B; 
+    --btn-disabled-bg: #E4E4E4;
+    --btn-disabled-txt: #999999;
+    --btn-popup-bg: #333333;
+    --btn-dark-txt: #222222;
+    
+    --btn-padding: 16px 20px; 
+    --btn-radius: 8px;
+}
+
+/* 버튼 공통 */
+button, .btn-link, .btn-download, .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: transparent;
+    font-family: inherit;
+    transition: all 0.2s; /* 호버 시 지연시간 */
+    text-decoration: none;
+    box-sizing: border-box;
+    font-weight: 500; 
+    padding: var(--btn-padding); 
+    line-height: 1.5; 
+    word-break: keep-all;
+}
+
+button:active, a[class*="btn-"]:active { transform: scale(0.98); opacity: 0.9; }
+
+
+/* Disabled */
+button:disabled, 
+a[class*="btn-"].disabled,
+button.disabled { 
+    background-color: var(--btn-disabled-bg) !important;
+    color: var(--btn-disabled-txt) !important;
+    border-color: var(--btn-disabled-bg) !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+/* Sticky / CTA Buttons */
+.btn-content.cta .button-group { 
+    display: flex; 
+    gap: 12px; 
+    width: 100%; 
+}
+
+.btn-content.cta a, 
+.btn-content.cta button { 
+    flex: 1; 
+    width: 100%; 
+    font-size: 18px; 
+    border-radius: var(--btn-radius);
+}
+
+/* Primary */
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+    border-color: var(--btn-primary-hover);
+}
+
+/* Secondary */
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--color-45);
+    border-color: var(--color-d);
+}
+
+/* 3:7 비율 유틸리티 */
+.btn-content.cta .button-group.ratio-3-7 .btn-secondary,
+.btn-content.cta .button-group.ratio-3-7 .btn-pop-secondary { flex: 3; }
+.btn-content.cta .button-group.ratio-3-7 .btn-primary,
+.btn-content.cta .button-group.ratio-3-7 .btn-pop-primary { flex: 7; }
+
+
+/* Popup / Alert Buttons */
+.btn-pop-primary,
+.btn-pop-secondary {
+    width: 100%;
+    font-size: 18px;
+    border-radius: var(--btn-radius);
+}
+
+/* Popup Primary */
+.btn-pop-primary {
+    background-color: var(--btn-popup-bg);
+    color: var(--white);
+    border-color: var(--btn-popup-bg);
+}
+
+/* Popup Secondary */
+.btn-pop-secondary {
+    background-color: var(--white);
+    border: 1px solid var(--color-d);
+    color: var(--btn-dark-txt);
+}
+
+

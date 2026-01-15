@@ -60,6 +60,7 @@
     font-weight: 400;
 }
 
+/* 샘플에서만 쓸거 */
 .form-container { margin-top: 20px; }
 
 .form-wrap {
@@ -71,6 +72,8 @@
     flex: 1; 
     position: relative;
 }
+/* 샘플에서만 쓸거 */
+
 .sample-content .form-wrap fieldset {
     width: 100%;
     display: flex;
