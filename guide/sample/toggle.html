@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Toggle Guide</title>
+    
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="../../app/resource/css/ui-util.css" />
+    <link rel="stylesheet" href="../css/sample.css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <main class="contentWrap">
+            
+            <div class="visual-content">
+                <h2><em>Toggle & Check</em></h2>
+            </div>
+
+            <div class="sample-content">
+                <!-- Check Box -->
+                <div class="tit-wrap">
+                    <h3>Check Box</h3>
+                    <div class="form-container">
+                        <div class="form-content">
+                            
+                            <!-- 기본형 (Fill) -->
+                            <p style="margin-bottom:10px;">기본 체크박스 (Fill)</p>
+                            <div class="form-wrap">
+                                <fieldset>
+                                    <label class="check fill">
+                                        <input type="checkbox">
+                                        <span>Check Box OFF</span>
+                                    </label>
+                                    <label class="check fill">
+                                        <input type="checkbox" checked>
+                                        <span>Check Box ON</span>
+                                    </label>
+                                </fieldset>
+                            </div>
+
+                            <!-- 라인형 (Line) -->
+                            <p style="margin:20px 0 10px;">기본 체크박스 (Line)</p>
+                            <div class="form-wrap">
+                                <fieldset>
+                                    <label class="check line">
+                                        <input type="checkbox">
+                                        <span>Check Box OFF</span>
+                                    </label>
+                                    <label class="check line">
+                                        <input type="checkbox" checked>
+                                        <span>Check Box ON</span>
+                                    </label>
+                                </fieldset>
+                            </div>
+
+                            <!-- 텍스트형 (Text) -->
+                            <p style="margin:20px 0 10px;">부가 체크박스 (Text)</p>
+                            <div class="form-wrap">
+                                <fieldset>
+                                    <label class="check text">
+                                        <input type="checkbox">
+                                        <span>Check Box OFF</span>
+                                    </label>
+                                    <label class="check text">
+                                        <input type="checkbox" checked>
+                                        <span>Check Box ON</span>
+                                    </label>
+                                </fieldset>
+                            </div>
+
+                            <p style="margin:20px 0 10px;">Depth Example</p>
+                            <div class="form-wrap">
+                                <fieldset style="flex-direction: column; align-items: flex-start; gap: 10px;">
+                                    
+                                    <!-- 1 Depth (Fill) -->
+                                    <label class="check fill">
+                                        <input type="checkbox" checked>
+                                        <span>[1depth] 기본 체크박스</span>
+                                    </label>
+
+                                    <!-- 2 Depth (Line) -->
+                                    <label class="check line">
+                                        <input type="checkbox" checked>
+                                        <span>[2depth] 하위 항목</span>
+                                    </label>
+
+                                    <!-- 3 Depth (Text) -->
+                                    <label class="check text">
+                                        <input type="checkbox" checked>
+                                        <span>[3depth] 부가 설명</span>
+                                    </label>
+
+                                </fieldset>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radio Button -->
+                <div class="tit-wrap">
+                    <h3>Radio Button</h3>
+                    <div class="form-container">
+                        <div class="form-content">
+                            <div class="form-wrap">
+                                <fieldset>
+                                    <label class="radio">
+                                        <input type="radio" name="r1">
+                                        <span>Radio OFF</span>
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="r1" checked>
+                                        <span>Radio ON</span>
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Switch -->
+                <div class="tit-wrap">
+                    <h3>Switch</h3>
+                    <div class="form-container">
+                        <div class="form-content">
+                            <div class="form-wrap">
+                                <fieldset>
+                                    <label class="toggle">
+                                        <input type="checkbox">
+                                        <span>Switch OFF</span>
+                                    </label>
+                                    <label class="toggle">
+                                        <input type="checkbox" checked>
+                                        <span>Switch ON</span>
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

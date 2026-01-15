@@ -39,7 +39,7 @@ body {
     /** 기본 색상 **/
     --primary: #FF5460;
     --secondary: #FF7159;
-
+    --tertiary: #FF768B;
     --error: #ff0000;
     --success: #086CFD;
 

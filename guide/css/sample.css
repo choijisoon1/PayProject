@@ -71,3 +71,8 @@
     flex: 1; 
     position: relative;
 }
+.sample-content .form-wrap fieldset {
+    width: 100%;
+    display: flex;
+    gap:50px;
+}
