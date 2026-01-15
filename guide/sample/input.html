@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Form Guide</title>
+    <link rel="stylesheet" href="../../app/resource/css/ui-util.css">
+    <link rel="stylesheet" href="../css/sample.css">
+</head>
+<body>
+    <div class="wrap">
+        <main class="contentWrap">
+            <div class="visual-content">
+                <h2><em>Form Guide</em><span>76px Height Input (Box Type)</span></h2>
+            </div>
+
+            <div class="sample-content">
+                <!-- 기본 인풋 -->
+                <div class="tit-wrap">
+                    <h3>Input</h3>
+                    <div>
+                        <h4>Text Field<span>높이 76px, 내부 라벨 구조</span></h4>
+                        <div class="form-container">
+                            <div class="form-content">
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <div class="input-box">
+                                            <label for="userName">이름</label>
+                                            <input type="text" id="userName" placeholder="이름을 입력하세요">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-box">
+                                            <label for="userMoney">송금 금액</label>
+                                            <input type="number" id="userMoney" placeholder="얼마를 보낼까요?" value="10000000" autofocus>
+                                            <button type="button" class="btn-clear"><span class="blind"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <div class="input-box">
+                                            <label>휴대폰 번호</label>
+                                            <input type="tel" value="010-1234-5678" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-box error">
+                                            <label>비밀번호</label>
+                                            <input type="password" value="1234" aria-invalid="true">
+                                        </div>
+                                        <p class="msg-error">비밀번호가 일치하지 않습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tit-wrap">
+                    <h3>Select Box</h3>
+                    <div>
+                        <h4>Dropdown<span>SVG 아이콘 적용, Input과 동일한 높이</span></h4>
+                        <div class="form-container">
+                            <div class="form-content">
+                                
+                                <div class="form-wrap">
+                                    <!-- 기본 Select -->
+                                    <div class="form-group">
+                                        <div class="input-box">
+                                            <label for="">default</label>
+                                            <select id="" required>
+                                                <option value="" disabled selected>선택해 주세요</option><!-- placeholder 역할 -->
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                                <option value="">3</option>
+                                                <option value="">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- 비활성 Select -->
+                                    <div class="form-group">
+                                        <div class="input-box">
+                                            <label>선택</label>
+                                            <select disabled>
+                                                <option selected>---</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

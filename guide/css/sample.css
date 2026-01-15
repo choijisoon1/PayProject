@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/* Guide Page Layout */
+.wrap { min-height: 100vh; background: #fff; }
+.contentWrap { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+/* visual-content */
+.visual-content {
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #222;
+}
+.visual-content h2 em {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+    font-style: normal;
+}
+.visual-content h2 span {
+    display: block;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* sample-content */
+.sample-content .tit-wrap {
+    display: flex;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+/* 좌측 대제목 */
+.sample-content .tit-wrap h3 {
+    flex: 0 0 240px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    padding-right: 20px;
+}
+/* 우측 콘텐츠 영역 */
+.sample-content .tit-wrap > div {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 소제목 (h4) */
+.sample-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+.sample-content h4 span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #888;
+    font-weight: 400;
+}
+
+.form-container { margin-top: 20px; }
+
+.form-wrap {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.form-group {
+    flex: 1; 
+    position: relative;
+}
