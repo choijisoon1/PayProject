@@ -21,7 +21,7 @@
     background-color: #fff;
 }
 
-.header .header-inner {
+.header-inner {
     position: relative;
     height: 50px;
     padding: 0 50px; /* 좌우 버튼 공간 확보 */
@@ -30,54 +30,54 @@
     align-items: center;
     justify-content: center;
 }
-.header .header-inner .left,
-.header .header-inner .right {
+.header-inner .left,
+.header-inner .right {
     position: absolute;
     top: 0; width: 55px; height: 100%;
     display: flex; align-items: center; justify-content: center;
 }
 
-.header .header-inner .left { left: 0; }
-.header .header-inner .right { right: 0; }
+.header-inner .left { left: 0; }
+.header-inner .right { right: 0; }
 
-.header .header-inner .title {
+.header-inner .title {
     width: 100%;
     font-size: 18px;
     text-align: left;
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     color: #222;
 }
-.header .header-inner.left-title {
+.header-inner.left-title {
     padding-left: 20px; 
     
 }
 
-.header .header-inner .left.logo-type {
+.header-inner .left.logo-type {
     width: auto;
     padding-left: 20px; 
     justify-content: flex-start; 
 }
 
 /* 로고 이미지 크기 조절 */
-.header .header-inner .left.logo-type img {
+.header-inner .left.logo-type img {
     height: 18px; 
     width: 61px; 
     display: block;
 }
 
 /* 헤더 버튼 (뒤로가기 등) */
-.header .se-btn {
+.se-btn {
     width: 40px; height: 40px;
     background: transparent no-repeat center / 24px;
     border: 0; cursor: pointer; font-size: 0;
 }
-.header .se-btn.back {
+.se-btn.back {
     background-image: url("../images/svg/arrow.svg");
 }
-.header .se-btn.menu {
+.se-btn.menu {
     background-image: url("../images/svg/menu.svg");
 }
-.header .se-btn.close {
+.se-btn.close {
     background-image: url("../images/svg/headerX.svg");
 }
 
@@ -109,32 +109,25 @@
     background: #fff;
 }
 
-
 /* Modal & Popup */
 
 .layout-fullpop {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background-color: #fff;
+    z-index: var(--z-popup);
 }
 .layout-fullpop .popup-layer {
     display: flex; flex-direction: column; height: 100%;
 }
+
 .layout-fullpop .popup-header {
     flex: none;
     position: relative;
-    height: 55px;
-    display: flex; align-items: center; justify-content: center;
-    border-bottom: 1px solid #E5E5EA;
+    height: var(--header-h); 
+    background: #fff;
 }
-.layout-fullpop .popup-header .popup-title { font-size: 16px; font-weight: 700; }
-.layout-fullpop .popup-header .popup-close {
-    position: absolute; right: 0; top: 0;
-    width: 55px; height: 55px;
-    border: 0; background: transparent no-repeat center / 24px;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cline x1='18' y1='6' x2='6' y2='18'/%3e%3cline x1='6' y1='6' x2='18' y2='18'/%3e%3c/svg%3e");
-    font-size: 0; cursor: pointer;
-}
+
 .layout-fullpop .popup-container {
     flex: 1; overflow-y: auto; padding: 20px;
 }
@@ -191,7 +184,6 @@
     padding: 20px;
     background: linear-gradient(to top,#ffffff 0%,#ffffff 70%,rgba(255,255,255,0) 100%);
 }
-
 
 /* Alert */
 .layout-alert {
