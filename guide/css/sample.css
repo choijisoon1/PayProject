@@ -60,6 +60,13 @@
     font-weight: 400;
 }
 
+.sample-content .form-wrap fieldset {
+    width: 100%;
+    display: flex;
+    gap:50px;
+}
+
+
 /* 샘플에서만 쓸거 */
 .form-container { margin-top: 20px; }
 
@@ -72,10 +79,44 @@
     flex: 1; 
     position: relative;
 }
+
+.header-guide-box {
+    position: relative; 
+    width: 100%;
+    height: 150px; 
+    background-color: #EAEAEA; 
+    border: 1px solid #ccc;
+    margin-bottom: 40px; 
+    overflow: hidden; 
+}
+
+/* 설명용 텍스트 */
+.header-guide-box::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 14px;
+    z-index: 0;
+}
+
+.header-guide-box .header {
+    position: absolute !important; 
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 10; 
+}
+
+.header-guide-box .layout-fullpop {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 10;
+}
 /* 샘플에서만 쓸거 */
 
-.sample-content .form-wrap fieldset {
-    width: 100%;
-    display: flex;
-    gap:50px;
-}
+
