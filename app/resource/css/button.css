@@ -129,3 +129,18 @@ button.disabled {
     border: 1px solid var(--color-d);
     color: var(--btn-dark-txt);
 }
+/* Form Button */
+.btn-form {
+    width: auto;
+    padding: 6px 8px; 
+    font-size: 12px;
+    font-weight: 500; 
+    background-color: #EAEBEF;
+    color: var(--color-45); 
+    border-radius: var(--btn-radius);
+}
+
+.btn-form:disabled {
+    background-color: #e4e4e4;
+    color: #999999;
+}
