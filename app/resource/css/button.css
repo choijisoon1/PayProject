@@ -58,7 +58,7 @@ button.disabled {
 /* Sticky / CTA */
 .btn-content.cta .button-group { 
     display: flex; 
-    gap: 12px; /* 버튼 사이 간격 */
+    gap: 10px; /* 버튼 사이 간격 */
     width: 100%; 
 }
 
@@ -99,10 +99,10 @@ button.disabled {
     background: linear-gradient(0deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
 }
 
-.pop-btn-area .button-group,
-.alert-btn-area .button-group {
+/* .pop-btn-area  */.button-group,
+/* .alert-btn-area  */.button-group {
     display: flex;
-    gap: 8px; 
+    gap: 10px; 
     width: 100%;
 }
 
