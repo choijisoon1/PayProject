@@ -322,3 +322,88 @@ var seSelect = (function(){
 $(document).on('change', '[data-stove="select"] select', function(){
 	seSelect.errorChk( $(this) );
 });
+
+/* ==========================================================================
+   Accordion (약관 동의 등)
+   ========================================================================== */
+var accord = (function() {
+    return {
+        toggle: function(element) {
+            var $this = $(element);
+            // data-stove="accordion" 속성을 가진 가장 가까운 부모 찾기
+            var $target = $this.closest('[data-stove="accordion"]');
+            
+            if ($target.hasClass('on')) {
+                $target.removeClass('on');
+                // 접근성: 텍스트 변경 (필요시)
+                $this.find('span').text('펼치기');
+            } else {
+                $target.addClass('on');
+                $this.find('span').text('접기');
+            }
+        }
+    }
+})();
+
+/* 이벤트 바인딩 (문서 로드 후 작동) */
+$(document).on('click', '.btn-fold', function() {
+    accord.toggle(this);
+});
+
+
+/* Checkbox All Check (약관 전체 동의) */
+var chkAll = (function() {
+    return {
+        init: function() {
+            //전체 동의 체크박스 클릭 시
+            $(document).on('change', '.terms-head input[type="checkbox"]', function() {
+                var isChecked = $(this).prop('checked');
+                var $pack = $(this).closest('.terms-pack');
+                
+                //하위 체크박스들을 모두 체크/해제
+                $pack.find('.terms-body input[type="checkbox"]').prop('checked', isChecked);
+                
+                //버튼 활성화 체크
+                chkAll.checkBtn();
+            });
+
+            //하위 체크박스 개별 클릭 시
+            $(document).on('change', '.terms-body input[type="checkbox"]', function() {
+                var $pack = $(this).closest('.terms-pack');
+                var total = $pack.find('.terms-body input[type="checkbox"]').length;
+                var checked = $pack.find('.terms-body input[type="checkbox"]:checked').length;
+                
+                //전부 체크되었으면 전체동의도 체크, 하나라도 빠지면 해제
+                if (total === checked) {
+                    $pack.find('.terms-head input[type="checkbox"]').prop('checked', true);
+                } else {
+                    $pack.find('.terms-head input[type="checkbox"]').prop('checked', false);
+                }
+
+                //버튼 활성화 체크
+                chkAll.checkBtn();
+            });
+        },
+        
+        //버튼 활성화/비활성화 로직
+        checkBtn: function() {
+            //필수(.required) 체크박스들이 모두 체크되었는지 확인
+            
+            var totalRequired = $('.terms-body input[type="checkbox"]').length; 
+            var checkedRequired = $('.terms-body input[type="checkbox"]:checked').length;
+            
+            var $submitBtn = $('.btn-fixed-bottom .btn-primary');
+
+            if (totalRequired > 0 && totalRequired === checkedRequired) {
+                $submitBtn.prop('disabled', false); //활성화
+            } else {
+                $submitBtn.prop('disabled', true);  //비활성화
+            }
+        }
+    }
+})();
+
+/* 문서 로드 후 초기화 실행 */
+$(document).ready(function(){
+    chkAll.init();
+});

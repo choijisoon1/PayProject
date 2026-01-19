@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>고객정보 입력</title>
+    
+    <!-- CSS 통합 연결 -->
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+    
+    <!-- JS -->
+    <script src="../../../guide/js/jquery-1.11.3.min.js"></script>
+    <script src="../../../guide/js/jquery.form.min.js"></script>
+    <script src="../../resource/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header-inner">
+                <div class="left">
+                    <button type="button" class="se-btn back"><span>뒤로가기</span></button>
+                </div>
+                <div class="right">
+                    <button type="button" class="se-btn close"><span>닫기</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar-wrap">
+            <span class="bar step2"></span>
+        </div>
+
+        <div class="container PAY-AUTH-003">
+            <div class="contents-inner">
+                <div class="section-jumbotron">
+                    <div class="tit-row">
+                        <h2 class="se-title">고객정보 입력</h2>
+                        <span class="page-num"><b>2</b> / 4</span>
+                    </div>
+                    <p class="text">
+                        등록/재등록을 위한 본인확인을 진행해 주세요.
+                    </p>
+                </div>
+
+                <div class="section">
+                    
+                    <!-- 이름 -->
+                    <div class="input-box">
+                        <label for="userName">이름 <span class="required">*</span></label>
+                        <input type="text" id="userName" placeholder="이름을 입력해 주세요">
+                        <button type="button" class="btn-clear"><span class="blind">삭제</span></button>
+                    </div>
+
+                    <!-- 주민등록번호 -->
+                    <div class="input-box">
+                        <label>주민등록번호 <span class="required">*</span></label>
+                        <div class="input-split">
+                            <input type="tel" id="resNum1" maxlength="6" value="" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <span class="dash">-</span>
+                            <input type="password" id="resNum2" maxlength="7" value="" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        </div>
+                    </div>
+
+                    <div class="form-group-stack">
+                        <!-- 통신사 -->
+                        <div class="input-box select">
+                            <div class="se-select" data-stove="select" data-uicase="slide">
+                                <select id="telecom" required>
+                                    <option value="" hidden>통신사를 선택해 주세요</option>
+                                    <option value="skt">SKT</option>
+                                    <option value="kt">KT</option>
+                                    <option value="lgu">LG U+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- 휴대폰 번호 + 인증요청 버튼 -->
+                        <div class="input-box has-btn">
+                            <label>휴대폰번호 <span class="required">*</span></label>
+                            <input type="tel" id="userPhone" maxlength="11" placeholder="- 없이 입력" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <button type="button" id="btnReqAuth" class="btn-form">인증번호 요청</button>
+                        </div>
+
+                        <!-- 인증번호 (숨김 상태) -->
+                        <div class="input-box" id="authBox" style="display: none;">
+                            <label for="authNum">인증 번호</label>
+                            <input type="tel" id="authNum" maxlength="6" placeholder="인증번호 6자리" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 하단 버튼 -->
+        <div class="btn-fixed-bottom">
+            <div class="button-group">
+                <button type="button" id="btnNext" class="btn-primary" disabled>다음</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            if (typeof seSelect !== 'undefined') { seSelect.init(); }
+
+            //인증번호 요청 버튼 클릭 시
+            $('#btnReqAuth').on('click', function(){
+                var phoneVal = $('#userPhone').val();
+                
+                //번호가 비었으면 실행X
+                if(phoneVal.length < 10) {
+                    alert('휴대폰 번호를 올바르게 입력해주세요.');
+                    return;
+                }
+
+                //버튼 텍스트 변경 및 비활성화 스타일
+                $(this).text('요청완료').addClass('disabled'); 
+                
+                //인증번호 입력창 보이기
+                $('#authBox').show();
+                $('#authNum').focus(); //포커스 이동
+
+                checkValidation(); //상태 변경 후 유효성 검사 한 번 실행
+            });
+
+            //실시간 유효성 검사 (모든 입력 변화 감지)
+            $('input, select').on('input change', function(){
+                checkValidation();
+            });
+
+            //유효성 검사 함수
+            function checkValidation() {
+                var name = $('#userName').val().trim();
+                var res1 = $('#resNum1').val().trim();
+                var res2 = $('#resNum2').val().trim();
+                var telecom = $('#telecom').val(); // 셀렉트 값
+                var phone = $('#userPhone').val().trim();
+                var authNum = $('#authNum').val().trim();
+                
+                //인증번호 창이 열려있는지 확인
+                var isAuthOpen = $('#authBox').is(':visible');
+
+                //모든 조건 확인
+                //이름O, 주민번호앞6, 주민번호뒤7, 통신사선택O, 폰번호10자리이상, 인증창열림O, 인증번호6자리
+                if( name.length > 0 && 
+                    res1.length === 6 && 
+                    res2.length === 7 && 
+                    telecom !== "" && 
+                    phone.length >= 10 && 
+                    isAuthOpen && 
+                    authNum.length === 6 
+                ) {
+                    //모든 조건 만족 시 '다음' 버튼 활성화
+                    $('#btnNext').prop('disabled', false);
+                } else {
+                    //하나라도 부족하면 비활성화
+                    $('#btnNext').prop('disabled', true);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

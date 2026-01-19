@@ -133,10 +133,20 @@ label.toggle input:checked:active::after { transform:translateX(calc(var(--toggl
 }
 
 .input-box .input-split input:first-child {
-    flex: 0 0 45%;
+    flex: 0 0 47%;
     width: 65px;
 }
 
 .input-box .input-split input:last-child {
     flex: 1; 
+}
+
+.input-box label .required {
+    color: var(--error);      
+    vertical-align: middle; 
+    font-size: 14px;
+}
+
+.form-group-stack .input-box.select  {
+    max-height: 52px;
 }
