@@ -144,3 +144,21 @@ button.disabled {
     background-color: #e4e4e4;
     color: #999999;
 }
+
+/* Tertiary Button */
+.btn-tertiary {
+    width: auto;
+    padding: 12px 14px; 
+    font-size: 14px;
+    font-weight: 400; 
+    background-color: var(--white);
+    color: var(--color-3); 
+    border-radius: 30px;
+    border: 1px solid var(--color-d);
+    min-width: 78px;
+}
+
+.btn-tertiary:disabled {
+    background-color: #e4e4e4;
+    color: #999999;
+}

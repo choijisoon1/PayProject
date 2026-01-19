@@ -22,7 +22,7 @@
                 <div class="tit-wrap">
                     <h3>Input</h3>
                     <div>
-                        <h4>Text Field<span>높이 76px, 내부 라벨 구조</span></h4>
+                        <h4>Text Field<span>높이 80px, 내부 라벨 구조</span></h4>
                         <div class="form-container">
                             <div class="form-content">
                                 <div class="form-wrap">
@@ -99,6 +99,57 @@
                                     </div>
                                 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tit-wrap">
+                    <h3>Phone Auth</h3>
+                    <div>
+                        <h4>Carrier + Phone<span>통신사 및 번호 인증 (세로 조합)</span></h4>
+                        <div class="form-container">
+                            <div class="form-content">
+                                <div class="form-group-stack">
+                                    <div class="input-box">
+                                        <label>통신사</label>
+                                        <div class="se-select" data-stove="select" data-uicase="slide">
+                                            <select required>
+                                                <option value="" hidden>통신사를 선택해 주세요</option>
+                                                <option value="skt">SKT</option>
+                                                <option value="kt">KT</option>
+                                                <option value="lgu">LG U+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-box has-btn">
+                                        <label>휴대폰번호</label>
+                                        <input type="tel" type="tel" maxlength="11" placeholder="- 없이 입력" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                        <button type="button" class="btn-form">인증번호 요청</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tit-wrap">
+                    <h3>Resident Number</h3>
+                    <div>
+                        <h4>Split Input<span>주민등록번호 (가로 분할)</span></h4>
+                        <div class="form-container">
+                            <div class="form-content">
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <div class="input-box">
+                                            <label>주민등록번호</label>
+                                            <div class="input-split">
+                                                <input type="tel" maxlength="6" value="" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                                <span class="dash">-</span>
+                                                <input type="password" maxlength="7" value="" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
