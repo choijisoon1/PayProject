@@ -94,8 +94,7 @@
 
 .contents { min-height: 100%; }
 .contents-inner {
-    padding: 20px; 
-    padding-bottom: 40px;
+    padding: 40px 20px; 
     box-sizing: border-box;
 }
 
