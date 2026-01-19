@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* 앱 접근권한 페이지 (PAY-PERM-001) */
+
+/* 컨테이너 여백 조정 */
+.container:has(.app-access-wrap) {
+    padding-top: 88px;
+}
+.app-access-wrap {
+    padding-top: 40px;
+}
+/* 권한 리스트 래퍼 */
+.app-access-wrap .list {
+    display: flex;
+    flex-direction: column;
+    gap: 27px; 
+}
+
+.app-access-wrap .list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* 아이콘 박스 */
+.app-access-wrap .icon-box {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background-color: #F4F4F4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    flex-shrink: 0;
+}
+.icon-box.phone { background-image: url('../images/svg/FERM/tel_ico.svg'); }
+.icon-box.save { background-image: url('../images/svg/FERM/save_ico.svg'); }
+.icon-box.camera { background-image: url('../images/svg/FERM/camera_ico.svg'); }
+.icon-box.contact { background-image: url('../images/svg/FERM/telbok_ico.svg'); }
+.icon-box.location { background-image: url('../images/svg/FERM/nav_ico.svg'); }
+.icon-box.faceid { background-image: url('../images/svg/FERM/face_ico.svg'); }
+
+
+/* 텍스트 영역 */
+.app-access-wrap .cnt .tit {
+    font-size: 16px; 
+    color: #222; 
+    margin-bottom: 4px;
+}
+.app-access-wrap .cnt .txt {
+    font-size: 14px; 
+    color: #666; 
+    
+}
+
+/* 배지 (필수/선택) */
+.badge { 
+    font-size: 14px; display: inline-block; 
+}
+.badge.required { color: var(--error); }
+.badge.optional { color: var(--success); }
+
+
+/* 구분선 */
+.line-divider {
+    border: 0; height: 1px; 
+    background-color: var(--color-e); 
+    margin: 30px 0;
+}

@@ -162,3 +162,18 @@ button.disabled {
     background-color: #e4e4e4;
     color: #999999;
 }
+
+/* 버튼 하단 고정 */
+.btn-fixed-bottom {
+    position: fixed;
+    bottom: 0; left: 0; width: 100%;
+    z-index: 100;
+    
+    padding: 20px;
+    box-sizing: border-box;
+    
+    background: linear-gradient(to top, #ffffff 80%, rgba(255,255,255,0) 100%);
+    
+    /* 아이폰 하단 홈바 대응 */
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+}

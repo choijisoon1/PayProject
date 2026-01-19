@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>앱 접근권한</title>
+    <!-- CSS 통합 연결 -->
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+</head>
+
+<body>
+    <!-- layout -->
+    <div id="layout" class="layout">
+        <!-- container -->
+        <div id="container" class="container">
+            <!-- contents -->
+            <div class="contents">
+                <div class="contents-inner">
+
+                    <div class="section-wrap">
+                        <div class="section-jumbotron">
+                            <h2 class="se-title">
+                                앱 이용을 위해<br>
+                                <strong>아래 권한 허용</strong>이 필요합니다.
+                            </h2>
+                        </div>
+
+                        <div class="section">
+                            <div class="app-access-wrap">
+                                <ul class="list">
+                                    <li>
+                                        <div class="icon-box phone"></div>
+                                        <div class="cnt">
+                                            <div class="tit">전화 <span class="badge required">[필수]</span></div>
+                                            <p class="txt">본인인증, 기기인증 및 상담연결</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-box save"></div>
+                                        <div class="cnt">
+                                            <div class="tit">저장공간 <span class="badge required">[필수]</span></div>
+                                            <p class="txt">사진, 미디어, 파일 저장 및 업데이트</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <hr class="line-divider">
+
+                                <!-- 선택 권한 -->
+                                <ul class="list">
+                                    <li>
+                                        <div class="icon-box camera"></div>
+                                        <div class="cnt">
+                                            <div class="tit">카메라 <span class="badge optional">[선택]</span></div>
+                                            <p class="txt">신분증 촬영 및 서류제출</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-box contact"></div>
+                                        <div class="cnt">
+                                            <div class="tit">연락처 <span class="badge optional">[선택]</span></div>
+                                            <p class="txt">간편송금 서비스 받는분 연락처 선택</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-box location"></div>
+                                        <div class="cnt">
+                                            <div class="tit">위치 <span class="badge optional">[선택]</span></div>
+                                            <p class="txt">비대면 상품 가입시 필요</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-box faceid"></div>
+                                        <div class="cnt">
+                                            <div class="tit">Face ID <span class="badge optional">[선택]</span></div>
+                                            <p class="txt">간편인증을 통한 로그인</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //contents-inner -->
+            </div>
+            <!-- //contents -->
+
+            <div class="btn-fixed-bottom">
+                <div class="button-group">
+                    <button type="button" class="btn-primary">확인했어요</button>
+                </div>
+            </div>
+            
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //layout -->
+</body>
+</html>

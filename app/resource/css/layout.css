@@ -102,7 +102,7 @@
 /* Section (콘텐츠 그룹) */
 .section-wrap { margin-bottom: 40px; }
 .section-jumbotron { margin-bottom: 20px;}
-.section-jumbotron .se-title { font-size: 22px; font-weight: 700; color: #222; margin-bottom: 10px; }
+.section-jumbotron .se-title { font-size: 22px; font-weight: 500; color: #222; margin-bottom: 10px; }
 .section-jumbotron .text { font-size: 14px; color: #666; }
 
 .section {
