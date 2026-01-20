@@ -412,3 +412,79 @@ var chkAll = (function() {
 $(document).ready(function(){
     chkAll.init();
 });
+
+/* 본인인증 페이지 로직 */
+var authValidation = (function() {
+    return {
+        init: function() {
+            if ($('#btnReqAuth').length === 0) return;
+
+            //인증번호 요청 버튼 클릭
+            $('#btnReqAuth').on('click', function() {
+                var phoneVal = $('#userPhone').val();
+                
+                //번호 길이 체크 (10자리 미만)
+                if (phoneVal.length < 10) {
+                    alert('휴대폰 번호를 올바르게 입력해주세요.');
+                    return;
+                }
+
+                //버튼 UI 변경
+                $(this).text('요청완료').addClass('disabled');
+                
+                // 인증번호 입력창 노출
+                $('#authBox').show();
+                $('#authNum').focus();
+
+                //유효성 검사 즉시 실행
+                authValidation.check();
+            });
+
+            //실시간 입력 감지
+            //input, select 값이 변할 때마다 체크
+            $('.PAY-AUTH-003 input, .PAY-AUTH-003 select').on('input change', function() {
+                authValidation.check();
+            });
+        },
+
+        //유효성 검사 및 버튼 제어 함수
+        check: function() {
+            var name = $('#userName').val().trim();
+            var res1 = $('#resNum1').val().trim();
+            var res2 = $('#resNum2').val().trim();
+            var telecom = $('#telecom').val();
+            var phone = $('#userPhone').val().trim();
+            var authNum = $('#authNum').val().trim();
+            
+            //인증번호 창이 열려있는지 확인
+            var isAuthOpen = $('#authBox').is(':visible');
+
+            //gk단 버튼 (ID가 없으면 클래스로 찾음)
+            var $btnNext = $('.btn-fixed-bottom .btn-primary');
+
+            //조건 확인
+            if (name.length > 0 && 
+                res1.length === 6 && 
+                res2.length === 7 && 
+                telecom !== "" && telecom !== null && 
+                phone.length >= 10 && 
+                isAuthOpen && 
+                authNum.length === 6 
+            ) {
+                $btnNext.removeClass('disabled'); 
+                $btnNext.prop('disabled', false); 
+            } else {
+                $btnNext.addClass('disabled');
+                $btnNext.prop('disabled', true);
+            }
+        }
+    }
+})();
+
+/* 문서 로드 후 실행 */
+$(document).ready(function(){
+    if(typeof seSelect !== 'undefined') seSelect.init();
+    if(typeof chkAll !== 'undefined') chkAll.init();
+    
+    authValidation.init();
+});

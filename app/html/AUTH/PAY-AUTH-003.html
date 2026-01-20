@@ -102,71 +102,11 @@
         <!-- 하단 버튼 -->
         <div class="btn-fixed-bottom">
             <div class="button-group">
-                <button type="button" id="btnNext" class="btn-primary" disabled>다음</button>
+                <a href="PAY-AUTH-004.html" class="btn-primary disabled">다음</a>
+                <!-- <button type="button" id="btnNext" class="btn-primary" disabled>다음</button> -->
             </div>
         </div>
     </div>
 
-    <script>
-        $(document).ready(function(){
-
-            if (typeof seSelect !== 'undefined') { seSelect.init(); }
-
-            //인증번호 요청 버튼 클릭 시
-            $('#btnReqAuth').on('click', function(){
-                var phoneVal = $('#userPhone').val();
-                
-                //번호가 비었으면 실행X
-                if(phoneVal.length < 10) {
-                    alert('휴대폰 번호를 올바르게 입력해주세요.');
-                    return;
-                }
-
-                //버튼 텍스트 변경 및 비활성화 스타일
-                $(this).text('요청완료').addClass('disabled'); 
-                
-                //인증번호 입력창 보이기
-                $('#authBox').show();
-                $('#authNum').focus(); //포커스 이동
-
-                checkValidation(); //상태 변경 후 유효성 검사 한 번 실행
-            });
-
-            //실시간 유효성 검사 (모든 입력 변화 감지)
-            $('input, select').on('input change', function(){
-                checkValidation();
-            });
-
-            //유효성 검사 함수
-            function checkValidation() {
-                var name = $('#userName').val().trim();
-                var res1 = $('#resNum1').val().trim();
-                var res2 = $('#resNum2').val().trim();
-                var telecom = $('#telecom').val(); // 셀렉트 값
-                var phone = $('#userPhone').val().trim();
-                var authNum = $('#authNum').val().trim();
-                
-                //인증번호 창이 열려있는지 확인
-                var isAuthOpen = $('#authBox').is(':visible');
-
-                //모든 조건 확인
-                //이름O, 주민번호앞6, 주민번호뒤7, 통신사선택O, 폰번호10자리이상, 인증창열림O, 인증번호6자리
-                if( name.length > 0 && 
-                    res1.length === 6 && 
-                    res2.length === 7 && 
-                    telecom !== "" && 
-                    phone.length >= 10 && 
-                    isAuthOpen && 
-                    authNum.length === 6 
-                ) {
-                    //모든 조건 만족 시 '다음' 버튼 활성화
-                    $('#btnNext').prop('disabled', false);
-                } else {
-                    //하나라도 부족하면 비활성화
-                    $('#btnNext').prop('disabled', true);
-                }
-            }
-        });
-    </script>
 </body>
 </html>

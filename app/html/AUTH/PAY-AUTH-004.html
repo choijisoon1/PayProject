@@ -107,7 +107,7 @@
         <!-- 하단 버튼 -->
         <div class="btn-fixed-bottom">
             <div class="button-group">
-                <button type="button" class="btn-primary" disabled>다음</button>
+                <a href="PAY-AUTH-005.html" class="btn-primary disabled">다음</a>
             </div>
         </div>
         
@@ -118,8 +118,9 @@
             //라디오 버튼 변경 감지
             $('input[name="authMethod"]').on('change', function(){
                 //하나라도 체크되면 버튼 활성화
+                var $btnNext = $('.btn-fixed-bottom .btn-primary');
                 if($(this).is(':checked')) {
-                    $('.btn-primary').prop('disabled', false);
+                    $btnNext.removeClass('disabled'); 
                 }
             });
         });
