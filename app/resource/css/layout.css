@@ -17,7 +17,7 @@
 .header-inner .left { left:0; }
 .header-inner .right { right:0; }
 
-.header-inner .title { width:100%; font-size:18px; text-align:left; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#222; }
+.header-inner .title { width:100%; font-size:18px; text-align:left; margin-left: 2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#222; font-weight: 500; }
 .header-inner.left-title { padding-left:20px; }
 
 /* 로고 이미지 크기 조절 */
