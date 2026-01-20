@@ -61,7 +61,7 @@
 .PAY-AUTH-003 .section-jumbotron .page-num b,
 .PAY-AUTH-004 .section-jumbotron .page-num b { color:#222; font-weight:600; }
 
-.PAY-AUTH-003 .section { padding:0; display:flex; flex-direction:column; gap:20px; }
+.PAY-AUTH-003 .section { padding:0; display:flex; flex-direction:column; gap:20px; padding-bottom: 140px;}
 
 
 /* 프로그레스 바 */
@@ -82,10 +82,10 @@
 .terms-pack.on .terms-head .btn-fold { transform:rotate(180deg); }
 
 /* 약관 리스트 */
-.terms-body { display:none; padding:10px 10px 0 10px; border:0; background-color:transparent; }
+.terms-body { display:none; padding-top: 10px; border:0; background-color:transparent; }
 .terms-pack.on .terms-body { display:block; }
 
-.terms-list li { display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding:0 10px; color:var(--color-2); }
+.terms-list li { display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding:0 6px; color:var(--color-2); }
 .terms-list li:first-child { margin-top:10px; }
 .terms-list .btn-detail { width:20px; height:20px; background:transparent var(--ico-select) no-repeat center / 16px; transform:rotate(-90deg); border:0; padding:0; opacity:0.4; cursor:pointer; }
 

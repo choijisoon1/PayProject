@@ -387,17 +387,22 @@ var chkAll = (function() {
         
         //버튼 활성화/비활성화 로직
         checkBtn: function() {
-            //필수(.required) 체크박스들이 모두 체크되었는지 확인
-            
             var totalRequired = $('.terms-body input[type="checkbox"]').length; 
             var checkedRequired = $('.terms-body input[type="checkbox"]:checked').length;
             
             var $submitBtn = $('.btn-fixed-bottom .btn-primary');
 
+            //모든 항목이 체크되었을 때
             if (totalRequired > 0 && totalRequired === checkedRequired) {
-                $submitBtn.prop('disabled', false); //활성화
+                //<button> 태그용
+                $submitBtn.prop('disabled', false); 
+                //<a> 태그용 (클래스 제거)
+                $submitBtn.removeClass('disabled'); 
             } else {
-                $submitBtn.prop('disabled', true);  //비활성화
+                //<button> 태그용
+                $submitBtn.prop('disabled', true);  
+                //<a> 태그용 (클래스 추가)
+                $submitBtn.addClass('disabled');    
             }
         }
     }
