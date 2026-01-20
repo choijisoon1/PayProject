@@ -1,18 +1,27 @@
 @charset "utf-8";
-
-/* 앱 접근권한 페이지 (PAY-PERM-001) */
-.app-access-wrap { padding-top:40px; }
-.app-access-wrap .list { display:flex; flex-direction:column; gap:27px; }
-.app-access-wrap .list li { display:flex; align-items:center; gap:14px; }
-
-/* 아이콘 박스 */
-.app-access-wrap .icon-box { width:48px; height:48px; border-radius:50%; background-color:#F4F4F4; background-repeat:no-repeat; background-position:center; background-size:24px; flex-shrink:0; }
+/* 공통 아이콘 박스 및 아이콘 */
+.icon-box { width:48px; height:48px; border-radius:50%; background-color:#F4F4F4; background-repeat:no-repeat; background-position:center; background-size:24px; flex-shrink:0; }
 .icon-box.phone { background-image:url('../images/svg/FERM/tel_ico.svg'); }
 .icon-box.save { background-image:url('../images/svg/FERM/save_ico.svg'); }
 .icon-box.camera { background-image:url('../images/svg/FERM/camera_ico.svg'); }
 .icon-box.contact { background-image:url('../images/svg/FERM/telbok_ico.svg'); }
 .icon-box.location { background-image:url('../images/svg/FERM/nav_ico.svg'); }
 .icon-box.faceid { background-image:url('../images/svg/FERM/face_ico.svg'); }
+
+.icon-box.password { background-image: url('../images/svg/LOGN/password_ico.svg'); }
+.icon-box.fingerprint { background-image: url('../images/svg/LOGN/fingerprint_ico.svg'); }
+.icon-box.password-fill { background-image: url('../images/svg/LOGN/password-fill-ico.svg'); }
+.icon-box.fingerprint-fill { background-image: url('../images/svg/LOGN/fingerprint_fill_ico.svg'); }
+.icon-box.faceid-fill { background-image:url('../images/svg/LOGN/face_fill_ico.svg'); }
+
+
+/* ============ 회원가입 (본인인증) ===================== */
+
+
+/* 앱 접근권한 페이지 (PAY-PERM-001) */
+.app-access-wrap { padding-top:40px; }
+.app-access-wrap .list { display:flex; flex-direction:column; gap:27px; }
+.app-access-wrap .list li { display:flex; align-items:center; gap:14px; }
 
 /* 텍스트 영역 */
 .app-access-wrap .cnt .tit { font-size:16px; color:#222; margin-bottom:4px; }
@@ -125,3 +134,47 @@
 /* 이미지 영역 */
 .PAY-AUTH-005 .result-motion { flex:1; display:flex; align-items:center; justify-content:center; padding-bottom:40px; }
 .PAY-AUTH-005 .result-motion .motion-bg { display:block; min-width:259px; min-height:149px; background-image:url('../../resource/images/AUTH/comp_img.gif'); background-repeat:no-repeat; background-position:center; background-size:contain; }
+
+
+
+/* ============ 로그인 (간편인증) ===================== */
+
+/* PAY-LOGN-001 간편인증 로그인 선택 */
+.login-method-list { border-top: 1px solid var(--color-e); }
+.login-method-list li { border-bottom: 1px solid var(--color-e); }
+.btn-method { display: flex; align-items: center; justify-content: flex-start; width: 100%; padding: 24px 0; background: transparent; border: 0; cursor: pointer; text-align: left; text-decoration: none; color: var(--color-2); gap: 14px; }
+.btn-method:active { background-color: #f9f9f9; }
+.btn-method .name { font-size: 16px; font-weight: 500; color: inherit; }
+.login-more-wrap { margin-top: 16px; display: flex; justify-content: flex-end; }
+.btn-text-arrow { display: inline-flex; width: auto; align-items: center; font-size: 14px; color: var(--color-45); background: transparent; border: 0; padding: 0; cursor: pointer; }
+.btn-text-arrow::after { content: ''; display: block; width: 16px; height: 16px; margin-left: 4px; background: var(--ico-select) no-repeat center/contain; }
+
+/* PAY-LOGN-01001 팝업 내부 컨텐츠 */
+.auth-setting-list { display: flex; flex-direction: column; gap: 10px; }
+.auth-setting-list .item-row { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 10px 0; text-decoration: none; cursor: pointer; }
+.auth-setting-list .left { display: flex; align-items: center; gap: 12px; }
+.auth-setting-list .name { font-size: 16px; color: #222; font-weight: 500; }
+.badge-state { display: inline-flex; align-items: center; justify-content: center; padding: 6px 10px; border-radius: 100px; font-size: 14px; font-weight: 500; background-color: #f3f3f3; color: var(--color-45); }
+.badge-state.on { background-color: #EcF4FF; color:var(--success); }
+.popup-container.padding-20 { padding: 20px; }
+
+/* PAY-LOGN-002 간편 비밀번호 */
+.popup-container.keypad-mode { display: flex; flex-direction: column; text-align: center; padding-top: 42px; padding-bottom: 0; }
+.popup-container.keypad-mode .se-title, .popup-container.auth-register-mode .se-title { font-size: 24px; font-weight: 700; }
+.pw-dots-area { display: flex; justify-content: center; gap: 15px; margin-top: 26px; margin-bottom: auto; }
+.pw-dot { width: 20px; height: 20px; border-radius: 50%; background-color: #E5E5e5; transition: background-color 0.2s; }
+.pw-dot.on { background-color:var(--secondary); }
+.secure-keypad { width: 100%; padding: 20px 0 40px 0; background-color: #fff; }
+.keypad-grid { display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 10px; }
+.keypad-btn { display: flex; align-items: center; justify-content: center; width: 100%; height: 65px; background: transparent; border: none; font-size: 24px; font-family: inherit; cursor: pointer; }
+.keypad-btn:active { background-color: #faf8fa; border-radius: 12px; }
+.keypad-btn.text-btn { font-size: 16px; color: #222; font-weight: 400; }
+.keypad-btn.back { background-image: url('../images/svg/LOGN/keypad-back.svg'); background-repeat: no-repeat; background-position: center; background-size: 28px auto; }
+
+/* PAY-LOGN-003~4 */
+.popup-container.auth-register-mode { display: flex; flex-direction: column; height: 100%; text-align: center; padding-top: 42px; }
+.popup-container.auth-register-mode .result-motion { display: flex; align-items: center; justify-content: center; margin-top: 26px; }
+.popup-container.auth-register-mode .motion-bg { display: block; width: 120px; height: 120px; background-repeat: no-repeat; background-position: center; background-size: contain; }
+.popup-container.auth-register-mode .motion-bg.fingerprint { background-image: url('../../resource/images/LOGN/Fingerprint_img.gif'); }
+.popup-container.auth-register-mode .motion-bg.face { background-image: url('../../resource/images/LOGN/Face_img.gif'); }
+.popup-container.auth-register-mode .auth-btn-wrap { margin-top: 42px; }

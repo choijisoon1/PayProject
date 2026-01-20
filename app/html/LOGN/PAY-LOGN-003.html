@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>지문인증</title>
+    
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+
+    <script src="../../../guide/js/jquery-1.11.3.min.js"></script>
+    <script src="../../../guide/js/jquery.form.min.js"></script>
+    <script src="../../resource/js/common.js"></script>
+    
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="layout-fullpop">
+        <div class="popup-layer">
+            <div class="popup-header">
+                <div class="header-inner">
+                    <div class="left"></div>
+                    <div class="title"></div> 
+                    
+                    <div class="right">
+                        <button type="button" class="se-btn close" onclick="window.close()">닫기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="popup-container auth-register-mode">
+                <div class="section-jumbotron">
+                    <h2 class="se-title">지문 등록</h2>
+                    <p class="text">손가락 지문을 터치해 주세요.</p>
+                    <!-- <h2 class="se-title">지문 등록 확인</h2>
+                    <p class="text">다시 한번 손가락 지문을 터치해 주세요.</p> -->
+                </div>
+
+                <div class="result-motion">
+                    <div class="motion-bg fingerprint"></div>
+                </div>
+
+                <div class="auth-btn-wrap">
+                    <button type="button" class="btn-tertiary">다음에 등록하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
