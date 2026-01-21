@@ -111,3 +111,17 @@ label.toggle input:checked:active::after { transform:translateX(calc(var(--toggl
 .input-box label .required { color:var(--error); vertical-align:middle; font-size:14px; }
 
 .form-group-stack .input-box.select { max-height:52px; }
+
+/* 이메일용 */
+.input-box:has(.email-domain:disabled) {
+    background-color: #fff !important;
+}
+.input-split.email input:first-child {
+    color: #222 !important;
+    background-color: transparent !important;
+}
+
+.email-domain:disabled {
+    color: #999 !important;           
+    cursor: not-allowed;                
+}

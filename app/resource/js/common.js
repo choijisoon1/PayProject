@@ -488,3 +488,19 @@ $(document).ready(function(){
     
     authValidation.init();
 });
+/* 이메일 */
+$(document).ready(function() {
+    $('#domain-select').on('change', function() {
+        var val = $(this).val();
+        var $domainInput = $('.email-domain'); //오른쪽 인풋
+
+        if (val === 'direct' || val === '') {
+            $domainInput.val('');
+            $domainInput.prop('disabled', false);
+            $domainInput.focus();
+        } else {
+            $domainInput.val(val);
+            $domainInput.prop('disabled', true); //오른쪽 인풋만 잠금
+        }
+    });
+});
