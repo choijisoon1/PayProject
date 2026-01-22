@@ -504,3 +504,27 @@ $(document).ready(function() {
         }
     });
 });
+$(document).ready(function() {
+	/* 스와이퍼 초기화 */
+    window.recommendSwiper = new Swiper('.recommend-swiper', {
+        loop: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        pagination: { el: '.recommend-pagination', clickable: true },
+        observer: true,
+        observeParents: true 
+    });
+
+    /* 탭 로직 */
+    $('.tab-list li').on('click', function() {
+        var idx = $(this).index();
+
+        $(this).addClass('on').siblings().removeClass('on');
+
+        $('.tab-content').eq(idx).addClass('on').siblings().removeClass('on');
+
+        if (idx === 0 && window.recommendSwiper) {
+            window.recommendSwiper.update(); 
+        }
+    });
+
+});

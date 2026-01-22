@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/* ========================================================================== Bottom Nav ========================================================================== */
+.bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; height: 70px; background-color: var(--white); border-top: 1px solid var(--color-d); z-index: 150; box-sizing: content-box; }
+.nav-inner { display: flex; height: 100%; align-items: center; justify-content: space-around; }
+.nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; width: 25%; height: 100%; }
+.nav-item .text { font-size: 12px; color: var(--color-75); font-weight: 500; margin-top: 4px; }
+.nav-item .icon { width: 24px; height: 24px; background-repeat: no-repeat; background-position: center; background-size: contain; }
+.nav-item .icon.my { background-image: url("../../resource/images/svg/MAIN/ico-my.svg"); }
+.nav-item .icon.pay { background-image: url("../../resource/images/svg/MAIN/ico-wallet.svg"); }
+.nav-item .icon.asset { background-image: url("../../resource/images/svg/MAIN/ico-money.svg"); }
+.nav-item .icon.benefit { background-image: url("../../resource/images/svg/MAIN/ico-percent.svg"); }
+.nav-item.on .text { color: var(--primary); font-weight: 700; }
+.nav-item.on .icon.my { background-image: url("../../resource/images/svg/MAIN/ico-my-on.svg"); }
+.nav-item.on .icon.pay { background-image: url("../../resource/images/svg/MAIN/ico-wallet-on.svg"); }
+.nav-item.on .icon.asset { background-image: url("../../resource/images/svg/MAIN/ico-money-on.svg"); }
+.nav-item.on .icon.benefit { background-image: url("../../resource/images/svg/MAIN/ico-percent-on.svg"); }
+
+/* ========================================================================== 카드 공통 ========================================================================== */
+.section { background: transparent !important; }
+.card { border-radius: 12px; background: #FFF; box-shadow: 0 0 8px 0 rgba(153, 153, 153, 0.25); margin-bottom: 26px; overflow: hidden; }
+.card.main-dash { overflow: visible !important; margin-top: 30px; padding: 0; }
+
+/* ========================================================================== 대표카드 ========================================================================== */
+.dash-inner { position: relative; padding: 18px 16px; background: linear-gradient(263deg, #FF5460 8.68%, #FE755D 59.82%); color: #fff; border-radius: 8px 8px 0 0; }
+.card-no { display: flex; align-items: center; font-size: 12px; font-weight: 400; }
+.card-no::before { content:''; display:inline-block; width:24px; height:15px; margin-right:8px; background: url("../../resource/images/MAIN/MasterCard_img.png") no-repeat center / contain; }
+.info-amount { margin-top: 10px; }
+.info-amount .val { font-size: 26px; font-weight: 700; }
+.info-amount .unit { font-size: 20px; font-weight: 500; }
+.card-name { font-size: 14px;}
+.info-detail { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; margin-bottom: 5px;}
+.btn-history { display: inline-flex; align-items: center; justify-content: center; max-width: 69px; min-height: 35px; /* 여기 패딩때문에 35px은 줘야할듯.. */ padding: 6px 12px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 6px; color: #fff; font-size: 13px; font-weight: 500; line-height: 1; white-space: nowrap; }
+.floating-card { position: absolute; top: -50px; right: 0px; width: 150px; height: 150px; z-index: 10; }
+.floating-card img { width: 100%; filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.3)); }
+
+/* ========================================================================== 대표카드 버튼 ========================================================================== */
+.btn-card-change { display: flex; align-items: center; justify-content: space-between; height: 48px; padding: 0 16px; background-color: #fff; color: var(--color-45); font-size: 14px; text-decoration: none; border-radius: 0 0 8px 8px;}
+.btn-card-change:active {transform: none !important;}
+.btn-card-change::before { content: ''; display: inline-block; width: 24px; height: 24px; margin-right: 10px; background: url("../../resource/images/svg/MAIN/change-ico.svg") no-repeat center / contain; }
+.btn-card-change::after { content: ''; display: inline-block; width: 20px; height: 20px; margin-left: auto; background-color: #f2f2f2; border-radius: 50%; background-image: url("../../resource/images/svg/MAIN/main-right.svg"); background-repeat: no-repeat; background-position: center; background-size: 12px 12px; }
+
+/* ========================================================================== 탭메뉴 ========================================================================== */
+.tab-wrap { background: #fff; border-bottom: 1px solid var(--color-e); position: sticky; top: 50px; z-index: 90; }
+.tab-list { display: flex; height: 50px; padding: 0 20px; justify-content: flex-start; gap: 24px; }
+.tab-list li { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; }
+.tab-list li a { font-size: 16px; color: var(--color-45); font-weight: 500; text-decoration: none; }
+.tab-list li.on a { color: var(--color-2); font-weight: 700; }
+.tab-list li.on::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background-color: #000; }
+.tab-content { display: none; }
+.tab-content.on { display: block; }
+
+/* ========================================================================== 결제 서비스 ========================================================================== */
+.card.payment {padding: 20px 16px 24px 16px;}
+/* 결제 서비스 카드 타이틀 */
+.card-inner-title { font-size: 18px; font-weight: 700; color: #222; margin-bottom: 20px; text-align: left; }
+/* 3열 그리드 리스트 */
+.payment-service-list { display: flex; align-items: center; justify-content: space-between; /* gap: 20px; */}
+.payment-service-list li { width: 33.33%; }
+/* 서비스 링크 버튼 */
+.btn-service { display: flex; flex-direction: column; align-items: center; width: 100%; text-decoration: none; color: inherit; cursor: pointer; }
+.btn-service::before { content: ''; display: block; width: 56px; height: 56px; border: 1px solid var(--color-e); border-radius: 50%; background-repeat: no-repeat; background-position: center; background-size: 24px; margin-bottom: 12px; transition: background-color 0.2s; }
+.btn-service .name { font-size: 14px; color: var(--color-45); font-weight: 500; letter-spacing: -0.5px; }
+
+.btn-service.touch::before { background-image: url("../../resource/images/svg/MAIN/ico_touch.svg"); }
+.btn-service.scan::before { background-image: url("../../resource/images/svg/MAIN/ico_scan.svg"); background-color: #212733; background-size: 28px; }
+.btn-service.barcode::before { background-image: url("../../resource/images/svg/MAIN/barcode.svg"); }
+
+/* ========================================================================== 카드 결제금액 ========================================================================== */
+/* 카드 헤더 및 메뉴 버튼 */
+.card.amount {padding: 20px 16px;}
+.card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+.card-head .card-inner-title {margin-bottom: 0;}
+.btn-more-dot { width: 24px; height: 24px; background: url("../../resource/images/svg/MAIN/ico-more-col.svg") no-repeat center / contain; border: 0; cursor: pointer; padding: 0;}
+
+/* 결제 금액 리스트 스타일 */
+.payment-amount-list { margin-bottom: 20px; }
+.payment-amount-list li { margin-bottom: 28px; }
+/* .payment-amount-list li:last-child { margin-bottom: 0; } */
+.payment-amount-list .item-link { display: flex; align-items: center; text-decoration: none; position: relative; padding-right: 20px; }
+.payment-amount-list .item-link::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; background: url("../../resource/images/svg/MAIN/main-right.svg") no-repeat center / contain; }
+
+/* 월별 뱃지 스타일 */
+.month-badge { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-right: 14px; }
+.month-badge.mint { background-color: #DFF6F6; color: #337171; }
+.month-badge.peach { background-color: #FFF1DA; color: #F16B5E; }
+
+.info-text .label { font-size: 13px; color: var(--color-75); }
+.info-text .amount { font-size: 18px; color: var(--color-2); font-weight: 700;}
+
+/* 하단 상세보기 버튼 스타일 */
+.btn-detail-view { display: block; width: calc(100%); padding: 14px 8px 0 8px; border-top: 1px solid var(--color-e); text-align: center; color: var(--color-45); font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 0 0 8px 8px; line-height: 1; height: auto; }
+
+/* ========================================================================== 일반 배너 ========================================================================== */
+.card.banner-asset { position: relative; padding: 20px; display: flex; align-items: center; min-height: 108px; cursor: pointer; background-color: #E9EFFF; }
+
+.banner-asset .banner-text { font-size: 16px; color: var(--color-45); line-height: 1.4; text-align: left; }
+.banner-asset .banner-text strong { font-size: 18px; color: var(--color-2); font-weight: 700; }
+
+.card.banner-asset::after { content: ''; position: absolute; top: 55%; right: 0px; transform: translateY(-50%); width: 114px; height: 68px; background: url("../../resource/images/MAIN/coin.png") no-repeat center / contain; }
+
+/* ========================================================================== 퀵메뉴 ========================================================================== */
+/* 퀵 메뉴 카드 전체 설정 */
+.card.quick-menu { padding: 24px 16px; }
+.quick-list li { margin-bottom: 18px; }
+.quick-list li:last-child { margin-bottom: 0; }
+
+/* 리스트 아이템 링크 */
+.quick-list .item-link { display: flex; align-items: center; position: relative; text-decoration: none; padding-bottom: 18px; border-bottom: 1px solid #f0f0f0; }
+.quick-list li:last-child .item-link { border-bottom: 0; padding-bottom: 0; }
+
+/* 왼쪽 아이콘 */
+.quick-list .item-link::before { content: ''; display: block; width: 23px; height: 23px; margin-right: 12px; background-repeat: no-repeat; background-position: center; background-size: contain; flex-shrink: 0; }
+.quick-list .item-link.notice::before { background-image: url("../../resource/images/svg/MAIN/notice.svg"); }
+.quick-list .item-link.guide::before { background-image: url("../../resource/images/svg/MAIN/info.svg"); }
+.quick-list .item-link.faq::before { background-image: url("../../resource/images/svg/MAIN/qna.svg"); }
+
+/* 우측 화살표 */
+.quick-list .item-link::after { content: ''; display: block; width: 16px; height: 16px; margin-left: auto; background: url("../../resource/images/svg/MAIN/main-right.svg") no-repeat center / contain; }
+
+/* 텍스트 스타일 */
+.quick-list .name { font-size: 16px; color: var(--color-2); font-weight: 500; }
+
+/* ========================================================================== 알림배너 ========================================================================== */
+/* 알림 배너 전체 설정 */
+.card.banner-notice { background: #4a5da9; padding: 12px 16px; border: 0; display: flex; align-items: center; border-radius: 8px; }
+
+/* 왼쪽 벨 아이콘 */
+.banner-notice .ico-bell { width: 50px; height: 50px; background: url("../../resource/images/MAIN/notif_img.png") no-repeat center / contain; margin-right: 6px; flex-shrink: 0; }
+
+/* 중앙 텍스트 */
+.banner-notice .banner-text { flex: 1; text-align: left; font-size: 12px; color: var(--white);  }
+.banner-notice .banner-text strong { display: block; font-size: 16px; font-weight: 700; margin-top: 2px; }
+
+/* 오른쪽 알림설정 버튼 */
+.btn-setup { width: auto; background: #fff; border-radius: 4px; padding: 8px 12px; min-height: 37px; font-size: 14px; color: #454545; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; border: 0; }
+.btn-setup:active { background-color: #f2f2f2; }
+
+/* ========================================================================== 스와이프 배너 ========================================================================== */
+/* 추천 배너 카드 기본 */
+.card.banner-recommend { padding: 0; overflow: hidden; position: relative; }
+.recommend-item { text-decoration: none; display: block; }
+
+.visual-area { width: 100%; height: 180px; background-color: #272238; background-repeat: no-repeat; background-position: center; background-size: 280px 161px;}
+.visual-area.b1 { background-image: url('../../resource/images/MAIN/banner01_img.png'); }
+.visual-area.b2 { background-image: url('../../resource/images/MAIN/banner02_img.png'); }
+
+/* 나머지 텍스트 */
+.info-area { padding: 20px; text-align: left; background: #fff; }
+.info-area .title { font-size: 16px; color: var(--color-2); font-weight: 700;}
+.info-area .desc { font-size: 14px; color: var(--color-45); margin-top: 4px; }
+
+/* 스와이퍼 페이지네이션 */
+.recommend-pagination { position: absolute; top: 16px !important; right: 16px !important; left: auto !important; width: auto !important; display: flex; gap: 5px; z-index: 1000; }
+.recommend-pagination .swiper-pagination-bullet { width: 7px; height: 7px; background: #C5C5C5; margin: 0 !important; border-radius: 50%; }
+.recommend-pagination .swiper-pagination-bullet-active { width: 24px; opacity: 1; border-radius: 20px; background: #fff; }
+
+/* ========================================================================== 메인유틸버튼 ========================================================================== */
+.main-util-wrap { display: flex; justify-content: center; align-items: center; gap: 12px; }
+.btn-util { display: inline-flex; align-items: center;  justify-content: center; width: auto; min-width: 88px; min-height: 37px; padding: 8px 12px; background: #EAEBEF; border-radius: 6px; color: var(--color-2); font-size: 14px; font-weight: 500; border: 0; cursor: pointer; white-space: nowrap;}
+
