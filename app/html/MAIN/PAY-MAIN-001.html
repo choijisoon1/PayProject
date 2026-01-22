@@ -254,18 +254,19 @@
 
                                         <div class="calendar-weekly">
                                             <ul class="weekly-list">
-                                                <li><span class="day">일</span><span class="date">11</span></li>
-                                                <li><span class="day">월</span><span class="date">12</span></li>
-                                                <li><span class="day">화</span><span class="date">13</span></li>
-                                                <li class="on"><span class="day">수</span><span class="date">14</span></li>
-                                                <li><span class="day">목</span><span class="date">15</span></li>
-                                                <li><span class="day">금</span><span class="date">16</span></li>
-                                                <li><span class="day">토</span><span class="date">17</span></li>
+                                                <li data-date="11"><span class="day">일</span><span class="date">11</span></li>
+                                                <li data-date="12"><span class="day">월</span><span class="date">12</span></li>
+                                                <li data-date="13"><span class="day">화</span><span class="date">13</span></li>
+                                                <li data-date="14" class="on"><span class="day">수</span><span class="date">14</span></li>
+                                                <li data-date="15" class="disabled"><span class="day">목</span><span class="date">15</span></li>
+                                                <li data-date="16" class="disabled"><span class="day">금</span><span class="date">16</span></li>
+                                                <li data-date="17" class="disabled"><span class="day">토</span><span class="date">17</span></li>
                                             </ul>
                                         </div>
 
                                         <div class="transaction-area">
-                                            <div class="trans-group">
+                                            <!-- 12일 내역 -->
+                                            <div class="trans-group" data-date="12">
                                                 <p class="group-date">1월 12일 월요일</p>
                                                 <div class="trans-item">
                                                     <div class="ico-badge minus"></div> 
@@ -275,10 +276,20 @@
                                                     </div>
                                                     <div class="amount withdrawal">-157,033 원</div>
                                                 </div>
+                                                
                                             </div>
 
-                                            <div class="trans-group">
-                                                <p class="group-date">1월 2일 금요일</p>
+                                            <!-- 14일 내역 (현재 활성화된 날짜라고 가정) -->
+                                            <div class="trans-group on" data-date="14">
+                                                <p class="group-date">1월 14일 수요일</p>
+                                                <div class="trans-item">
+                                                    <div class="ico-badge minus"></div> 
+                                                    <div class="info">
+                                                        <p class="name">카카오페이</p>
+                                                        <p class="type">출금 <span>저축예금</span></p>
+                                                    </div>
+                                                    <div class="amount withdrawal">-245,033 원</div>
+                                                </div>
                                                 <div class="trans-item">
                                                     <div class="ico-badge plus"></div>
                                                     <div class="info">
@@ -288,6 +299,9 @@
                                                     <div class="amount deposit">+20,000 원</div>
                                                 </div>
                                             </div>
+                                            
+                                            <!-- 내역 없는 날짜(임시추가함) -->
+                                            <div class="trans-empty" style="display: none; padding: 40px 0; text-align: center; color: #999;">내역이 없습니다.</div>
                                         </div>
 
                                         <a href="#" class="btn-detail-view">자세히 보기</a>

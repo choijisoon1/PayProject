@@ -97,7 +97,7 @@
 .info-text .amount { font-size: 18px; color: var(--color-2); font-weight: 700;}
 
 /* 하단 상세보기 버튼 스타일 */
-.btn-detail-view { display: block; width: calc(100%); padding: 14px 8px 0 8px; border-top: 1px solid var(--color-e); text-align: center; color: var(--color-45); font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 0 0 8px 8px; line-height: 1; height: auto; }
+.btn-detail-view { display: block; width: calc(100%); padding: 20px 8px 0 8px; border-top: 1px solid var(--color-e); text-align: center; color: var(--color-45); font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 0 0 8px 8px; line-height: 1; height: auto; }
 
 /* ========================================================================== 일반 배너 ========================================================================== */
 .card.banner-asset { position: relative; padding: 20px; display: flex; align-items: center; min-height: 108px; cursor: pointer; background-color: #E9EFFF; box-shadow: none;}
@@ -171,17 +171,20 @@
 /* 주간 캘린더 레이아웃 */
 .card.financial-calendar {padding: 20px 16px;}
 .weekly-list { display: flex; justify-content: space-between; padding: 10px 0 24px; border-bottom: 1px solid var(--color-e); margin-bottom: 20px; }
-.weekly-list li { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
-.weekly-list li .day { font-size: 12px; color: var(--color-9); font-weight: 500;}
-.weekly-list li .date { font-size: 15px; color: var(--color-45); font-weight: 500; width:24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+.weekly-list li { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; }
+.weekly-list li .day { font-size: 14px; color: var(--color-9); font-weight: 500;}
+.weekly-list li .date { font-size: 16px; color: var(--color-45); font-weight: 500; width:24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
 .weekly-list li.on .date { background-color: #F2F5FC; color: var(--color-2); font-weight: 700; }
-
+.weekly-list li.disabled { cursor: default; }
+.weekly-list li.disabled .day, .weekly-list li.disabled .date { color: var(--color-9) } 
 /* 내역 리스트 레이아웃 */
 .transaction-area { text-align: left; }
 .trans-group { margin-bottom: 24px; }
 .group-date { font-size: 13px; color: var(--color-75); margin-bottom: 16px; }
 .trans-item { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
 .trans-item:last-child { margin-bottom: 0; }
+.trans-group { display: none; }
+.trans-group.on { display: block; }
 
 .ico-badge { position: relative; width: 50px; height: 50px; background-color: #F2F5FC; border-radius: 12px; }
 .ico-badge::before { content: ''; position: absolute; inset: 0; background-repeat: no-repeat; background-position: center; background-size: 28px; }
@@ -189,8 +192,8 @@
 .ico-badge.plus::before { background-image: url("../../resource/images/svg/MAIN/dp_ico.svg"); }
 
 /* 내역 텍스트 정보 */
-.trans-item .info .name { font-size: 14px; color: var(--color-45); font-weight: 700; }
-.trans-item .info .type { font-size: 12px; color: var(--color-45); margin-top: 4px; font-weight: 400;}
+.trans-item .info .name { font-size: 16px; color: var(--color-45); font-weight: 600; }
+.trans-item .info .type { font-size: 12px; color: var(--color-45); margin-top: 6px; font-weight: 400;}
 .trans-item .info .type span { position: relative; padding-left: 6px; }
 .trans-item .info .type span::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); margin-left: 1px; width: 1px; height: 10px; background-color: var(--color-d); }
 

@@ -528,3 +528,29 @@ $(document).ready(function() {
     });
 
 });
+
+$(document).ready(function() {
+    //금융 캘린더 날짜 클릭 이벤트
+    $('.weekly-list li').on('click', function() {
+
+		if ($(this).hasClass('disabled')) {
+            return false; 
+        }
+		
+        $(this).addClass('on').siblings().removeClass('on');
+
+        var targetDate = $(this).attr('data-date');
+        var $targetGroup = $('.trans-group[data-date="' + targetDate + '"]');
+
+        if ($targetGroup.length > 0) {
+            //내역이 있는 경우
+            $('.trans-group').removeClass('on');
+            $targetGroup.addClass('on');
+            $('.trans-empty').hide();
+        } else {
+            //내역이 없는 경우
+            $('.trans-group').removeClass('on');
+            $('.trans-empty').show();
+        }
+    });
+});
