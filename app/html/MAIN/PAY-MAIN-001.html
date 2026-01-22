@@ -9,7 +9,7 @@
         <meta http-equiv="Pragma" content="no-cache" />
         <meta name="format-detection" content="telephone=no" />
 
-        <title>메인 페이지</title>
+        <title>메인 페이지(마이)</title>
 
         <link rel="stylesheet" href="../../resource/css/ui-util.css">
         <link rel="stylesheet" href="../../resource/css/main.css">
@@ -43,15 +43,15 @@
             <div id="container" class="container">
                 <div class="tab-wrap">
                     <ul class="tab-list">
-                        <li><a href="javascript:void(0);">카드</a></li>
-                        <li class="on"><a href="javascript:void(0);">금융</a></li>
+                        <li class="on"><a href="javascript:void(0);">카드</a></li>
+                        <li><a href="javascript:void(0);">금융</a></li>
                         <li><a href="javascript:void(0);">오픈뱅킹</a></li>
                     </ul>
                 </div>
 
                 <div class="contents">
                     <div class="contents-inner main">
-                        <div id="tab-card" class="tab-content">
+                        <div id="tab-card" class="tab-content on">
                             <div class="section-wrap">
                                 <div class="section">
                                     <div class="card main-dash">
@@ -198,7 +198,7 @@
                             </div>
                         </div>
                         
-                        <div id="tab-finance" class="tab-content on">
+                        <div id="tab-finance" class="tab-content">
                             <div class="section-wrap">
                                 <div class="section">
                                     <div class="card main-dash">
@@ -300,8 +300,11 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- 내역 없는 날짜(임시추가함) -->
-                                            <div class="trans-empty" style="display: none; padding: 40px 0; text-align: center; color: #999;">내역이 없습니다.</div>
+                                            <!-- 내역 없는 날짜 -->
+                                            <div class="trans-empty">
+                                                <div class="ico-no-data"></div>
+                                                <p class="text">결제내역이 없습니다.</p>
+                                            </div>
                                         </div>
 
                                         <a href="#" class="btn-detail-view">자세히 보기</a>
@@ -379,7 +382,21 @@
 
                         <div id="tab-open" class="tab-content">
                             <div class="section-wrap">
-                                <div class="section">오픈뱅킹 서비스 준비중</div>
+                                <div class="section-jumbotron tac">
+                                    <h2 class="se-title">오픈뱅킹 서비스란?</h2>
+                                    <div class="text">
+                                        영업점 방문 없이, 24시간 365일 언제 어디서나,<br>
+                                        쉽고 빠른 다양한 금융서비스를 만나보세요!
+                                    </div>
+                                </div>
+
+                                <div class="section tac">
+                                    <div class="open-intro-visual"></div>
+
+                                    <div class="main-util-wrap">
+                                        <a href="#" class="btn-util">오픈뱅킹 등록하기</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -389,15 +406,15 @@
         <!-- //container -->
         <nav class="bottom-nav">
             <div class="nav-inner">
-                <a href="#" class="nav-item on">
+                <a href="./PAY-MAIN-001.html" class="nav-item on">
                     <span class="icon my"></span>
                     <span class="text">마이</span>
                 </a>
-                <a href="#" class="nav-item">
+                <a href="./PAY-MAIN-002.html" class="nav-item">
                     <span class="icon pay"></span>
                     <span class="text">페이</span>
                 </a>
-                <a href="#" class="nav-item">
+                <a href="./PAY-MAIN-003.html" class="nav-item">
                     <span class="icon asset"></span>
                     <span class="text">자산</span>
                 </a>

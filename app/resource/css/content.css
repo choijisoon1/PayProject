@@ -28,7 +28,7 @@
 
 .loading-bar-area { position: absolute; bottom: 30px; left: 0; width: 100%; display: flex; justify-content: center; align-items: center; pointer-events: none; }
 .loading-bar { width: 198px; height: 3px; background: var(--white); position: relative; overflow: hidden; }
-.loading-bar .gauge { position: absolute; top: 0; left: 0; height: 100%; width: 0; background: #222; animation: loadingFill 2s infinite linear; }
+.loading-bar .gauge { position: absolute; top: 0; left: 0; height: 100%; width: 0; background: #222; animation: loadingFill 2s forwards linear; }
 
 .app-version { position: absolute; right: 20px; bottom: 24px; font-size: 12px; color: var(--color-45); font-weight: 400; z-index: 20; }
 /* 애니메이션 */
@@ -44,7 +44,7 @@
 .app-access-wrap .list li { display:flex; align-items:center; gap:14px; }
 
 /* 텍스트 영역 */
-.app-access-wrap .cnt .tit { font-size:16px; color:#222; margin-bottom:4px; }
+.app-access-wrap .cnt .tit { font-size:16px; color:#222; margin-bottom:4px; font-weight: 500; }
 .app-access-wrap .cnt .txt { font-size:14px; color:#666; }
 
 /* 배지 (필수/선택) */
@@ -91,7 +91,7 @@
 .PAY-AUTH-004 .section-jumbotron .page-num b { color:#222; font-weight:600; }
 
 .PAY-AUTH-003 .section { padding:0; display:flex; flex-direction:column; gap:20px; padding-bottom: 140px;}
-
+.input-box .auth-timer { position: absolute; right: 16px; font-size: 14px; color: var(--primary); font-weight: 400;} /* 인증번호 인풋박스 옆 타이머 */
 
 /* 프로그레스 바 */
 .progress-bar-wrap { position:fixed; top:50px; left:0; width:100%; height:2px; background-color:#E5E5EA; z-index:99; }
