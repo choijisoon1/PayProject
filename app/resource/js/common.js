@@ -508,7 +508,7 @@ $(document).ready(function() {
 	/* 스와이퍼 초기화 */
     window.recommendSwiper = new Swiper('.recommend-swiper', {
         loop: true,
-        autoplay: { delay: 3000, disableOnInteraction: false },
+        /* autoplay: { delay: 3000, disableOnInteraction: false }, */
         pagination: { el: '.recommend-pagination', clickable: true },
         observer: true,
         observeParents: true 
