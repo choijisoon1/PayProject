@@ -130,7 +130,7 @@
 
 /* 중앙 텍스트 */
 .banner-notice .banner-text { flex: 1; text-align: left; font-size: 12px; color: var(--white);  }
-.banner-notice .banner-text strong { display: block; font-size: 16px; font-weight: 700; margin-top: 2px; }
+.banner-notice .banner-text strong { display: block; font-size: 16px; margin-top: 4px; }
 
 /* 오른쪽 알림설정 버튼 */
 .btn-setup { width: auto; background: #fff; border-radius: 4px; padding: 8px 12px; min-height: 37px; font-size: 14px; color: #454545; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; border: 0; }
