@@ -62,7 +62,7 @@
 .PAY-AUTH-001 .section-jumbotron .text { margin-top:10px; font-size:14px; color:#666; }
 
 /* 하단 유의사항 리스트 */
-.notice-list li { position:relative; padding-left:10px; font-size:14px; color:var(--color-75); margin-top:12px; }
+.notice-list li { position:relative; padding-left:10px; font-size:14px; color:var(--color-75); margin-top:12px; line-height: 1.5;}
 .notice-list li:first-child { margin-top:0; }
 .notice-list li::before { content:"•"; position:absolute; left:0; top:0; font-size:10px; }
 

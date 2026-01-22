@@ -170,7 +170,7 @@
 /* ========================================================================== 주간 캘린더 ========================================================================== */
 /* 주간 캘린더 레이아웃 */
 .card.financial-calendar {padding: 20px 16px;}
-.weekly-list { display: flex; justify-content: space-between; padding: 10px 0 24px; border-bottom: 1px solid var(--color-e); margin-bottom: 20px; }
+.weekly-list { display: flex; justify-content: space-between; padding: 10px 0 24px; border-bottom: 1px solid var(--color-e); margin-bottom: 22px; }
 .weekly-list li { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; }
 .weekly-list li .day { font-size: 14px; color: var(--color-9); font-weight: 500;}
 .weekly-list li .date { font-size: 16px; color: var(--color-45); font-weight: 500; width:24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
@@ -186,10 +186,10 @@
 .trans-group { display: none; }
 .trans-group.on { display: block; }
 
-.trans-empty { display: none; padding-bottom: 24px; text-align: center; }
+.trans-empty { display: none; padding-bottom: 26px; text-align: center; }
 .trans-empty.on { display: block; }
 
-.trans-empty .ico-no-data { width: 38px; height: 38px; margin: 0 auto 10px; background-image: url("../../resource/images/svg/MAIN/ready.svg"); background-repeat: no-repeat; background-position: center; background-size: 38px; }
+.trans-empty .ico-no-data { width: 38px; height: 38px; margin: 0 auto 6px; background-image: url("../../resource/images/svg/MAIN/ready.svg"); background-repeat: no-repeat; background-position: center; background-size: 38px; }
 
 /* 안내 문구 */
 

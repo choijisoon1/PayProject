@@ -40,7 +40,7 @@
 /* .section-wrap { margin-bottom: 100px; padding-bottom: 70px; } */
 .section-jumbotron { margin-bottom:20px; }
 .section-jumbotron .se-title { font-size:22px; font-weight:500; color:#222; margin-bottom:10px; }
-.section-jumbotron .text { font-size:14px; color:var(--color-75); }
+.section-jumbotron .text { font-size:14px; color:var(--color-75); line-height: 1.5; }
 .section { background:#fff; padding-bottom: 120px;}
 
 
