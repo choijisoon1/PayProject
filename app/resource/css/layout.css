@@ -34,7 +34,7 @@
 /* Container */
 .container { position:relative; min-height:100vh; padding-top:50px; box-sizing:border-box; background-color:var(--white); }
 .contents { min-height:100%; }
-.contents-inner { padding:40px 20px; box-sizing:border-box; }
+.contents-inner { padding:40px 20px; box-sizing:border-box; overflow-x: hidden; }
 
 /* Section (콘텐츠 그룹) */
 /* .section-wrap { margin-bottom: 100px; padding-bottom: 70px; } */

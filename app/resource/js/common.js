@@ -24,7 +24,44 @@ $(document).ready(function() {
             observeParents: true 
         });
     }
+	if ($('.card-main-swiper').length > 0) {
+		window.cardMainSwiper = new Swiper('.card-main-swiper', {
+			slidesPerView: 1,      
+			centeredSlides: true,       
+			spaceBetween: 12,                       
+			initialSlide: 0,            
 
+			loopedSlides: 2,            
+			
+			touchRatio: 1,
+			resistance: false,
+			
+			pagination: {
+				el: '.swiper-pagination-fraction',
+				type: 'fraction',
+			},
+			navigation: {
+				nextEl: '.btn-next',
+				prevEl: '.btn-prev',
+			},
+
+			/* 탭 전환 시 새로고침 */
+			observer: true,
+			observeParents: true,
+		});
+	}
+	/* 추천 카드 스와이퍼 */
+	if ($('.recommend-card-swiper').length > 0) {
+		new Swiper('.recommend-card-swiper', {
+			slidesPerView: 1,   /* 한 화면에 하나씩 딱 맞게 */
+			spaceBetween: 20,   /* 슬라이드 사이 간격 (안 보이더라도 벌려주는 게 좋음) */
+			loop: true,         /* 무한 루프 */
+			pagination: {
+				el: '.recommend-dot',
+				clickable: true,
+			},
+		});
+	}
     /* 탭 전환 */
     $('.tab-list li').on('click', function() {
         var idx = $(this).index();
@@ -35,6 +72,16 @@ $(document).ready(function() {
             window.recommendSwiper.update(); 
         }
     });
+
+	/* 알약탭 */
+	$('.pill-tab-list li').on('click', function() {
+		var idx = $(this).index();
+
+		$(this).addClass('on').siblings().removeClass('on');
+
+		var $parent = $(this).closest('.product-list-area');
+		$parent.find('.pill-content').eq(idx).addClass('on').siblings().removeClass('on');
+	});
 
     /* 금융 캘린더 날짜 클릭 */
     $('.weekly-list li').on('click', function() {
