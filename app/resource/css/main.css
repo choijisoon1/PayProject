@@ -230,20 +230,27 @@
 .banner-inner { position: relative; height: 276px; border-radius: 12px; overflow: hidden; background-repeat: no-repeat; background-position: center; background-size: cover; padding: 28px; box-sizing: border-box; }
 .banner-inner.b1 { background-image: url('../../resource/images/MAIN/main_left_container.png'); }
 .banner-inner.b2 { background-image: url('../../resource/images/MAIN/main_right_container.png'); }
+.banner-inner.b3 { background-image: url('../../resource/images/MAIN/main_fiance_left_container.png'); }
+.banner-inner.b4 { background-image: url('../../resource/images/MAIN/main_fiance_right_container.png'); }
 
-.centered-card { position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 2; pointer-events: none; }
-.banner-inner.b1 .centered-card { top: 42%; width: 180px; }
-.banner-inner.b2 .centered-card { top: 38%; left: 52%; width: 114px; }
+.centered-img { position: absolute; left: 50%; transform: translate(-50%, -50%); z-index: 2; pointer-events: none; }
+.banner-inner.b1 .centered-img { top: 42%; width: 180px; }
+.banner-inner.b2 .centered-img { top: 38%; left: 52%; width: 114px; }
+.banner-inner.b3 .centered-img { top: 42%; left: 50%; width: 224px;}
+.banner-inner.b4 .centered-img { top: 45%; left: 50%; width: 300px;}
 
 .banner-txt { position: absolute; bottom: 30px; left: 24px; text-align: left; z-index: 3; pointer-events: none; }
 .banner-txt .tit { font-size: 18px; font-weight: 700; display: block; margin-bottom: 8px; }
 .banner-txt .desc { font-size: 14px; margin: 0; font-weight: 400;}
 
-.banner-inner.b1 .banner-txt .tit { color: #ffffff; }
-.banner-inner.b1 .banner-txt .desc { color: #dddddd; }
+.banner-inner.b1 .banner-txt .tit, .banner-inner.b3 .banner-txt .tit { color: var(--white); }
+.banner-inner.b1 .banner-txt .desc { color: var(--color-e); }
 
-.banner-inner.b2 .banner-txt .tit { color: #222222; }
-.banner-inner.b2 .banner-txt .desc { color: #454545; }
+.banner-inner.b2 .banner-txt .tit, .banner-inner.b4 .banner-txt .tit { color: var(--color-2); }
+.banner-inner.b2 .banner-txt .desc, .banner-inner.b4 .banner-txt .desc { color: var(--color-45); }
+
+.banner-inner.b3 .banner-txt .desc {color: var(--white);}
+
 /* 컨트롤러 및 페이지네이션 */
 .swiper-controls-wrap { display: flex; align-items: center; justify-content: center; gap: 5px; margin-top: 16px; position: relative; z-index: 10; }
 .btn-prev, .btn-next { width: 7px; height: 7px; background-repeat: no-repeat; background-position: center; background-size: 7px; cursor: pointer; border: 0; background-color: transparent; }
@@ -253,10 +260,10 @@
 .swiper-controls-wrap [class*="btn-"].swiper-button-disabled { background-color: #fff !important; }
 
 
-/*-- recommend-card-area --*/
+/*-- recommend-area --*/
 /* 추천 카드 섹션 전체 */
-.recommend-card-area { margin-bottom: 40px; }
-.recommend-card-area-title { font-size: 20px; font-weight: 800; color: #222; text-align: left; margin-bottom: 13px; }
+.recommend-area { margin-bottom: 40px; }
+.recommend-area-title { font-size: 20px; font-weight: 700; color: #222; text-align: left; margin-bottom: 13px; }
 .recommend-card-swiper { border-radius: 12px; overflow: hidden; }
 
 .recommend-box { background-color: #f8f8f8; border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px; text-align: left; }
@@ -266,6 +273,15 @@
 .recommend-box .info-box .name { color: #222; font-size: 16px; font-weight: 700; display: block; }
 .recommend-box .benefit-list { line-height: 1.5; margin-top: 10px; }
 .recommend-box .benefit-list li { font-size: 12px; color: #757575; }
+
+/* 금융타입 전용 - 텍스트 왼쪽, 이미지 오른쪽 배경 처리 */
+.recommend-box.type-finance {font-size: 18px; font-weight: 700; justify-content: space-between; padding-right: 10px; line-height: 1.5;} /* 오른쪽 여백 살짝 조절 */
+.recommend-box.type-finance .info-box .f-line { font-size: 12px; color: var(--color-45); font-weight: 700; margin-bottom: 5px;}
+.recommend-box.type-finance .info-box .m-line { font-size: 16px; font-weight: 500; } 
+.recommend-box.type-finance .info-box .e-line { color: var(--color-2);} 
+.recommend-box.type-finance .visual-box {max-width: none; max-height: none;}
+.recommend-box.type-finance .visual-box.credit { width: 94px; height: 94px; background: url("../../resource/images/MAIN/main_fiance_banner_img1.png") no-repeat center / contain; flex-shrink: 0; }
+.recommend-box.type-finance .visual-box.limit { width: 94px; height: 94px; background: url("../../resource/images/MAIN/main_fiance_banner_img2.png") no-repeat center / contain; flex-shrink: 0; }
 
 /* 하단 페이지네이션 */
 .recommend-dot { position: relative !important; bottom: auto !important; margin-top: 13px; display: flex; justify-content: center; gap: 6px; }
@@ -288,10 +304,10 @@
 .pill-content.on { display: block; }
 
 /* 상품 리스트 카드 공통 */
-.product-item { position: relative; padding: 24px 20px; text-align: left; margin-bottom: 16px; }
-
+.product-item { position: relative; padding: 24px 20px; text-align: left; margin-bottom: 20px; }
+.info-box {padding-right: 20px;}
 /* 찜 버튼 */
-.btn-wish { position: absolute; top: 20px; right: 10px; width: 24px; height: 24px; background: url("../../resource/images/svg/MAIN/ico_heart.svg") no-repeat center / contain; border: 0; cursor: pointer; z-index: 10; }
+.btn-wish { position: absolute; top: 18px; right: 10px; width: 24px; height: 24px; background: url("../../resource/images/svg/MAIN/ico_heart.svg") no-repeat center / contain; border: 0; cursor: pointer; z-index: 10; }
 .btn-wish.on { background-image: url("../../resource/images/svg/MAIN/ico_heart_fill.svg"); }
 
 /* 상단 레이아웃 */
@@ -312,7 +328,7 @@
 .item-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid var(--color-e); }
 .price-info { display: flex; flex-direction: column; gap: 4px; }
 .price-info .label { font-size: 12px; color: var(--color-9); font-weight: 500; }
-.price-info .val { font-size: 18px; color: var(--color-2); font-weight: 700;}
+.price-info .val { font-size: 20px; color: var(--color-2); font-weight: 700;}
 
 /* 자세히 보기 버튼 */
 .btn-detail { display: inline-flex; align-items: center; justify-content: center; min-width: 88px; min-height: 41px; padding: 10px 12px; background: #EAEBEF; border-radius: 4px; color: var(--color-45); font-size: 14px; font-weight: 500; text-decoration: none; line-height: 1; }

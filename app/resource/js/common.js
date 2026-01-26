@@ -83,6 +83,12 @@ $(document).ready(function() {
 		$parent.find('.pill-content').eq(idx).addClass('on').siblings().removeClass('on');
 	});
 
+	/* 찜버튼 on off */
+	$(document).on('click', '.btn-wish', function(e) {
+        e.stopPropagation(); 
+        $(this).toggleClass('on');
+    });
+
     /* 금융 캘린더 날짜 클릭 */
     $('.weekly-list li').on('click', function() {
         if ($(this).hasClass('disabled')) {
