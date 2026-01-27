@@ -26,7 +26,7 @@
 /* ========================================================================== 대표카드 ========================================================================== */
 .dash-inner { position: relative; padding: 18px 16px; background: linear-gradient(263deg, #FF5460 8.68%, #FE755D 59.82%); color: #fff; border-radius: 8px 8px 0 0; }
 .dash-inner.ty-account { background: linear-gradient(263deg, #5457FF 8.68%, #9076F5 59.82%);}
-.card-no { display: flex; align-items: center; font-size: 12px; font-weight: 400; }
+.card-no { display: flex; align-items: center; font-size: 12px; font-weight: 400; color: var(--white) !important; }
 .card-no::before { content:''; display:inline-block; width:24px; height:15px; margin-right:8px; background: url("../../resource/images/MAIN/MasterCard_img.png") no-repeat center / contain; }
 .dash-inner.ty-account .card-no::before { background-image: url("../../resource/images/MAIN/logo-toss-symbol-white-fill.png"); width: 18px; height: 18px; }
 .info-amount { margin-top: 12px; }
