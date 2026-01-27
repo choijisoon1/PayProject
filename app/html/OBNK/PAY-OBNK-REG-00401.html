@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Full Popup</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../app/resource/images/ONBD/Logo-Onbording.png" />
+    
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+    <link rel="stylesheet" href="../../resource/css/main.css">
+    <!-- JS  -->
+    <script src="../../../guide/js/jquery-1.11.3.min.js"></script>
+    <script src="../../../guide/js/jquery.form.min.js"></script>
+    <script src="../../resource/js/common.js"></script>
+</head>
+
+<body>
+    <div class="layout-fullpop on"> <!-- 개발 완료 후 on 클래스로 제어 -->
+        <div class="popup-layer">
+            <div class="popup-header">
+                <div class="header-inner" style="padding: 0 18px;">
+                    <div class="title">연결계좌 선택</div>
+                    <div class="right">
+                        <button type="button" class="se-btn close" onclick="closeLayer(this)"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-container PAY-OBNK-REG-00401">
+                <div class="section-jumbotron">
+                    <h2 class="se-title">연결하고 싶은 다른 금융을<br><strong>선택해 주세요</strong></h2>
+                </div>
+
+                <div class="search-bar-area">
+                    <div class="input-box search">
+                        <input type="text" placeholder="금융사 검색">
+                    </div>
+                </div>
+
+                <div class="tab-wrap">
+                    <ul class="tab-list">
+                        <li class="on"><a href="javascript:void(0);">은행</a></li>
+                        <li><a href="javascript:void(0);">저축은행</a></li>
+                        <li><a href="javascript:void(0);">증권사</a></li>
+                    </ul>
+                </div>
+
+                <div id="tab-bank" class="tab-content on">
+                    <div class="list-header">
+                        <span class="tit">은행</span>
+                        <label class="check-all-label">
+                            <input type="checkbox" class="all-check">
+                            <span>전체선택</span>
+                        </label>
+                    </div>
+
+                    <ul class="bank-select-list">
+                        <li>
+                            <div class="bank-info nh"> <!-- 클래스로 로고 제어 -->
+                                <span class="name">NH농협은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info nh">
+                                <span class="name">지역농협</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info kb">
+                                <span class="name">KB국민은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info sh">
+                                <span class="name">신한은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info wo">
+                                <span class="name">우리은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info hana">
+                                <span class="name">하나은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info ibk">
+                                <span class="name">IBK기업은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info im">
+                                <span class="name">im뱅크</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info bnk">
+                                <span class="name">BNK부산은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info bnk">
+                                <span class="name">BNK경남은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info sc">
+                                <span class="name">SC제일은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info kbank">
+                                <span class="name">케이뱅크</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info mg">
+                                <span class="name">새마을금고</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info po">
+                                <span class="name">우체국</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div id="tab-savings-bank" class="tab-content">
+                    <div class="list-header">
+                        <span class="tit">저축은행</span>
+                        <label class="check-all-label">
+                            <input type="checkbox" class="all-check">
+                            <span>전체선택</span>
+                        </label>
+                    </div>
+
+                    <ul class="bank-select-list">
+                        <li>
+                            <div class="bank-info im">
+                                <span class="name">im뱅크</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info bnk">
+                                <span class="name">BNK부산은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info bnk">
+                                <span class="name">BNK경남은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info sc">
+                                <span class="name">SC제일은행</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        
+
+                    </ul>
+                </div>
+
+                <div id="tab-securities" class="tab-content">
+                    <div class="list-header">
+                        <span class="tit">증권사</span>
+                        <label class="check-all-label">
+                            <input type="checkbox" class="all-check">
+                            <span>전체선택</span>
+                        </label>
+                    </div>
+
+                    <ul class="bank-select-list">
+                        <li>
+                            <div class="bank-info mg">
+                                <span class="name">새마을금고</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="bank-info po">
+                                <span class="name">우체국</span>
+                            </div>
+                            <label class="check line">
+                                <input type="checkbox" class="unit-check">
+                                <svg class="chk-svg" viewBox="0 0 14 10" fill="none"><path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="popup-footer">
+                <div class="button-group">
+                    <a href="#" class="btn-pop-primary disabled" id="btnConnect">동의하고 진행하기</a>
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

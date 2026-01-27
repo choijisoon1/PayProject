@@ -57,29 +57,41 @@
 
 
 /* PAY-AUTH-001 (본인인증 안내) */
-.PAY-AUTH-001 .contents-inner { display:flex; flex-direction:column; justify-content:space-between; min-height:calc(100vh - 50px - 100px); padding-bottom:20px; }
+.PAY-AUTH-001 .contents-inner, .PAY-OBNK-REG-003 .contents-inner { display:flex; flex-direction:column; justify-content:space-between; min-height:calc(100vh - 50px - 100px); padding-bottom:20px; }
 .PAY-AUTH-001 .section-jumbotron .se-title { font-size:24px; }
 .PAY-AUTH-001 .section-jumbotron .text { margin-top:10px; font-size:14px; color:#666; }
 
 /* 하단 유의사항 리스트 */
+.notice-list-wrap { margin-top: auto;}
 .notice-list li { position:relative; padding-left:10px; font-size:14px; color:var(--color-75); margin-top:12px; line-height: 1.5;}
 .notice-list li:first-child { margin-top:0; }
 .notice-list li::before { content:"•"; position:absolute; left:0; top:0; font-size:10px; }
 
 
+
+
 /* PAY-AUTH-002,3,4 페이지 전용 스타일 */
 .PAY-AUTH-002 .section-jumbotron,
 .PAY-AUTH-003 .section-jumbotron,
-.PAY-AUTH-004 .section-jumbotron { padding:0; text-align:left; border-bottom:1px solid var(--color-e); padding-bottom:26px; margin-bottom:32px; }
+.PAY-AUTH-004 .section-jumbotron,
+.PAY-OBNK-REG-002 .section-jumbotron,
+.PAY-OBNK-REG-003 .section-jumbotron,
+.PAY-OBNK-REG-004 .section-jumbotron { padding:0; text-align:left; border-bottom:1px solid var(--color-e); padding-bottom:26px; margin-bottom:32px; }
 
 .PAY-AUTH-002 .section-jumbotron .tit-row,
 .PAY-AUTH-003 .section-jumbotron .tit-row,
-.PAY-AUTH-004 .section-jumbotron .tit-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.PAY-AUTH-004 .section-jumbotron .tit-row,
+.PAY-OBNK-REG-002 .section-jumbotron .tit-row,
+.PAY-OBNK-REG-003 .section-jumbotron .tit-row,
+.PAY-OBNK-REG-004 .section-jumbotron .tit-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
 
 /* 타이틀 폰트 */
 .PAY-AUTH-002 .section-jumbotron .se-title,
 .PAY-AUTH-003 .section-jumbotron .se-title,
-.PAY-AUTH-004 .section-jumbotron .se-title { font-size:22px; font-weight:700; margin-bottom:0; }
+.PAY-AUTH-004 .section-jumbotron .se-title
+,.PAY-OBNK-REG-002 .section-jumbotron .se-title,
+.PAY-OBNK-REG-003 .section-jumbotron .se-title,
+.PAY-OBNK-REG-004 .section-jumbotron .se-title { font-size:22px; font-weight:700; margin-bottom:0; }
 
 /* 페이지 번호 스타일 */
 .PAY-AUTH-002 .section-jumbotron .page-num,
@@ -100,7 +112,13 @@
 .progress-bar-wrap .bar.step2 { width:50%; }
 .progress-bar-wrap .bar.step3 { width:75%; }
 .progress-bar-wrap .bar.step4 { width:100%; }
-
+/* 6단계 프로세스 전용 */
+.progress-bar-wrap.len6 .bar.step1 { width: 16.66%; }
+.progress-bar-wrap.len6 .bar.step2 { width: 33.33%; }
+.progress-bar-wrap.len6 .bar.step3 { width: 50.00%; }
+.progress-bar-wrap.len6 .bar.step4 { width: 66.66%; }
+.progress-bar-wrap.len6 .bar.step5 { width: 83.33%; }
+.progress-bar-wrap.len6 .bar.step6 { width: 100.00%; }
 
 /* 약관 동의 박스 */
 .terms-pack { margin-bottom:20px; }
@@ -200,6 +218,7 @@
 .popup-container.auth-register-mode .auth-btn-wrap { margin-top: 42px; }
 
 /* OBNK */
+/* OBNK-001 */
 .section.PAY-OBNK-REG-001 {padding-top: 26px;}
 /* 서브페이지 전용 소제목 */
 .sub-title-sm { font-size: 16px; font-weight: 600; color: var(--color-2); margin-bottom: 12px; text-align: left; }
@@ -214,3 +233,77 @@
 .bottom-skip-area { position: fixed; bottom: 40px; left: 0; width: 100%; text-align: center; z-index: 10; }
 .btn-skip { font-size: 14px; color: var(--color-75); text-decoration: underline; text-underline-offset: 4px; transition: color 0.2s; }
 .btn-skip:active { color: var(--color-2); }
+
+/* OBNK-002 */
+.terms-pack + .terms-pack {margin-top: 42px;}
+.PAY-OBNK-REG-002 label.check{align-items: start;}
+
+.notice-pack { background-color: #f8fafb; border-radius: 8px; margin-top: 40px; overflow: hidden; }
+.notice-head { padding: 18px 14px; display: flex; align-items: center; position: relative; }
+.notice-head .ico-info { width: 24px; height: 24px; background: url('../../resource/images/svg/OBNK/ico_obnk_notice.svg') no-repeat center / contain; margin-right: 8px; }
+.notice-head .tit { font-size: 16px; color: var(--color-45); }
+.notice-head .btn-fold { margin-left: auto; width: 24px; height: 24px; background: transparent var(--ico-select) no-repeat center / 20px; border: 0; padding: 0; cursor: pointer; /* transition: transform 0.3s;  */}
+.notice-pack.on .btn-fold { transform: rotate(180deg); }
+
+.accordion-notice-body { display: none; padding: 0 14px 18px 14px; }
+.notice-pack.on .accordion-notice-body { display: block; }
+.accordion-notice-list li { position: relative; padding-left: 10px; font-size: 14px; color: var(--color-75); margin-top: 14px; text-align: left; }
+.accordion-notice-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--color-75); }
+.accordion-notice-list li:first-child { margin-top: 0; }
+
+/* OBNK-00401 */
+
+/* 팝업 전용 탭 고정 스타일 */
+.PAY-OBNK-REG-00401 .tab-wrap {top: -38px;}
+.PAY-OBNK-REG-00401 .tab-list {padding: 0;}
+
+/* 검색바 영역 */
+.search-bar-area {padding-top: 12px; margin-bottom: 32px; }
+
+/* 검색 인풋 박스 */
+.input-box.search { background-color: #f5f7f9; border: 0; height: 48px; border-radius: 8px; padding-left: 44px; position: relative; display: flex; align-items: center; }
+.input-box.search input { background: transparent; font-size: 16px; height: 100%; }
+.input-box.search::before { content: ''; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; background: url("../../resource/images/svg/OBNK/search-line-20.svg") no-repeat center / contain; pointer-events: none; }
+
+/* 리스트 헤더 (은행 / 전체선택) */
+.list-header { display: flex; justify-content: space-between; align-items: center; padding: 32px 0 32px 0; }
+.list-header .tit { font-size: 20px; font-weight: 700; color: var(--color-2); }
+.check-all-label { cursor: pointer; display: flex; align-items: center; }
+.check-all-label input { display: none; }
+.check-all-label span { font-size: 14px; color: var(--color-75); }
+
+/* 은행 리스트 항목 */
+.bank-select-list li { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 0; }
+.bank-select-list li:last-child{ padding-bottom: 0;}
+.bank-info { display: flex; align-items: center; gap: 14px; }
+.bank-info::before { content: ''; width: 28px; height: 28px; border-radius: 50%; background-repeat: no-repeat; background-position: center; background-size: 28px; flex-shrink: 0; }
+
+.bank-info.nh::before { background-image: url("../../resource/images/svg/OBNK/icon_nonghyeop_28.svg"); }
+.bank-info.kb::before { background-image: url("../../resource/images/svg/OBNK/Icon_kb_28.svg"); }
+.bank-info.sh::before { background-image: url("../../resource/images/svg/OBNK/Icon_shinhan_28.svg"); }
+.bank-info.wo::before { background-image: url("../../resource/images/svg/OBNK/Icon_woori_28.svg"); }
+.bank-info.hana::before { background-image: url("../../resource/images/svg/OBNK/icon_hana_28.svg"); }
+.bank-info.ibk::before { background-image: url("../../resource/images/svg/OBNK/icon_IBK_28.svg"); }
+.bank-info.im::before { background-image: url("../../resource/images/svg/OBNK/icon_im_28.svg"); }
+.bank-info.bnk::before { background-image: url("../../resource/images/svg/OBNK/icon_bnk_28.svg"); }
+.bank-info.sc::before { background-image: url("../../resource/images/svg/OBNK/icon_SC_28.svg"); }
+.bank-info.kbank::before { background-image: url("../../resource/images/svg/OBNK/icon_kbank_28.svg"); }
+.bank-info.mg::before { background-image: url("../../resource/images/svg/OBNK/icon_MG_28.svg"); }
+.bank-info.po::before { background-image: url("../../resource/images/svg/OBNK/icon_postoffice_28.svg"); }
+
+.bank-info.sam::before { background-image: url("../../resource/images/svg/OBNK/Icon_samsung_28.svg"); }
+.bank-info.hdai::before { background-image: url("../../resource/images/svg/OBNK/ico_hyundai_28.svg"); }
+.bank-info.toss::before { background-image: url("../../resource/images/svg/OBNK/Icon_toss_28.svg"); }
+.bank-info.bc::before { background-image: url("../../resource/images/svg/OBNK/icon_BC_28.svg"); }
+.bank-info.lotte::before { background-image: url("../../resource/images/svg/OBNK/Icon_lotte_28.svg"); }
+
+.bank-info .name { font-size: 16px; color: var(--color-45); font-weight: 500; }
+
+
+
+/* OBNK-006 */
+.ico-complete { width: 58px; height: 58px; background: url("../../resource/images/OBNK/check_img.gif") no-repeat center / contain; margin-bottom: 14px;}
+button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 16px; color: var(--color-45); background: none; border: 0; padding: 0; cursor: pointer; font-weight: 500; padding-top: 17px;}
+.btn-link-arrow::after { content: ''; display: inline-block; width: 20px; height: 20px; margin-left: 4px; background: url("../../resource/images/svg/OBNK/ico_right_45.svg") no-repeat center / contain;}
+.bank-select-list li .comp {font-size: 14px; color: var(--success); font-weight: 500;}
+.bank-select-list li .fail {font-size: 14px; color: var(--error); font-weight: 500;}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="OnePay">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <title>약관동의</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../resource/images/ONBD/Logo-Onbording.png" />
+    
+    <!-- CSS 통합 연결 -->
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+    <!-- JS  -->
+    <script src="../../../guide/js/jquery-1.11.3.min.js"></script>
+    <script src="../../../guide/js/jquery.form.min.js"></script>
+    <script src="../../resource/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header-inner">
+                <div class="left">
+                    <button type="button" class="se-btn back"></button>
+                </div>
+                <div class="title">
+                    오픈뱅킹 등록
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar-wrap len6">
+            <span class="bar step3"></span>
+        </div>
+
+        <div class="container PAY-OBNK-REG-004">
+            <div class="contents-inner">
+
+                <div class="section-jumbotron">
+                    <div class="tit-row">
+                        <h2 class="se-title">SMS 인증</h2>
+                        <span class="page-num"><b>3</b> / 6</span>
+                    </div>
+                    
+                    <p class="text">
+                        오픈뱅킹 이용을 위해 SMS 인증해 주세요.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <div class="form-group-stack">
+                        <!-- 통신사 -->
+                        <div class="input-box select">
+                            <div class="se-select" data-stove="select" data-uicase="slide">
+                                <select id="telecom" required>
+                                    <option value="" hidden>통신사를 선택해 주세요</option>
+                                    <option value="skt">SKT</option>
+                                    <option value="kt">KT</option>
+                                    <option value="lgu">LG U+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- 휴대폰 번호 + 인증요청 버튼 -->
+                        <div class="input-box has-btn">
+                            <label>휴대폰번호 <span class="required">*</span></label>
+                            <input type="tel" id="userPhone" maxlength="11" placeholder="- 없이 입력" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <button type="button" id="btnReqAuth" class="btn-form">인증번호 요청</button>
+                        </div>
+
+                        <!-- 인증번호 (숨김 상태) -->
+                        <div class="input-box" id="authBox" style="display: none;">
+                            <label for="authNum">인증 번호</label>
+                            <input type="tel" id="authNum" maxlength="6" placeholder="인증번호 6자리" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                            <span class="auth-timer">03:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        
+        <div class="btn-fixed-bottom">
+            <div class="button-group">
+                <!-- <button type="button" class="btn-primary" disabled>동의하고 진행하기</button> -->
+                <a href="#" class="btn-primary disabled">동의하고 진행하기</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

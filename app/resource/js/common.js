@@ -2,6 +2,7 @@ $(document).ready(function() {
     if (typeof seSelect !== 'undefined') seSelect.init(); /* 셀렉트 초기화 */
     if (typeof chkAll !== 'undefined') chkAll.init(); /* 전체 동의 초기화 */
     if (typeof authValidation !== 'undefined') authValidation.init(); /* 본인인증 초기화 */
+	if (typeof emailValidation !== 'undefined') emailValidation.init(); /* 이메일 검사 실행 */
 
     /* 이메일 도메인 선택 */
     $('#domain-select').on('change', function() {
@@ -53,9 +54,9 @@ $(document).ready(function() {
 	/* 추천 카드 스와이퍼 */
 	if ($('.recommend-card-swiper').length > 0) {
 		new Swiper('.recommend-card-swiper', {
-			slidesPerView: 1,   /* 한 화면에 하나씩 딱 맞게 */
-			spaceBetween: 20,   /* 슬라이드 사이 간격 (안 보이더라도 벌려주는 게 좋음) */
-			loop: true,         /* 무한 루프 */
+			slidesPerView: 1,   
+			spaceBetween: 20,   
+			loop: true,         
 			pagination: {
 				el: '.recommend-dot',
 				clickable: true,
@@ -271,49 +272,142 @@ var accord = (function() {
     }
 })();
 
-/* 체크박스 전체동의 객체 */
+/* 체크박스 전체동의/전체선택 객체  */
 var chkAll = (function() {
     return {
         init: function() {
-            $(document).on('change', '.terms-head input[type="checkbox"]', function() {
-                var isChecked = $(this).prop('checked'), $pack = $(this).closest('.terms-pack');
-                $pack.find('.terms-body input[type="checkbox"]').prop('checked', isChecked);
-                chkAll.checkBtn();
+            $(document).on('change', '.terms-head input[type="checkbox"], .all-check', function() {
+                var isChecked = $(this).prop('checked');
+                var $parent = $(this).closest('.terms-pack, .tab-content');
+                
+                $parent.find('.terms-body input[type="checkbox"], .unit-check').prop('checked', isChecked);
+                
+                chkAll.checkBtn(); /* 버튼 상태 갱신 */
             });
-            $(document).on('change', '.terms-body input[type="checkbox"]', function() {
-                var $pack = $(this).closest('.terms-pack'), total = $pack.find('.terms-body input[type="checkbox"]').length, checked = $pack.find('.terms-body input[type="checkbox"]:checked').length;
-                if (total === checked) { $pack.find('.terms-head input[type="checkbox"]').prop('checked', true); } 
-                else { $pack.find('.terms-head input[type="checkbox"]').prop('checked', false); }
-                chkAll.checkBtn();
+
+            /* 하위 체크박스 개별 클릭 시 */
+            $(document).on('change', '.terms-body input[type="checkbox"], .unit-check', function() {
+                var $parent = $(this).closest('.terms-pack, .tab-content');
+                var $units = $parent.find('.terms-body input[type="checkbox"], .unit-check');
+                var total = $units.length;
+                var checked = $units.filter(':checked').length;
+                
+                var $master = $parent.find('.terms-head input[type="checkbox"], .all-check');
+                $master.prop('checked', total === checked);
+
+                chkAll.checkBtn(); 
             });
         },
+        
+        /* 하단 고정 버튼 활성화 로직 */
         checkBtn: function() {
-            var totalRequired = $('.terms-body input[type="checkbox"]').length, checkedRequired = $('.terms-body input[type="checkbox"]:checked').length, $submitBtn = $('.btn-fixed-bottom .btn-primary');
-            if (totalRequired > 0 && totalRequired === checkedRequired) { $submitBtn.prop('disabled', false).removeClass('disabled'); } 
-            else { $submitBtn.prop('disabled', true).addClass('disabled'); }
+            var $submitBtn = $('.btn-fixed-bottom .btn-primary, .popup-footer .btn-pop-primary');
+            var isFinalValid = false;
+
+            /* 약관 동의 페이지일 때 모든 체크박스가 체크되어야 함 */
+            if ($('.terms-pack').length > 0) {
+                var totalReq = $('.terms-body input[type="checkbox"]').length;
+                var checkedReq = $('.terms-body input[type="checkbox"]:checked').length;
+                isFinalValid = (totalReq > 0 && totalReq === checkedReq);
+            } 
+            /* 은행 선택 팝업일 때는 하나라도 체크되어 있으면 됨 */
+            else if ($('.bank-select-list').length > 0) {
+                isFinalValid = ($('.unit-check:checked').length > 0);
+            }
+
+            if (isFinalValid) {
+                $submitBtn.removeClass('disabled').prop('disabled', false);
+            } else {
+                $submitBtn.addClass('disabled').prop('disabled', true);
+            }
         }
     }
 })();
 
-/* 본인인증 유효성 검사 객체 */
 var authValidation = (function() {
     return {
         init: function() {
             if ($('#btnReqAuth').length === 0) return;
+
             $('#btnReqAuth').on('click', function() {
                 var phoneVal = $('#userPhone').val();
-                if (phoneVal.length < 10) { alert('휴대폰 번호를 올바르게 입력해주세요.'); return; }
-                $(this).text('요청완료').addClass('disabled');
-                $('#authBox').show(); $('#authNum').focus();
+                if (phoneVal.length < 10) { 
+                    alert('휴대폰 번호를 올바르게 입력해주세요.'); 
+                    return; 
+                }
+
+                $(this).text('요청완료').addClass('disabled').prop('disabled', true);
+                $('#authBox').show(); 
+                $('#authNum').focus();
+                authValidation.check(); 
+            });
+
+            $('.PAY-AUTH-003 input, .PAY-AUTH-003 select, .PAY-OBNK-REG-004 input, .PAY-OBNK-REG-004 select').on('input change', function() {
                 authValidation.check();
             });
-            $('.PAY-AUTH-003 input, .PAY-AUTH-003 select').on('input change', function() { authValidation.check(); });
+        },
+
+        check: function() {
+            var telecom = $('#telecom').val();
+            var phone = $('#userPhone').val().trim();
+            var authNum = $('#authNum').val().trim();
+            var isAuthOpen = $('#authBox').is(':visible');
+            var $btnNext = $('.btn-fixed-bottom .btn-primary');
+
+            var isBaseValid = (telecom !== "" && telecom !== null && phone.length >= 10 && isAuthOpen && authNum.length === 6);
+            var isFinalValid = false;
+
+            if ($('.PAY-AUTH-003').length > 0) {
+                var name = $('#userName').val().trim();
+                var res1 = $('#resNum1').val().trim();
+                var res2 = $('#resNum2').val().trim();
+                isFinalValid = (isBaseValid && name.length > 0 && res1.length === 6 && res2.length === 7);
+            } else if ($('.PAY-OBNK-REG-004').length > 0) {
+                isFinalValid = isBaseValid;
+            }
+
+            if (isFinalValid) {
+                $btnNext.removeClass('disabled').prop('disabled', false);
+            } else {
+                $btnNext.addClass('disabled').prop('disabled', true);
+            }
+        }
+    }
+})();
+
+var emailValidation = (function() {
+    return {
+        init: function() {
+            if ($('.PAY-OBNK-REG-003').length === 0) return; /* 단일 페이지에서만 실행되게 해둠, 나중에 쓰는 페이지가 많아지면 추가 혹은 로직 수정 */
+
+            $('#emailId, .email-domain').on('input', function() {
+                /* 한글, 공백, 기타 금지문자 제거 (영문, 숫자, 마침표, 하이픈, 언더바만 허용) */
+                var regex = /[^a-zA-Z0-9\.\-\_]/g; 
+                var v = $(this).val();
+                
+                if (regex.test(v)) {
+                    $(this).val(v.replace(regex, ''));
+                }
+                
+                emailValidation.check(); 
+            });
+
+            $('#domain-select').on('change', function() {
+                setTimeout(function(){
+                    emailValidation.check();
+                }, 10);
+            });
         },
         check: function() {
-            var name = $('#userName').val().trim(), res1 = $('#resNum1').val().trim(), res2 = $('#resNum2').val().trim(), telecom = $('#telecom').val(), phone = $('#userPhone').val().trim(), authNum = $('#authNum').val().trim();
-            var isAuthOpen = $('#authBox').is(':visible'), $btnNext = $('.btn-fixed-bottom .btn-primary');
-            if (name.length > 0 && res1.length === 6 && res2.length === 7 && telecom !== "" && phone.length >= 10 && isAuthOpen && authNum.length === 6) { $btnNext.removeClass('disabled').prop('disabled', false); } 
-            else { $btnNext.addClass('disabled').prop('disabled', true); }
+            var emailId = $('#emailId').val().trim();
+            var emailDomain = $('.email-domain').val().trim();
+            var $btnNext = $('.PAY-OBNK-REG-003').closest('.wrap').find('.btn-fixed-bottom .btn-primary');
+
+            if (emailId.length > 0 && emailDomain.length > 0 && emailDomain.indexOf('.') !== -1) {
+                $btnNext.removeClass('disabled').prop('disabled', false);
+            } else {
+                $btnNext.addClass('disabled').prop('disabled', true);
+            }
         }
     }
 })();
