@@ -418,8 +418,8 @@ function openLayer(id) {
     $('body').css('overflow', 'hidden');
 }
 
-/* 팝업 닫기 함수 */
+/* 팝업 닫기 함수 (슬라이드 팝업 & 풀 팝업 공통) */
 function closeLayer(el) {
-    $(el).closest('.layout-slide').removeClass('on');
+    $(el).closest('[class^="layout-"]').removeClass('on');
     $('body').css('overflow', ''); 
 }

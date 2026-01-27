@@ -45,11 +45,15 @@
 
 
 /* Modal & Popup */
-.layout-fullpop { position:fixed; top:0; left:0; width:100%; height:100%; background-color:#fff; z-index:var(--z-popup); }
-.layout-fullpop .popup-layer { display:flex; flex-direction:column; height:100%; }
 .layout-fullpop .popup-header { flex:none; position:relative; height:var(--header-h); background:#fff; }
 .layout-fullpop .popup-container { flex:1; overflow-y:auto; padding:38px 20px 100px 20px; }
 .layout-fullpop .popup-footer { flex:none; padding:20px; background:linear-gradient(to top,#ffffff 0%,#ffffff 70%,rgba(255,255,255,0) 100%); }
+
+.layout-fullpop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; z-index: 1000; visibility: hidden; opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(20px); }
+
+.layout-fullpop.on { visibility: visible; opacity: 1; transform: translateY(0); }
+
+.layout-fullpop .popup-layer { display: flex; flex-direction: column; height: 100%; background: #fff; }
 
 /* Slide Popup (바텀 시트) */
 .layout-slide { position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.5); display:flex; flex-direction:column; justify-content:flex-end; visibility:hidden; opacity:0; transition:all 0.3s; }
