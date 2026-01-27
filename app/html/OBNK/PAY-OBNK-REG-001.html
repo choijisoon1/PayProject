@@ -8,13 +8,14 @@
     <meta name="apple-mobile-web-app-title" content="OnePay">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <title>본인인증 안내</title>
+    <title>오픈뱅킹 등록</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="../../resource/images/ONBD/Logo-Onbording.png" />
     
     <!-- CSS 통합 연결 -->
     <link rel="stylesheet" href="../../resource/css/ui-util.css">
-    <!-- JS  -->
+    
+    <!-- JS -->
     <script src="../../../guide/js/jquery-1.11.3.min.js"></script>
     <script src="../../../guide/js/jquery.form.min.js"></script>
     <script src="../../resource/js/common.js"></script>
@@ -23,43 +24,38 @@
 <body>
     <div class="wrap">
         <div class="header">
-            <div class="header-inner">
+            <div class="header-inner" style="padding: 0 18px;">
+                <div class="title">
+                    오픈뱅킹 등록
+                </div>
                 <div class="right">
                     <button type="button" class="se-btn menu"><span>메뉴</span></button>
                 </div>
             </div>
         </div>
 
-        <div class="container PAY-AUTH-001">
+        <div class="container">
             <div class="contents-inner">
-                <!-- 타이틀 영역 -->
                 <div class="section-jumbotron">
-                    <h2 class="se-title">
-                        안녕하세요! <br>
-                        <strong>본인인증</strong>을 진행해 주세요
-                    </h2>
-                    <p class="text">
-                        본인인증을 통한 로그인을 진행해 주시기 바랍니다.
-                    </p>
+                    <h2 class="se-title">다른 금융기관의 <br><strong>자산을 연결</strong>해보세요.</h2>
+                    <p class="text">나의 새로운 자산을 등록해보세요.</p>
                 </div>
 
-                <!-- 유의사항 영역 -->
-                <div class="notice-list-wrap">
-                    <ul class="notice-list">
-                        <li>본인명의의 휴대폰 번호로만 인증이 가능합니다.</li>
-                        <li>기존 회원의 경우 본인인증 절차를 통해 기존 회원정보를 가져오실 수 있습니다.</li>
-                    </ul>
+                <div class="section">
+                    <h3 class="sub-title-sm">금융자산</h3>
+                    <a href="javascript:void(0);" class="btn-add-asset type-line">금융사 추가하기</a>
+
+                    <h3 class="sub-title-sm mt32">카드자산</h3>
+                    <a href="javascript:void(0);" class="btn-add-asset type-disabled">카드사 추가하기</a>
+                </div>
+
+                <div class="bottom-skip-area">
+                    <a href="javascript:void(0);" class="btn-skip">다음에 등록하기</a>
                 </div>
             </div>
-        </div>
-
-        <!-- 하단 고정 버튼 -->
-        <div class="btn-fixed-bottom">
-            <div class="button-group">
-                <a href="./PAY-AUTH-002.html" class="btn-secondary">시작하기</a>
             </div>
         </div>
-        
     </div>
 </body>
+
 </html>

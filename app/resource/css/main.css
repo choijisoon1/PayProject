@@ -67,7 +67,7 @@
 /* 서비스 링크 버튼 */
 .btn-service { display: flex; flex-direction: column; align-items: center; width: 100%; text-decoration: none; color: inherit; cursor: pointer; }
 .btn-service::before { content: ''; display: block; width: 56px; height: 56px; border: 1px solid var(--color-e); border-radius: 50%; background-repeat: no-repeat; background-position: center; background-size: 24px; margin-bottom: 12px; transition: background-color 0.2s; }
-.btn-service .name { font-size: 14px; color: var(--color-45); font-weight: 500; letter-spacing: -0.5px; }
+.btn-service .name { font-size: 14px; color: var(--color-45); font-weight: 400; letter-spacing: -0.5px; }
 
 .btn-service.touch::before { background-image: url("../../resource/images/svg/MAIN/ico_touch.svg"); }
 .btn-service.send::before {background-image: url("../../resource/images/svg/MAIN/send_money.svg");}
@@ -95,11 +95,11 @@
 .month-badge.mint { background-color: #DFF6F6; color: #337171; }
 .month-badge.peach { background-color: #FFF1DA; color: #F16B5E; }
 
-.info-text .label { font-size: 13px; color: var(--color-75); margin-bottom: 3px; }
+.info-text .label { font-size: 14px; color: var(--color-75); margin-bottom: 3px; }
 .info-text .amount { font-size: 18px; color: var(--color-2); font-weight: 700;}
 
 /* 하단 상세보기 버튼 스타일 */
-.btn-detail-view { display: block; width: calc(100%); padding: 20px 8px 0 8px; border-top: 1px solid var(--color-e); text-align: center; color: var(--color-45); font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 0 0 8px 8px; line-height: 1; height: auto; }
+.btn-detail-view { display: block; width: calc(100%); padding: 20px 8px 0 8px; border-top: 1px solid var(--color-e); text-align: center; color: var(--color-75); font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 0 0 8px 8px; line-height: 1; height: auto; }
 
 /* ========================================================================== 일반 배너 ========================================================================== */
 .card.banner-asset { position: relative; padding: 20px; display: flex; align-items: center; min-height: 108px; cursor: pointer; background-color: #E9EFFF; box-shadow: none;}
@@ -227,6 +227,8 @@
 /*-- card-product-banner 관련 스타일 --*/
 .card-product-banner { margin-bottom: 40px; position: relative; }
 .card-main-swiper { overflow: visible !important; }
+.swiper-pagination-total {font-weight: 400; color: var(--color-75);}
+
 .banner-inner { position: relative; height: 276px; border-radius: 12px; overflow: hidden; background-repeat: no-repeat; background-position: center; background-size: cover; padding: 28px; box-sizing: border-box; }
 .banner-inner.b1 { background-image: url('../../resource/images/MAIN/main_left_container.png'); }
 .banner-inner.b2 { background-image: url('../../resource/images/MAIN/main_right_container.png'); }
@@ -331,5 +333,5 @@
 .price-info .val { font-size: 20px; color: var(--color-2); font-weight: 700;}
 
 /* 자세히 보기 버튼 */
-.btn-detail { display: inline-flex; align-items: center; justify-content: center; min-width: 88px; min-height: 41px; padding: 10px 12px; background: #EAEBEF; border-radius: 4px; color: var(--color-45); font-size: 14px; font-weight: 500; text-decoration: none; line-height: 1; }
+.btn-detail { display: inline-flex; align-items: center; justify-content: center; min-width: 88px; min-height: 41px; padding: 10px 12px; background: #EAEBEF; border-radius: 4px; color: var(--color-45); font-size: 14px; font-weight: 600; text-decoration: none; line-height: 1; }
 .btn-detail:active { transform: none !important; opacity: 1 !important; }

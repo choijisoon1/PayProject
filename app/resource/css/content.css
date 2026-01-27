@@ -6,13 +6,13 @@
 .icon-box.camera { background-image:url('../images/svg/FERM/camera_ico.svg'); }
 .icon-box.contact { background-image:url('../images/svg/FERM/telbok_ico.svg'); }
 .icon-box.location { background-image:url('../images/svg/FERM/nav_ico.svg'); }
-.icon-box.faceid { background-image:url('../images/svg/FERM/face_ico.svg'); }
+.icon-box.faceid { background-image:url('../images/svg/FERM/face_ico.svg'); width: 42px; height: 42px;}
 
-.icon-box.password { background-image: url('../images/svg/LOGN/password_ico.svg'); }
-.icon-box.fingerprint { background-image: url('../images/svg/LOGN/fingerprint_ico.svg'); }
-.icon-box.password-fill { background-image: url('../images/svg/LOGN/password-fill-ico.svg'); }
-.icon-box.fingerprint-fill { background-image: url('../images/svg/LOGN/fingerprint_fill_ico.svg'); }
-.icon-box.faceid-fill { background-image:url('../images/svg/LOGN/face_fill_ico.svg'); }
+.icon-box.password { background-image: url('../images/svg/LOGN/password_ico.svg'); width: 42px; height: 42px;}
+.icon-box.fingerprint { background-image: url('../images/svg/LOGN/fingerprint_ico.svg'); width: 42px; height: 42px;}
+.icon-box.password-fill { background-image: url('../images/svg/LOGN/password-fill-ico.svg'); width: 38px; height: 38px; }
+.icon-box.fingerprint-fill { background-image: url('../images/svg/LOGN/fingerprint_fill_ico.svg'); width: 38px; height: 38px;}
+.icon-box.faceid-fill { background-image:url('../images/svg/LOGN/face_fill_ico.svg'); width: 38px; height: 38px;}
 
 /* ============ 온보딩 ===================== */
 .onboarding-page { background: #fff; height: 100vh; overflow: hidden; position: relative; }
@@ -44,8 +44,8 @@
 .app-access-wrap .list li { display:flex; align-items:center; gap:14px; }
 
 /* 텍스트 영역 */
-.app-access-wrap .cnt .tit { font-size:16px; color:#222; margin-bottom:4px; font-weight: 500; }
-.app-access-wrap .cnt .txt { font-size:14px; color:#666; }
+.app-access-wrap .cnt .tit { font-size:16px; color:var(--color-2); margin-bottom:4px; font-weight: 500; }
+.app-access-wrap .cnt .txt { font-size:14px; color:var(--color-75); }
 
 /* 배지 (필수/선택) */
 .badge { font-size:14px; display:inline-block; }
@@ -74,7 +74,7 @@
 
 .PAY-AUTH-002 .section-jumbotron .tit-row,
 .PAY-AUTH-003 .section-jumbotron .tit-row,
-.PAY-AUTH-004 .section-jumbotron .tit-row { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:15px; }
+.PAY-AUTH-004 .section-jumbotron .tit-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
 
 /* 타이틀 폰트 */
 .PAY-AUTH-002 .section-jumbotron .se-title,
@@ -90,7 +90,7 @@
 .PAY-AUTH-003 .section-jumbotron .page-num b,
 .PAY-AUTH-004 .section-jumbotron .page-num b { color:#222; font-weight:600; }
 
-.PAY-AUTH-003 .section { padding:0; display:flex; flex-direction:column; gap:20px; padding-bottom: 140px;}
+.PAY-AUTH-003 .section { padding:0; display:flex; flex-direction:column; gap:26px; padding-bottom: 140px;}
 .input-box .auth-timer { position: absolute; right: 16px; font-size: 14px; color: var(--primary); font-weight: 400;} /* 인증번호 인풋박스 옆 타이머 */
 
 /* 프로그레스 바 */
@@ -136,7 +136,7 @@
 .auth-method-card .logo.bank { background-image:url('../images/AUTH/ot_img.png'); }
 
 /* 텍스트 및 체크 아이콘 */
-.auth-method-card .name { color:#222; font-weight:500; flex:1; }
+.auth-method-card .name { color:var(--color-45); font-weight:500; flex:1; }
 .auth-method-card .chk-svg { margin-left:auto; }
 .auth-method-card .chk-svg path { stroke:var(--color-9); stroke-dashoffset:0; transition:stroke 0.2s; }
 .auth-method-card input:checked + .card-inner .chk-svg path { stroke:var(--primary); animation:redraw 0.3s ease forwards; }
@@ -149,7 +149,7 @@
 
 /* 타이틀 형광펜 효과 */
 .PAY-AUTH-005 .se-title .highlight { position:relative; z-index:1; display:inline-block; }
-.PAY-AUTH-005 .se-title .highlight::after { content:''; position:absolute; bottom:0; left:0; width:100%; height:12px; background-color:#FFdddf; z-index:-1; opacity:0.8; }
+.PAY-AUTH-005 .se-title .highlight::after { content:''; position:absolute; bottom:2px; left:0; width:100%; height:8px; background-color:#FFdddf; z-index:-1; opacity:0.8; }
 
 /* 이미지 영역 */
 .PAY-AUTH-005 .result-motion { flex:1; display:flex; align-items:center; justify-content:center; padding-bottom:40px; }
@@ -172,9 +172,9 @@
 /* PAY-LOGN-01001 팝업 내부 컨텐츠 */
 .auth-setting-list { display: flex; flex-direction: column; gap: 10px; }
 .auth-setting-list .item-row { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 10px 0; text-decoration: none; cursor: pointer; }
-.auth-setting-list .left { display: flex; align-items: center; gap: 12px; }
+.auth-setting-list .left { display: flex; align-items: center; gap: 10px; }
 .auth-setting-list .name { font-size: 16px; color: #222; font-weight: 500; }
-.badge-state { display: inline-flex; align-items: center; justify-content: center; padding: 6px 10px; border-radius: 100px; font-size: 14px; font-weight: 500; background-color: #f3f3f3; color: var(--color-45); }
+.badge-state { display: inline-flex; align-items: center; justify-content: center; padding: 2px 10px; border-radius: 100px; font-size: 14px; font-weight: 500; background-color: #f3f3f3; color: var(--color-45); }
 .badge-state.on { background-color: #EcF4FF; color:var(--success); }
 .popup-container.padding-20 { padding: 20px; }
 
@@ -186,7 +186,7 @@
 .pw-dot.on { background-color:var(--secondary); }
 .secure-keypad { width: 100%; padding: 20px 0 40px 0; background-color: #fff; }
 .keypad-grid { display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 10px; }
-.keypad-btn { display: flex; align-items: center; justify-content: center; width: 100%; height: 65px; background: transparent; border: none; font-size: 24px; font-family: inherit; cursor: pointer; }
+.keypad-btn { display: flex; align-items: center; justify-content: center; width: 100%; height: 65px; background: transparent; border: none; font-size: 24px; font-family: inherit; cursor: pointer; font-weight: 400; }
 .keypad-btn:active { background-color: #faf8fa; border-radius: 12px; }
 .keypad-btn.text-btn { font-size: 16px; color: #222; font-weight: 400; }
 .keypad-btn.back { background-image: url('../images/svg/LOGN/keypad-back.svg'); background-repeat: no-repeat; background-position: center; background-size: 28px auto; }
@@ -198,3 +198,18 @@
 .popup-container.auth-register-mode .motion-bg.fingerprint { background-image: url('../../resource/images/LOGN/Fingerprint_img.gif'); }
 .popup-container.auth-register-mode .motion-bg.face { background-image: url('../../resource/images/LOGN/Face_img.gif'); }
 .popup-container.auth-register-mode .auth-btn-wrap { margin-top: 42px; }
+
+/* OBNK */
+/* 서브페이지 전용 소제목 */
+.sub-title-sm { font-size: 16px; font-weight: 600; color: var(--color-2); margin-bottom: 12px; text-align: left; }
+.mt32 { margin-top: 32px; }
+/* 자산 추가 버튼  */
+.btn-add-asset { display: flex; align-items: center; justify-content: center; width: 100%; padding: 18px; height: 64px; border-radius: 12px; font-size: 16px; font-weight: 500; text-decoration: none; gap: 4px; }
+.btn-add-asset.type-line { border: 1px solid var(--primary); color: var(--primary); background: #fff; }
+.btn-add-asset.type-line::after { content: ''; width: 20px; height: 20px; background: url('../../resource/images/svg/OBNK/ico-plus-pill.svg') no-repeat center / contain; }
+.btn-add-asset.type-disabled { background-color: #Eee; color: var(--color-45); border: 0; pointer-events: none; cursor: default; }
+.btn-add-asset.type-disabled::after { content: ''; width: 20px; height: 20px; background: url('../../resource/images/svg/OBNK/ico-plus-45.svg') no-repeat center / contain; }
+/* 하단 스킵 링크 영역 */
+.bottom-skip-area { position: fixed; bottom: 40px; left: 0; width: 100%; text-align: center; z-index: 10; }
+.btn-skip { font-size: 14px; color: var(--color-75); text-decoration: underline; text-underline-offset: 4px; transition: color 0.2s; }
+.btn-skip:active { color: var(--color-2); }

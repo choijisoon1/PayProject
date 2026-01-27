@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>메인팝업</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../app/resource/images/ONBD/Logo-Onbording.png" />
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+    <!-- <link rel="stylesheet" href="../../app/resource/css/layout.css">
+    <link rel="stylesheet" href="../../app/resource/css/button.css"> -->
+    
+    <style>
+        body { background-color: #f5f5f5; }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header-inner">
+                <div class="title">메인 화면</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="contents-inner">
+                <p>본문 내용이 뒤에 깔려 있습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 이벤트 바텀 팝업 -->
+    <div class="layout-slide type-event on">
+        <div class="dim" onclick="closeLayer(this)"></div>
+        <div class="popup-layer">
+            <div class="popup-container">
+                <div class="event-visual">
+                    <img src="../../resource/images/MAIN/main_bottom_popup_1.png" alt="이벤트 배너">
+                </div>
+            </div>
+            <div class="popup-footer">
+                <div class="event-footer-btns">
+                    <button type="button" class="btn-today-hide" onclick="closeLayer(this)">오늘하루 안보기</button>
+                    <button type="button" class="btn-close-text" onclick="closeLayer(this)">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

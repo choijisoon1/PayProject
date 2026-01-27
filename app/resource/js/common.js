@@ -123,6 +123,11 @@ $(document).ready(function() {
         seSelect.errorChk( $(this) );
     });
 
+	if ($('#popMainEvent').length > 0) {
+        setTimeout(function() {
+            openLayer('popMainEvent');
+        }, 300);
+    }
 }); 
 
 /* 커스텀 셀렉트 함수 */
@@ -312,3 +317,15 @@ var authValidation = (function() {
         }
     }
 })();
+
+/* 팝업 열기 함수 */
+function openLayer(id) {
+    $('#' + id).addClass('on');
+    $('body').css('overflow', 'hidden');
+}
+
+/* 팝업 닫기 함수 */
+function closeLayer(el) {
+    $(el).closest('.layout-slide').removeClass('on');
+    $('body').css('overflow', ''); 
+}
