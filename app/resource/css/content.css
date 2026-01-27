@@ -200,6 +200,7 @@
 .popup-container.auth-register-mode .auth-btn-wrap { margin-top: 42px; }
 
 /* OBNK */
+.section.PAY-OBNK-REG-001 {padding-top: 26px;}
 /* 서브페이지 전용 소제목 */
 .sub-title-sm { font-size: 16px; font-weight: 600; color: var(--color-2); margin-bottom: 12px; text-align: left; }
 .mt32 { margin-top: 32px; }
