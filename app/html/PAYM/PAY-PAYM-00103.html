@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>스캔 결제 팝업</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../resource/images/ONBD/Logo-Onbording.png" />
+    
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+    <link rel="stylesheet" href="../../resource/css/main.css">
+    <!-- JS  -->
+    <script src="../../../guide/js/jquery-1.11.3.min.js"></script>
+    <script src="../../../guide/js/jquery.form.min.js"></script>
+    <script src="../../resource/js/common.js"></script>
+</head>
+
+<body>
+    <div id="popScanPay" class="layout-fullpop type-pay-dark type-pay-scan on">
+        <div class="popup-layer">
+            
+            <div class="popup-header">
+                <div class="header-inner" style="padding: 0 18px;">
+                    <div class="right">
+                        <button type="button" class="se-btn close-white" onclick="closeLayer(this)"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-container scan-mode">
+                <div class="scan-area">
+                    <div class="scan-guide">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <p class="scan-txt">QR코드를 자동으로 인식합니다.</p>
+                </div>
+            </div>
+
+            <div id="payDrawer" class="layout-slide type-drawer">
+                <div class="popup-layer">
+                    <div class="popup-header">
+                        <div class="drawer-handle" onclick="toggleDrawer()"></div>
+                    </div>
+
+                    <div class="popup-container">
+                        <div class="keypad-auth-top">
+                            <p class="txt">6자리 숫자를 입력하세요.</p>
+
+                            <div class="pw-dots-area">
+                                <span class="pw-dot"></span><span class="pw-dot"></span>
+                                <span class="pw-dot"></span><span class="pw-dot"></span>
+                                <span class="pw-dot"></span><span class="pw-dot"></span>
+                            </div>
+                        </div>
+
+                        <div class="secure-keypad">
+                            <div class="keypad-grid">
+                                <button type="button" class="keypad-btn">1</button>
+                                <button type="button" class="keypad-btn">2</button>
+                                <button type="button" class="keypad-btn">3</button>
+                                <button type="button" class="keypad-btn">4</button>
+                                <button type="button" class="keypad-btn">5</button>
+                                <button type="button" class="keypad-btn">6</button>
+                                <button type="button" class="keypad-btn">7</button>
+                                <button type="button" class="keypad-btn">8</button>
+                                <button type="button" class="keypad-btn">9</button>
+                                <button type="button" class="keypad-btn text-btn">재배열</button>
+                                <button type="button" class="keypad-btn">0</button>
+                                <button type="button" class="keypad-btn back"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+

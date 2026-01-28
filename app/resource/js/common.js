@@ -290,40 +290,40 @@ var chkAll = (function() {
             $(document).on('change', '.terms-head input[type="checkbox"], .all-check', function() {
                 var isChecked = $(this).prop('checked');
                 var $parent = $(this).closest('.terms-pack, .tab-content');
-                
                 $parent.find('.terms-body input[type="checkbox"], .unit-check').prop('checked', isChecked);
-                
-                chkAll.checkBtn(); /* 버튼 상태 갱신 */
+                chkAll.checkBtn(); 
             });
 
-            /* 하위 체크박스 개별 클릭 시 */
-            $(document).on('change', '.terms-body input[type="checkbox"], .unit-check', function() {
+            $(document).on('change', '.terms-body input[type="checkbox"], .unit-check, #payAgree', function() {
                 var $parent = $(this).closest('.terms-pack, .tab-content');
-                var $units = $parent.find('.terms-body input[type="checkbox"], .unit-check');
-                var total = $units.length;
-                var checked = $units.filter(':checked').length;
-                
-                var $master = $parent.find('.terms-head input[type="checkbox"], .all-check');
-                $master.prop('checked', total === checked);
+
+                if($parent.length > 0) {
+                    var $units = $parent.find('.terms-body input[type="checkbox"], .unit-check');
+                    var total = $units.length;
+                    var checked = $units.filter(':checked').length;
+                    var $master = $parent.find('.terms-head input[type="checkbox"], .all-check');
+                    $master.prop('checked', total === checked);
+                }
 
                 chkAll.checkBtn(); 
             });
         },
         
-        /* 하단 고정 버튼 활성화 로직 */
         checkBtn: function() {
             var $submitBtn = $('.btn-fixed-bottom .btn-primary, .popup-footer .btn-pop-primary');
             var isFinalValid = false;
 
-            /* 약관 동의 페이지일 때 모든 체크박스가 체크되어야 함 */
             if ($('.terms-pack').length > 0) {
                 var totalReq = $('.terms-body input[type="checkbox"]').length;
                 var checkedReq = $('.terms-body input[type="checkbox"]:checked').length;
                 isFinalValid = (totalReq > 0 && totalReq === checkedReq);
             } 
-            /* 은행 선택 팝업일 때는 하나라도 체크되어 있으면 됨 */
             else if ($('.bank-select-list').length > 0) {
                 isFinalValid = ($('.unit-check:checked').length > 0);
+            }
+            
+            else if ($('.PAY-PAYM-002').length > 0) {
+                isFinalValid = $('#payAgree').is(':checked');
             }
 
             if (isFinalValid) {

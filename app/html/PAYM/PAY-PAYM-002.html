@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="OnePay">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <title>인증완료</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../resource/images/ONBD/Logo-Onbording.png" />
+    
+    <!-- CSS 통합 연결 -->
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+    <!-- JS  -->
+    <script src="../../../guide/js/jquery-1.11.3.min.js"></script>
+    <script src="../../../guide/js/jquery.form.min.js"></script>
+    <script src="../../resource/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header-inner">
+                <div class="left">
+                    <button type="button" class="se-btn back"></button>
+                </div>
+                <div class="title">
+                    결제내역 확인
+                </div>
+            </div>
+        </div>
+    
+        <div class="container PAY-PAYM-002">
+            <div class="contents-inner">
+                
+                <div class="section-jumbotron">
+                    <h2 class="se-title">
+                        <span class="highlight"><strong>스타벅스 경주보문호수점</strong></span>&nbsp;에서<br>결제할게요.
+                    </h2>
+                </div>
+
+                <div class="section">
+                    <!-- 결제 정보 리스트 -->
+                    <ul class="pay-detail-list">
+                        <li>
+                            <span class="label">상품</span>
+                            <span class="val">스타벅스 메뉴 주문</span>
+                        </li>
+                        <li>
+                            <span class="label">금액</span>
+                            <span class="val">17,000원 <small>(VAT 포함)</small></span>
+                        </li>
+                        <li>
+                            <span class="label">카드사 포인트 사용</span>
+                            <div class="form-wrap">
+                                <fieldset>
+                                    <label class="radio">
+                                        <input type="radio" name="pointUse" checked>
+                                        <span>사용</span>
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="pointUse">
+                                        <span>미사용</span>
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- 총 결제 금액 영역 -->
+                    <div class="pay-total-box">
+                        <span class="label">총 결제 금액</span>
+                        <span class="amount">17,000원</span>
+                    </div>
+
+                    <!-- 결제 카드 비주얼 -->
+                    <div class="pay-card-visual">
+                        <div class="card-img">
+                            <img src="../../resource/images/PAYM/PAYM-002-wooriOne-card.png" alt="우리WON 체크카드">
+                        </div>
+                        <p class="card-info">우리은행 | 우리WON 체크 960*</p>
+                    </div>
+
+                    <div class="pay-consent-wrap">
+                        <div class="form-wrap">
+                            <fieldset>
+                                <label class="check fill">
+                                    <input type="checkbox" id="payAgree">
+                                    <svg class="chk-svg" viewBox="0 0 14 10" fill="none">
+                                        <path d="M1 5L4.5 8.5L13 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="txt">위 구매조건을 확인, 결제진행에 동의합니다.</span>
+                                </label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                                
+
+            </div>
+        </div>
+
+        <div class="btn-fixed-bottom">
+            <div class="button-group">
+                <a href="../MAIN/PAY-MAIN-001.html" class="btn-primary disabled">결제하기</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

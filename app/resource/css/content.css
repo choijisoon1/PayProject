@@ -76,7 +76,8 @@
 .PAY-AUTH-004 .section-jumbotron,
 .PAY-OBNK-REG-002 .section-jumbotron,
 .PAY-OBNK-REG-003 .section-jumbotron,
-.PAY-OBNK-REG-004 .section-jumbotron { padding:0; text-align:left; border-bottom:1px solid var(--color-e); padding-bottom:26px; margin-bottom:32px; }
+.PAY-OBNK-REG-004 .section-jumbotron,
+.PAY-PAYM-002 .section-jumbotron { padding:0; text-align:left; border-bottom:1px solid var(--color-e); padding-bottom:26px; margin-bottom:32px; }
 
 .PAY-AUTH-002 .section-jumbotron .tit-row,
 .PAY-AUTH-003 .section-jumbotron .tit-row,
@@ -166,8 +167,8 @@
 .PAY-AUTH-005 .section-jumbotron .text { color:var(--color-45); }
 
 /* 타이틀 형광펜 효과 */
-.PAY-AUTH-005 .se-title .highlight { position:relative; z-index:1; display:inline-block; }
-.PAY-AUTH-005 .se-title .highlight::after { content:''; position:absolute; bottom:2px; left:0; width:100%; height:8px; background-color:#FFdddf; z-index:-1; opacity:0.8; }
+.se-title .highlight { position:relative; z-index:1; display:inline-block; }
+.se-title .highlight::after { content:''; position:absolute; bottom:2px; left:0; width:100%; height:8px; background-color:#FFdddf; z-index:-1; opacity:0.8; }
 
 /* 이미지 영역 */
 .PAY-AUTH-005 .result-motion { flex:1; display:flex; align-items:center; justify-content:center; padding-bottom:40px; }
@@ -377,3 +378,55 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 .barcode-img img { width: 100%; max-width: 304px; height: auto; }
 
 .qr-img img { width: 123px; height: 123px; }
+
+
+/* PAYM-00103 */
+
+/* 스캔 가이드 */
+.type-pay-scan .scan-mode { display: flex; align-items: flex-start; justify-content: center;}
+.scan-guide { position: relative; width: 280px; height:280px; margin: 0 auto 120px; }
+.scan-guide span { position: absolute; width: 40px; height: 40px; border: 4px solid #fff;}
+.scan-guide span:nth-child(1) { top:70px; left:0; border-right:0; border-bottom:0;}
+.scan-guide span:nth-child(2) { top:70px; right:0; border-left:0; border-bottom:0;}
+.scan-guide span:nth-child(3) { bottom:-70px; left:0; border-right:0; border-top:0;}
+.scan-guide span:nth-child(4) { bottom:-70px; right:0; border-left:0; border-top:0;}
+.scan-txt { color: #ebebeb; font-size: 16px; text-align: center; font-weight: 400; }
+
+/* 이 팝업에서만 레이어 높이 올라가도록 세팅*/
+.type-pay-scan .type-drawer .popup-layer { height: 520px !important; transform: translateY(340px); }
+/* 키패드 상단 텍스트 정렬 */
+.keypad-auth-top { text-align: center; margin-bottom: 50px;}
+.keypad-auth-top .txt { font-size: 16px; color: #222; margin-bottom: 20px; font-weight: 500; }
+
+/* paym-002 */
+/* 결제 상세 리스트 */
+.pay-detail-list {margin-bottom: 24px; }
+.pay-detail-list li { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.pay-detail-list li:last-child {margin-bottom: 28px;}
+
+.pay-detail-list .label { font-size: 14px; color: var(--color-9); font-weight: 500; }
+.pay-detail-list .val { font-size: 16px; color: var(--color-45); font-weight: 500; }
+.pay-detail-list .val small { font-size: 12px; color: var(--color-9); margin-left: 5px; }
+
+/* 총 결제 금액 상자 */
+.pay-total-box { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; padding-bottom: 48px; border-top: 1px solid var(--color-2);}
+.pay-total-box .label { font-size: 14px; font-weight: 500; color: var(--color-75); }
+.pay-total-box .amount { font-size: 24px; font-weight: 500; color: var(--success); }
+
+/* 카드 비주얼 영역 */
+.pay-card-visual { text-align: center; margin-bottom: 60px; }
+.pay-card-visual .card-img { width: 251px; margin: 0 auto 10px; }
+/* .pay-card-visual .card-img img { width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); } */
+.pay-card-visual .card-info { display: block; font-size: 12px; color: var(--color-75); font-weight: 500; }
+
+/* 동의 영역 */
+/* .pay-consent-wrap { padding: 20px 0; text-align: left; } */
+.pay-consent-wrap .check.fill .txt { font-size: 16px; color: var(--color-75); font-weight: 400; }
+
+/* 라디오 버튼 간격 보정 */
+label.radio + label.radio { margin-left: 10px; }
+
+/* PAY-PAYM-003 */
+.PAY-PAYM-003 .section-jumbotron.auth-complete {padding-bottom: 26px; border-bottom: 1px solid var(--color-2);}
+.PAY-PAYM-003 .val.success {color: var(--success);}
+.PAY-PAYM-003 .contents-inner { display: flex; flex-direction: column; min-height: calc(100vh - 130px);}
