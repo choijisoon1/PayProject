@@ -63,15 +63,26 @@ $(document).ready(function() {
 			},
 		});
 	}
-    /* 탭 전환 */
-    $('.tab-list li').on('click', function() {
-        var idx = $(this).index();
-        $(this).addClass('on').siblings().removeClass('on');
-        $('.tab-content').eq(idx).addClass('on').siblings().removeClass('on');
+
+    /* 탭 전환 최종로직 */
+    $(document).on('click', '.tab-list li', function() {
+        var idx = $(this).index(); /* 클릭한 탭 순서 */
+        var $tabWrap = $(this).closest('.tab-wrap'); /* 현재 탭 감싸는 영역 */
         
-        if (idx === 0 && window.recommendSwiper) {
-            window.recommendSwiper.update(); 
-        }
+        /* 탭 버튼 활성화 */
+        $(this).addClass('on').siblings().removeClass('on');
+
+        /* 콘텐츠 찾기 */
+        var $scope = $(this).closest('#container, .popup-layer, .code-card');
+        var $targetContents = $scope.find('.tab-content, .sub-tab-content').filter(function() {
+            return $(this).closest('#container, .popup-layer, .code-card').is($scope);
+        });
+
+        $targetContents.eq(idx).addClass('on').siblings().removeClass('on');
+
+        if (window.recommendSwiper) window.recommendSwiper.update();
+        if (window.cardMainSwiper) window.cardMainSwiper.update();
+        if (window.recommendCardSwiper) window.recommendCardSwiper.update();
     });
 
 	/* 알약탭 */
@@ -332,7 +343,7 @@ var authValidation = (function() {
             $('#btnReqAuth').on('click', function() {
                 var phoneVal = $('#userPhone').val();
                 if (phoneVal.length < 10) { 
-                    alert('휴대폰 번호를 올바르게 입력해주세요.'); 
+                    openLayer('alertPhone'); 
                     return; 
                 }
 
@@ -423,3 +434,39 @@ function closeLayer(el) {
     $(el).closest('[class^="layout-"]').removeClass('on');
     $('body').css('overflow', ''); 
 }
+
+/* 드로워 상태 제어 함수 */
+function toggleDrawer(state) {
+    var $drawer = $('#payDrawer');
+    var $dim = $('.drawer-dim');
+
+    if (state === 'open') {
+        $drawer.addClass('expanded');
+        $dim.addClass('on');
+    } else if (state === 'close') {
+        $drawer.removeClass('expanded');
+        $dim.removeClass('on');
+    } else {
+        $drawer.toggleClass('expanded');
+        $dim.toggleClass('on');
+    }
+}
+
+/* 터치 제스처 (밀어서 올리기/내리기) */
+$(document).on('touchstart', '.drawer-handle', function(e) {
+    var startY = e.originalEvent.touches[0].clientY;
+    var $handle = $(this);
+
+    $handle.on('touchend.drawer', function(e) {
+        var endY = e.originalEvent.changedTouches[0].clientY;
+        var diffY = startY - endY; 
+
+        if (diffY > 30) { 
+            toggleDrawer('open');
+        } else if (diffY < -30) { 
+            toggleDrawer('close');
+        }
+        
+        $handle.off('touchend.drawer');
+    });
+});

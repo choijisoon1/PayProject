@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>터치결제 팝업</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../resource/images/ONBD/Logo-Onbording.png" />
+    
+    <link rel="stylesheet" href="../../resource/css/ui-util.css">
+    <link rel="stylesheet" href="../../resource/css/main.css">
+    <!-- JS  -->
+    <script src="../../../guide/js/jquery-1.11.3.min.js"></script>
+    <script src="../../../guide/js/jquery.form.min.js"></script>
+    <script src="../../resource/js/common.js"></script>
+</head>
+
+<body>
+    <div id="popPayment" class="layout-fullpop type-pay-dark on">
+        <div class="popup-layer">
+            <div class="popup-header">
+                <div class="header-inner" style="padding: 0 18px;">
+                    <div class="right">
+                        <button type="button" class="se-btn close-white" onclick="closeLayer(this)"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-container">
+                <!-- 타이머 -->
+                <div class="pay-top-area">
+                    <p class="timer-label">남은시간</p>
+                    <div class="timer-num">00:48</div>
+                </div>
+
+                <!-- 알약형 탭 -->
+                <div class="tab-wrap">
+                    <ul class="tab-list">
+                        <li class="on"><a href="javascript:void(0);" class="ico-touch">터치결제</a></li>
+                        <li><a href="javascript:void(0);" class="ico-barcode">바코드·QR</a></li>
+                    </ul>
+                </div>
+
+                <!-- 터치결제 -->
+                <div id="tab-touch" class="tab-content on">
+                    <div class="pay-visual-area">
+                        <div class="main-card-img">
+                            <img src="../../resource/images/PAYM/PAYM_card.png" alt="결제 카드 이미지">
+                        </div>
+                    </div>
+                    <p class="pay-guide-txt">휴대폰 뒷면을 리더기에 터치해주세요.</p>
+                </div>
+
+                <!-- 바코드·QR 탭 (메인)-->
+                <div id="tab-barcode" class="tab-content">
+                    <div class="code-card-wrap">
+                        <div class="code-card">
+                            <div class="tab-wrap type-segment">
+                                <ul class="tab-list">
+                                    <li class="on"><a href="javascript:void(0);">바코드</a></li>
+                                    <li><a href="javascript:void(0);">QR코드</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="code-visual-wrap">
+                                <!-- 바코드 내용 -->
+                                <div class="sub-tab-content on">
+                                    <div class="barcode-img">
+                                        <img src="../../resource/images/PAYM/barcode-number.png" alt="바코드">
+                                    </div>
+                                </div>
+
+                                <div class="sub-tab-content">
+                                    <div class="qr-img">
+                                        <img src="../../resource/images/svg/PAYM/QR-Code.svg" alt="QR코드">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pay-guide-txt">화면에 보이는 바코드, QR을 스캔해 주세요.</p>
+                </div>
+            </div>
+
+            <div class="drawer-dim" onclick="toggleDrawer()"></div>
+
+            <div id="payDrawer" class="layout-slide type-drawer on">
+                <div class="popup-layer">
+                    <div class="popup-header">
+                        <div class="drawer-handle" onclick="toggleDrawer()"></div>
+                    </div>
+
+                    <div class="popup-container">
+                        <ul class="drawer-card-list">
+                            <li class="on"> 
+                                <div class="card-info">
+                                    <div class="thumb"><img src="../../resource/images/PAYM/PAYM_card_kookmin.png" alt=""></div>
+                                    <div class="txt">
+                                        <p class="name">국민 다모아 혜택카드</p>
+                                        <p class="amount">1,980,500원</p>
+                                    </div>
+                                </div>
+                                <span class="check-ico"></span>
+                            </li>
+                            <li>
+                                <div class="card-info">
+                                    <div class="thumb"><img src="../../resource/images/PAYM/PAYM_card_shinhan.png" alt=""></div>
+                                    <div class="txt"><p class="name">신한카드 Discount Plan</p><p class="amount">224,020원</p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-info">
+                                    <div class="thumb"><img src="../../resource/images/PAYM/PAYM_card_woori.png" alt=""></div>
+                                    <div class="txt"><p class="name">우리카드 트래블GO</p><p class="amount">35,400원</p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-info">
+                                    <div class="thumb"><img src="../../resource/images/PAYM/PAYM_card_kookmin_onoff.png" alt=""></div>
+                                    <div class="txt"><p class="name">국민 ON&OFF 카드</p><p class="amount">144,230원</p></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -4,7 +4,7 @@
 
 /* Z-Index 관리 */
 .header { z-index:100; }
-.layout-alert { z-index:1000; }
+.layout-alert { z-index:10000; }
 .layout-popup { z-index:1000; }
 .layout-slide { z-index:1000; }
 .layout-fullpop { z-index:1000; }
@@ -69,12 +69,14 @@
 .layout-slide .popup-footer { position:absolute; bottom:0; left:0; width:100%; z-index:10; padding:20px; background:linear-gradient(to top,#ffffff 0%,#ffffff 70%,rgba(255,255,255,0) 100%); }
 
 /* Alert Popup */
-.layout-alert { position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.5); z-index:var(--z-popup); display:flex; align-items:center; justify-content:center; padding:20px; box-sizing:border-box; }
+.layout-alert { position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.5); z-index:var(--z-popup); display:none; align-items:center; justify-content:center; padding:20px; box-sizing:border-box; }
 .layout-alert .popup-layer { width:100%; max-width:420px; background:#fff; border-radius:8px; overflow:hidden; text-align:center; display:flex; flex-direction:column; }
 .layout-alert .popup-container { padding:40px 20px 0 20px; }
 .layout-alert .popup-contents { font-size:16px; color:#222; line-height:1.5; margin-bottom:36px; }
 .layout-alert .popup-footer { padding:0 20px 20px 20px; border:0; background:transparent; }
-
+.layout-alert.on { 
+    display: flex; /* 보이기 */
+}
 /* 메인 팝업 */
 .layout-slide.type-event .popup-layer { width: 100%; max-width: none; background: #fff; }
 .layout-slide.type-event .popup-container { padding: 0 !important; background-color: #C7D8FA; width: 100%; border-radius: 20px 20px 0 0;}

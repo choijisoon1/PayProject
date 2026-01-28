@@ -98,7 +98,7 @@ label.toggle input:checked:active::after { transform:translateX(calc(var(--toggl
 .input-box.has-btn { position:relative; }
 
 /* 인풋 내부 버튼 위치 */
-.input-box .btn-form { position:absolute; right:18px; bottom:22px; z-index:10; margin:0; }
+.input-box .btn-form { position:absolute; right:18px; bottom:22px; margin:0; }
 
 /* Split Input (주민등록번호 - 좌측 정렬) */
 .input-box .input-split { display:flex; align-items:center; width:100%; }

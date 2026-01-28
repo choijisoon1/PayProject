@@ -70,7 +70,6 @@
         </div>
     </div>
     <div id="popLoginMethod" class="layout-slide">
-        
         <div class="popup-layer">
             <div class="popup-header">
                 <div class="popup-title">간편인증 등록</div>
@@ -80,7 +79,7 @@
             <div class="popup-container padding-20">
                 <ul class="auth-setting-list">
                     <li>
-                        <a href="./PAY-LOGN-002.html" class="item-row">
+                        <a href="javascript:void(0);" class="item-row" onclick="openLayer('popPasswordReg')">
                             <div class="left">
                                 <span class="icon-box password-fill"></span>
                                 <span class="name">간편 비밀번호</span>
@@ -91,7 +90,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./PAY-LOGN-003.html" class="item-row">
+                        <a href="javascript:void(0);" class="item-row" onclick="openLayer('popFingerprintReg')">
                             <div class="left">
                                 <span class="icon-box fingerprint-fill"></span>
                                 <span class="name">지문 인증</span>
@@ -102,7 +101,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./PAY-LOGN-004.html" class="item-row">
+                        <a href="javascript:void(0);" class="item-row" onclick="openLayer('popFaceidReg')">
                             <div class="left">
                                 <span class="icon-box faceid-fill"></span>
                                 <span class="name">Face 인증</span>
@@ -116,19 +115,129 @@
             </div>
         </div>
     </div>
-    <script>
-        //팝업 열기
-        function openLayer(id) {
-            $('#' + id).addClass('on'); 
-            $('body').css('overflow', 'hidden'); 
-        }
+    <div id="popPasswordReg" class="layout-fullpop">
+        <div class="popup-layer">
+            
+            <div class="popup-header">
+                <div class="header-inner">
+                    <div class="left"></div>
+                    <div class="title"></div> 
+                    
+                    <div class="right">
+                        <button type="button" class="se-btn close" onclick="closeLayer(this)">닫기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="popup-container keypad-mode">
+                <div class="section-jumbotron">
+                    <h2 class="se-title">간편 비밀번호 등록</h2>
+                    <!-- <h2 class="se-title">간편 비밀번호 확인</h2> -->
+                    <p class="text">
+                        로그인시 사용할 간편 비밀번호를 입력해 주세요
+                    </p>
+                    <!-- <p class="text">
+                        동일한 비밀번호를 한번 더 입력해 주세요.
+                    </p> -->
+                </div>
 
-        //팝업 닫기
-        function closeLayer(el) {
-            $(el).closest('.layout-slide').removeClass('on'); 
-            $('body').css('overflow', '');
-        }
-    </script>
+                <div class="pw-dots-area">
+                    <span class="pw-dot on"></span>
+                    <span class="pw-dot on"></span>
+                    <span class="pw-dot on"></span>
+                    <span class="pw-dot"></span>
+                    <span class="pw-dot"></span>
+                    <span class="pw-dot"></span>
+                </div>
+
+                <div class="secure-keypad">
+                    <div class="keypad-grid">
+                        <button type="button" class="keypad-btn">1</button>
+                        <button type="button" class="keypad-btn">2</button>
+                        <button type="button" class="keypad-btn">3</button>
+                        <button type="button" class="keypad-btn">4</button>
+                        <button type="button" class="keypad-btn">5</button>
+                        <button type="button" class="keypad-btn">6</button>
+                        <button type="button" class="keypad-btn">7</button>
+                        <button type="button" class="keypad-btn">8</button>
+                        <button type="button" class="keypad-btn">9</button>
+                        
+                        
+                        <button type="button" class="keypad-btn text-btn">재배열</button>
+                        
+                        <button type="button" class="keypad-btn">0</button>
+                        
+                        <button type="button" class="keypad-btn back"></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="popFingerprintReg" class="layout-fullpop">
+        <div class="popup-layer">
+            <div class="popup-header">
+                <div class="header-inner">
+                    <div class="left"></div>
+                    <div class="title"></div> 
+                    
+                    <div class="right">
+                        <button type="button" class="se-btn close" onclick="closeLayer(this)">닫기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="popup-container auth-register-mode">
+                <div class="section-jumbotron">
+                    <h2 class="se-title">지문 등록</h2>
+                    <p class="text">손가락 지문을 터치해 주세요.</p>
+                    <!-- <h2 class="se-title">지문 등록 확인</h2>
+                    <p class="text">다시 한번 손가락 지문을 터치해 주세요.</p> -->
+                </div>
+
+                <div class="result-motion">
+                    <div class="motion-bg fingerprint"></div>
+                </div>
+
+                <div class="auth-btn-wrap">
+                    <button type="button" class="btn-tertiary">다음에 등록하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popFaceidReg" class="layout-fullpop">
+        <div class="popup-layer">
+            <div class="popup-header">
+                <div class="header-inner">
+                    <div class="left"></div>
+                    <div class="title"></div> 
+                    
+                    <div class="right">
+                        <button type="button" class="se-btn close" onclick="closeLayer(this)">닫기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="popup-container auth-register-mode">
+                <div class="section-jumbotron">
+                    <h2 class="se-title">Face 등록</h2>
+                    <p class="text">화면을 바라봐 주세요.</p>
+                    <!-- <h2 class="se-title">Face 등록 확인</h2>
+                    <p class="text">다시 한번 화면을 바라봐 주세요.</p> -->
+                </div>
+
+                <div class="result-motion">
+                    <div class="motion-bg face"></div>
+                </div>
+
+                <div class="auth-btn-wrap">
+                    <button type="button" class="btn-tertiary">다음에 등록하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

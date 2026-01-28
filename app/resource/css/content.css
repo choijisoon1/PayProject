@@ -307,3 +307,73 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 .btn-link-arrow::after { content: ''; display: inline-block; width: 20px; height: 20px; margin-left: 4px; background: url("../../resource/images/svg/OBNK/ico_right_45.svg") no-repeat center / contain;}
 .bank-select-list li .comp {font-size: 14px; color: var(--success); font-weight: 500;}
 .bank-select-list li .fail {font-size: 14px; color: var(--error); font-weight: 500;}
+
+
+/* ========================================================================== PAYM 다크모드 및 기본 레이아웃 ========================================================================== */
+.type-pay-dark .popup-layer, .type-pay-dark .popup-header { background-color: #17171F !important; color: #fff; }
+.type-pay-dark .se-btn.close-white { background-image: url("../images/svg/PAYM/ico_headerX_PAYM.svg"); }
+.pay-top-area { text-align: center; margin-top: 20px; }
+.timer-label { color: var(--color-d); font-size: 16px; font-weight: 400; margin-bottom: 6px; }
+.timer-num { font-size: 36px; font-weight: 600; }
+
+/* ========================================================================== PAYM 알약형 탭 ========================================================================== */
+.type-pay-dark .tab-wrap { background: none !important; border: none !important; position: relative; top: 0; margin-top: 26px; display: flex; justify-content: center; z-index: 10; }
+.type-pay-dark .tab-list { display: inline-flex; background-color: transparent; border-radius: 100px; min-width: 222px; height: auto; gap: 0; border: 1px solid var(--color-45); padding: 0; }
+.type-pay-dark .tab-list li { flex: none; width: auto; height: auto; }
+.type-pay-dark .tab-list li a { display: flex; align-items: center; justify-content: center; min-width: 105px; padding: 10px 16px; border-radius: 1000px; color: #888 !important; font-size: 14px; font-weight: 600; line-height: 1; transition: all 0.3s; text-decoration: none; gap: 4px; }
+.type-pay-dark .tab-list li a::before { content: ''; display: block; width: 20px; height: 20px; background-repeat: no-repeat; background-position: center; background-size: contain; flex-shrink: 0; }
+.type-pay-dark .tab-list li a.ico-touch::before { background-image: url("../../resource/images/svg/PAYM/ico_touch_white.svg"); }
+.type-pay-dark .tab-list li a.ico-barcode::before { background-image: url("../../resource/images/svg/PAYM/ico_barcode_white.svg"); }
+.type-pay-dark .tab-list li.on a { background-color: #FF5460; color: #fff !important; }
+.type-pay-dark .tab-list li.on::after { display: none !important; }
+
+/* ========================================================================== PAYM 중앙 비주얼 및 가이드 ========================================================================== */
+.pay-visual-area { position: relative; height: 284px; display: flex; align-items: center; justify-content: center; background-image: url("../../resource/images/PAYM/PAYM_bg.png"); background-repeat: no-repeat; background-position: center; background-size: contain; }
+.main-card-img { position: absolute; top: 70px; width: 128px; z-index: 5; }
+.main-card-img img { width: 100%; border-radius: 10px; }
+.pay-guide-txt { text-align: center; color: #ebebeb; font-size: 16px; font-weight: 400; margin-top: 40px; }
+.type-pay-dark .popup-container { padding-bottom: 160px !important; }
+
+/* ========================================================================== PAYM 하단 드로워 ========================================================================== */
+.type-pay-dark .popup-layer { position: relative; overflow: hidden; }
+.layout-slide.type-drawer { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; z-index: 100; visibility: visible; opacity: 1; background: none; pointer-events: none; }
+.layout-slide.type-drawer .popup-layer { position: absolute; bottom: 0; left: 0; width: 100%; height: 400px; background: #fff; border-radius: 14px 14px 0 0; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); transform: translateY(270px); z-index: 100; color: #222; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); pointer-events: auto; }
+.layout-slide.type-drawer.expanded .popup-layer { transform: translateY(0); }
+
+/* 드로워 딤드 */
+.drawer-dim { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 90; visibility: hidden; opacity: 0; transition: all 0.3s; border-radius: 20px 20px 0 0; pointer-events: auto; }
+.drawer-dim.on { visibility: visible !important; opacity: 1 !important; }
+
+/* 핸들 및 리스트 */
+.layout-slide.type-drawer .popup-header { height: 32px; background: #fff !important; padding: 0; border: 0; flex: none; }
+.drawer-handle { width: 100%; height: 100%; position: relative; cursor: pointer; }
+.drawer-handle::before { content:''; position:absolute; top:10px; left:50%; transform:translateX(-50%); width:60px; height:5px; background:var(--color-d) !important; border-radius:100px; display: block; }
+.layout-slide.type-drawer .popup-container { padding: 10px 20px 30px 20px; height: calc(100% - 32px); overflow-y: auto; -webkit-overflow-scrolling: touch; background: #fff; flex: 1; }
+.drawer-card-list li { display: flex; align-items: center; justify-content: space-between; padding-bottom: 30px; text-align: left; }
+.card-info { display: flex; align-items: center; gap: 14px; }
+.card-info .thumb { width: 40px; height: 60px; flex-shrink: 0; }
+.card-info .thumb img { width: 100%; border-radius: 4px; }
+.card-info .name { color: var(--color-2); font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+.card-info .amount { color: var(--color-75); font-size: 16px; }
+.check-ico { display: inline-block; width: 28px; height: 28px; background-color: #f2f2f2; border-radius: 50%; background-image: url("../images/svg/PAYM/PAYM_check.svg"); background-repeat: no-repeat; background-position: center; background-size: 12px auto; }
+
+/* 바코드 카드 박스 */
+.code-card-wrap {margin: 25px 0 0 0; }
+.code-card { background: #fff; border-radius: 10px; padding: 20px 10px;}
+.sub-tab-content { display: none; }
+.sub-tab-content.on { display: block; }
+
+/* ========================================================================== PAYM 서브 탭 ========================================================================== */
+.type-segment.tab-wrap { background: #E4E4E4 !important; border-radius: 4px; padding: 4px; margin-top: 0; margin-bottom: 24px; position: static; }
+.type-segment .tab-list { display: flex; width: 100%; height: 36px; gap: 0; background: none; border: 0; padding: 0; }
+.type-segment .tab-list li { flex: 1; }
+.type-segment .tab-list li a { width: 100%; height: 100%; border-radius: 6px; padding: 8px; font-size: 14px; color: var(--color-75) !important; font-weight: 500; background: none;}
+.type-segment .tab-list li.on a { background: #fff; color: var(--color-2) !important; font-size: 14px !important; font-weight: 700 !important; padding: 8px; border-radius: 6px !important;}
+.type-segment .tab-list li.on::after { display: none !important; } /* 빨간 선 제거 */
+.type-segment .tab-list li a::before {display: none !important;}
+
+/* 코드 이미지 및 텍스트 정렬 */
+.code-visual-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.barcode-img img { width: 100%; max-width: 304px; height: auto; }
+
+.qr-img img { width: 123px; height: 123px; }
