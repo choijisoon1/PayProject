@@ -49,8 +49,8 @@
 
 /* ========================================================================== 탭메뉴 ========================================================================== */
 .tab-wrap { background: #fff; border-bottom: 1px solid var(--color-e); position: sticky; top: 50px; z-index: 90; }
-.tab-list { display: flex; height: 50px; padding: 0 20px; justify-content: flex-start; gap: 24px; }
-.tab-list li { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; }
+.tab-list { display: flex; height: 50px; padding: 0 20px; justify-content: flex-start; gap: 12px; }
+.tab-list li { position: relative; padding: 8px; height: 100%; display: flex; align-items: center; justify-content: center; }
 .tab-list li a { font-size: 16px; color: var(--color-45); font-weight: 500; text-decoration: none; }
 .tab-list li.on a { color: var(--color-2); font-weight: 700; }
 .tab-list li.on::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background-color: #000; }
@@ -335,3 +335,5 @@
 /* 자세히 보기 버튼 */
 .btn-detail { display: inline-flex; align-items: center; justify-content: center; min-width: 88px; min-height: 41px; padding: 10px 12px; background: #EAEBEF; border-radius: 4px; color: var(--color-45); font-size: 14px; font-weight: 600; text-decoration: none; line-height: 1; }
 .btn-detail:active { transform: none !important; opacity: 1 !important; }
+
+

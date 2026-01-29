@@ -44,19 +44,19 @@
                 <div class="section">
                     <ul class="login-method-list">
                         <li>
-                            <a href="#" class="btn-method">
+                            <a href="javascript:void(0);" class="btn-method" onclick="openLayer('popPasswordReg')">
                                 <span class="icon-box password"></span>
                                 <span class="name">간편 비밀번호</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="btn-method">
+                            <a href="javascript:void(0);" class="btn-method" onclick="openLayer('popFingerprintReg')">
                                 <span class="icon-box fingerprint"></span>
                                 <span class="name">지문 인증</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="btn-method">
+                            <a href="javascript:void(0);" class="btn-method" onclick="openLayer('popFaceidReg')">
                                 <span class="icon-box faceid"></span>
                                 <span class="name">Face 인증</span>
                             </a>
@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="auth-btn-wrap">
-                    <button type="button" class="btn-tertiary">다음에 등록하기</button>
+                    <button type="button" class="btn-tertiary" onclick="closeLayer(this)">다음에 등록하기</button>
                 </div>
             </div>
         </div>
@@ -233,7 +233,7 @@
                 </div>
 
                 <div class="auth-btn-wrap">
-                    <button type="button" class="btn-tertiary">다음에 등록하기</button>
+                    <button type="button" class="btn-tertiary" onclick="closeLayer(this)">다음에 등록하기</button>
                 </div>
             </div>
         </div>

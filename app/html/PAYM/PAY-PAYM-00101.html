@@ -21,7 +21,7 @@
             <div class="popup-header">
                 <div class="header-inner" style="padding: 0 18px;">
                     <div class="right">
-                        <button type="button" class="se-btn close-white" onclick="closeLayer(this)"></button>
+                        <a href="../MAIN/PAY-MAIN-001.html" class="se-btn close-white"></a>
                     </div>
                 </div>
             </div>
@@ -91,33 +91,61 @@
 
                     <div class="popup-container">
                         <ul class="drawer-card-list">
-                            <li class="on"> 
-                                <div class="card-info">
-                                    <div class="thumb"><img src="../../resource/images/PAYM/PAYM_card_kookmin.png" alt=""></div>
-                                    <div class="txt">
-                                        <p class="name">국민 다모아 혜택카드</p>
-                                        <p class="amount">1,980,500원</p>
-                                    </div>
-                                </div>
-                                <span class="check-ico"></span>
-                            </li>
                             <li>
-                                <div class="card-info">
-                                    <div class="thumb"><img src="../../resource/images/PAYM/PAYM_card_shinhan.png" alt=""></div>
-                                    <div class="txt"><p class="name">신한카드 Discount Plan</p><p class="amount">224,020원</p></div>
-                                </div>
+                                <label class="card-radio-item">
+                                    <input type="radio" name="pay_card" checked>
+                                    
+                                    <span class="inner-box">
+                                        <span class="card-info">
+                                            <span class="thumb"><img src="../../resource/images/PAYM/PAYM_card_kookmin.png" alt=""></span>
+                                            <span class="txt">
+                                                <span class="name">국민 다모아 혜택카드</span>
+                                                <span class="amount">1,980,500원</span>
+                                            </span>
+                                        </span>
+
+                                        <span class="check-ico"></span>
+                                    </span>
+                                </label>
                             </li>
+
                             <li>
-                                <div class="card-info">
-                                    <div class="thumb"><img src="../../resource/images/PAYM/PAYM_card_woori.png" alt=""></div>
-                                    <div class="txt"><p class="name">우리카드 트래블GO</p><p class="amount">35,400원</p></div>
-                                </div>
+                                <label class="card-radio-item">
+                                    <input type="radio" name="pay_card">
+                                    <span class="inner-box">
+                                        <span class="card-info">
+                                            <span class="thumb"><img src="../../resource/images/PAYM/PAYM_card_shinhan.png" alt=""></span>
+                                            <span class="txt"><span class="name">신한카드 Discount Plan</span><span class="amount">224,020원</span></span>
+                                        </span>
+                                        <span class="check-ico"></span>
+                                    </span>
+                                </label>
                             </li>
+
                             <li>
-                                <div class="card-info">
-                                    <div class="thumb"><img src="../../resource/images/PAYM/PAYM_card_kookmin_onoff.png" alt=""></div>
-                                    <div class="txt"><p class="name">국민 ON&OFF 카드</p><p class="amount">144,230원</p></div>
-                                </div>
+                                <label class="card-radio-item">
+                                    <input type="radio" name="pay_card">
+                                    <span class="inner-box">
+                                        <span class="card-info">
+                                            <span class="thumb"><img src="../../resource/images/PAYM/PAYM_card_woori.png" alt=""></span>
+                                            <span class="txt"><span class="name">우리카드 트래블GO</span><span class="amount">35,400원</span></span>
+                                        </span>
+                                        <span class="check-ico"></span>
+                                    </span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label class="card-radio-item">
+                                    <input type="radio" name="pay_card">
+                                    <span class="inner-box">
+                                        <span class="card-info">
+                                            <span class="thumb"><img src="../../resource/images/PAYM/PAYM_card_kookmin_onoff.png" alt=""></span>
+                                            <span class="txt"><span class="name">국민카드 On&Off</span><span class="amount">144,232원</span></span>
+                                        </span>
+                                        <span class="check-ico"></span>
+                                    </span>
+                                </label>
                             </li>
                         </ul>
                     </div>

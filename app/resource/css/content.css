@@ -58,7 +58,7 @@
 
 /* PAY-AUTH-001 (본인인증 안내) */
 .PAY-AUTH-001 .contents-inner, .PAY-OBNK-REG-003 .contents-inner { display:flex; flex-direction:column; justify-content:space-between; min-height:calc(100vh - 50px - 100px); padding-bottom:20px; }
-.PAY-AUTH-001 .section-jumbotron .se-title { font-size:24px; }
+.PAY-AUTH-001 .section-jumbotron .se-title, .PAY-OBNK-REG-006 .section-jumbotron .se-title, .PAY-OBNK-REG-00601 .section-jumbotron .se-title { font-size:24px; }
 .PAY-AUTH-001 .section-jumbotron .text { margin-top:10px; font-size:14px; color:#666; }
 
 /* 하단 유의사항 리스트 */
@@ -66,8 +66,6 @@
 .notice-list li { position:relative; padding-left:10px; font-size:14px; color:var(--color-75); margin-top:12px; line-height: 1.5;}
 .notice-list li:first-child { margin-top:0; }
 .notice-list li::before { content:"•"; position:absolute; left:0; top:0; font-size:10px; }
-
-
 
 
 /* PAY-AUTH-002,3,4 페이지 전용 스타일 */
@@ -93,12 +91,12 @@
 ,.PAY-OBNK-REG-002 .section-jumbotron .se-title,
 .PAY-OBNK-REG-003 .section-jumbotron .se-title,
 .PAY-OBNK-REG-004 .section-jumbotron .se-title { font-size:22px; font-weight:700; margin-bottom:0; }
-
+.PAY-PAYM-002 .section-jumbotron .se-title, .PAY-PAYM-003 .section-jumbotron .se-title {margin-bottom: 0;}
 /* 페이지 번호 스타일 */
 .PAY-AUTH-002 .section-jumbotron .page-num,
 .PAY-AUTH-003 .section-jumbotron .page-num,
 .PAY-AUTH-004 .section-jumbotron .page-num { font-size:16px; color:#999; }
-
+.PAY-OBNK-REG-002 .section-jumbotron .page-num {font-size: 16px;}
 .PAY-AUTH-002 .section-jumbotron .page-num b,
 .PAY-AUTH-003 .section-jumbotron .page-num b,
 .PAY-AUTH-004 .section-jumbotron .page-num b { color:#222; font-weight:600; }
@@ -106,6 +104,7 @@
 .PAY-AUTH-003 .section { padding:0; display:flex; flex-direction:column; gap:26px; padding-bottom: 140px;}
 .input-box .auth-timer { position: absolute; right: 16px; font-size: 14px; color: var(--primary); font-weight: 400;} /* 인증번호 인풋박스 옆 타이머 */
 
+.PAY-OBNK-REG-00601 .section-jumbotron {margin-bottom: 0;}
 /* 프로그레스 바 */
 .progress-bar-wrap { position:fixed; top:50px; left:0; width:100%; height:2px; background-color:#E5E5EA; z-index:99; }
 .progress-bar-wrap .bar { display:block; height:100%; background-color:var(--primary); width:0%; transition:width 0.3s; }
@@ -175,8 +174,7 @@
 .PAY-AUTH-005 .result-motion .motion-bg { display:block; min-width:259px; min-height:149px; background-image:url('../../resource/images/AUTH/comp_img.gif'); background-repeat:no-repeat; background-position:center; background-size:contain; }
 
 
-
-/* ============ 로그인 (간편인증) ===================== */
+/* ========================================================================== 로그인 (간편인증) ========================================================================== */
 
 /* PAY-LOGN-001 간편인증 로그인 선택 */
 .login-method-list { border-top: 1px solid var(--color-e); }
@@ -218,7 +216,7 @@
 .popup-container.auth-register-mode .motion-bg.face { background-image: url('../../resource/images/LOGN/Face_img.gif'); }
 .popup-container.auth-register-mode .auth-btn-wrap { margin-top: 42px; }
 
-/* OBNK */
+/* ========================================================================== OBNK-001 ========================================================================== */
 /* OBNK-001 */
 .section.PAY-OBNK-REG-001 {padding-top: 26px;}
 /* 서브페이지 전용 소제목 */
@@ -235,28 +233,27 @@
 .btn-skip { font-size: 14px; color: var(--color-75); text-decoration: underline; text-underline-offset: 4px; transition: color 0.2s; }
 .btn-skip:active { color: var(--color-2); }
 
-/* OBNK-002 */
+/* ========================================================================== OBNK-002 ========================================================================== */
 .terms-pack + .terms-pack {margin-top: 42px;}
 .PAY-OBNK-REG-002 label.check{align-items: start;}
 
 .notice-pack { background-color: #f8fafb; border-radius: 8px; margin-top: 40px; overflow: hidden; }
 .notice-head { padding: 18px 14px; display: flex; align-items: center; position: relative; }
 .notice-head .ico-info { width: 24px; height: 24px; background: url('../../resource/images/svg/OBNK/ico_obnk_notice.svg') no-repeat center / contain; margin-right: 8px; }
-.notice-head .tit { font-size: 16px; color: var(--color-45); }
+.notice-head .tit { font-size: 16px; color: var(--color-45);font-weight: 500;}
 .notice-head .btn-fold { margin-left: auto; width: 24px; height: 24px; background: transparent var(--ico-select) no-repeat center / 20px; border: 0; padding: 0; cursor: pointer; /* transition: transform 0.3s;  */}
 .notice-pack.on .btn-fold { transform: rotate(180deg); }
 
-.accordion-notice-body { display: none; padding: 0 14px 18px 14px; }
+.accordion-notice-body { display: none; padding: 0 20px 18px 20px; }
 .notice-pack.on .accordion-notice-body { display: block; }
 .accordion-notice-list li { position: relative; padding-left: 10px; font-size: 14px; color: var(--color-75); margin-top: 14px; text-align: left; }
 .accordion-notice-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--color-75); }
 .accordion-notice-list li:first-child { margin-top: 0; }
 
-/* OBNK-00401 */
-
+/* ========================================================================== OBNK-00401 ========================================================================== */
 /* 팝업 전용 탭 고정 스타일 */
-.PAY-OBNK-REG-00401 .tab-wrap {top: -38px;}
-.PAY-OBNK-REG-00401 .tab-list {padding: 0;}
+.PAY-OBNK-REG-00401 .tab-wrap {top: -38px; margin-right: -20px; margin-left: -20px;}
+
 
 /* 검색바 영역 */
 .search-bar-area {padding-top: 12px; margin-bottom: 32px; }
@@ -300,9 +297,7 @@
 
 .bank-info .name { font-size: 16px; color: var(--color-45); font-weight: 500; }
 
-
-
-/* OBNK-006 */
+/* ========================================================================== OBNK-006 ========================================================================== */
 .ico-complete { width: 58px; height: 58px; background: url("../../resource/images/OBNK/check_img.gif") no-repeat center / contain; margin-bottom: 14px;}
 button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 16px; color: var(--color-45); background: none; border: 0; padding: 0; cursor: pointer; font-weight: 500; padding-top: 17px;}
 .btn-link-arrow::after { content: ''; display: inline-block; width: 20px; height: 20px; margin-left: 4px; background: url("../../resource/images/svg/OBNK/ico_right_45.svg") no-repeat center / contain;}
@@ -313,19 +308,19 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 /* ========================================================================== PAYM 다크모드 및 기본 레이아웃 ========================================================================== */
 .type-pay-dark .popup-layer, .type-pay-dark .popup-header { background-color: #17171F !important; color: #fff; }
 .type-pay-dark .se-btn.close-white { background-image: url("../images/svg/PAYM/ico_headerX_PAYM.svg"); }
-.pay-top-area { text-align: center; margin-top: 20px; }
+.pay-top-area { text-align: center; /* margin-top: 20px; */ }
 .timer-label { color: var(--color-d); font-size: 16px; font-weight: 400; margin-bottom: 6px; }
 .timer-num { font-size: 36px; font-weight: 600; }
 
 /* ========================================================================== PAYM 알약형 탭 ========================================================================== */
 .type-pay-dark .tab-wrap { background: none !important; border: none !important; position: relative; top: 0; margin-top: 26px; display: flex; justify-content: center; z-index: 10; }
 .type-pay-dark .tab-list { display: inline-flex; background-color: transparent; border-radius: 100px; min-width: 222px; height: auto; gap: 0; border: 1px solid var(--color-45); padding: 0; }
-.type-pay-dark .tab-list li { flex: none; width: auto; height: auto; }
-.type-pay-dark .tab-list li a { display: flex; align-items: center; justify-content: center; min-width: 105px; padding: 10px 16px; border-radius: 1000px; color: #888 !important; font-size: 14px; font-weight: 600; line-height: 1; transition: all 0.3s; text-decoration: none; gap: 4px; }
+.type-pay-dark .tab-list li { flex: none; width: auto; height: auto; padding: 0;}
+.type-pay-dark .tab-list li a { display: flex; align-items: center; justify-content: center; min-width: 105px; padding: 10px 16px; border-radius: 1000px; color: #f5f5f5 !important; font-size: 14px; transition: all 0.3s; text-decoration: none; gap: 4px; }
 .type-pay-dark .tab-list li a::before { content: ''; display: block; width: 20px; height: 20px; background-repeat: no-repeat; background-position: center; background-size: contain; flex-shrink: 0; }
 .type-pay-dark .tab-list li a.ico-touch::before { background-image: url("../../resource/images/svg/PAYM/ico_touch_white.svg"); }
 .type-pay-dark .tab-list li a.ico-barcode::before { background-image: url("../../resource/images/svg/PAYM/ico_barcode_white.svg"); }
-.type-pay-dark .tab-list li.on a { background-color: #FF5460; color: #fff !important; }
+.type-pay-dark .tab-list li.on a { background-color: #FF5460; color: #fff !important; font-weight: 600; }
 .type-pay-dark .tab-list li.on::after { display: none !important; }
 
 /* ========================================================================== PAYM 중앙 비주얼 및 가이드 ========================================================================== */
@@ -337,10 +332,11 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 
 /* ========================================================================== PAYM 하단 드로워 ========================================================================== */
 .type-pay-dark .popup-layer { position: relative; overflow: hidden; }
-.layout-slide.type-drawer { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; z-index: 100; visibility: visible; opacity: 1; background: none; pointer-events: none; }
-.layout-slide.type-drawer .popup-layer { position: absolute; bottom: 0; left: 0; width: 100%; height: 400px; background: #fff; border-radius: 14px 14px 0 0; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); transform: translateY(270px); z-index: 100; color: #222; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); pointer-events: auto; }
+.layout-slide.type-drawer { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; z-index: 100; visibility: visible; opacity: 1; background: none !important; pointer-events: none; }
+.layout-slide.type-drawer .popup-layer { position: absolute; bottom: 0; left: 0; width: 100%; height: 400px; background: #fff; border-radius: 14px 14px 0 0; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); transform: translateY(270px); z-index: 100; color: #222; /* box-shadow: 0 -5px 20px rgba(0,0,0,0.2); */ pointer-events: auto; }
 .layout-slide.type-drawer.expanded .popup-layer { transform: translateY(0); }
 
+.layout-slide.type-drawer .popup-container {margin-top: -1px; padding: 12px 20px 0px 20px !important; height: calc(100% - 32px); overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch; background: #fff; /* flex: 1;  */}
 /* 드로워 딤드 */
 .drawer-dim { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 90; visibility: hidden; opacity: 0; transition: all 0.3s; border-radius: 20px 20px 0 0; pointer-events: auto; }
 .drawer-dim.on { visibility: visible !important; opacity: 1 !important; }
@@ -349,14 +345,33 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 .layout-slide.type-drawer .popup-header { height: 32px; background: #fff !important; padding: 0; border: 0; flex: none; }
 .drawer-handle { width: 100%; height: 100%; position: relative; cursor: pointer; }
 .drawer-handle::before { content:''; position:absolute; top:10px; left:50%; transform:translateX(-50%); width:60px; height:5px; background:var(--color-d) !important; border-radius:100px; display: block; }
-.layout-slide.type-drawer .popup-container { padding: 10px 20px 30px 20px; height: calc(100% - 32px); overflow-y: auto; -webkit-overflow-scrolling: touch; background: #fff; flex: 1; }
-.drawer-card-list li { display: flex; align-items: center; justify-content: space-between; padding-bottom: 30px; text-align: left; }
-.card-info { display: flex; align-items: center; gap: 14px; }
-.card-info .thumb { width: 40px; height: 60px; flex-shrink: 0; }
-.card-info .thumb img { width: 100%; border-radius: 4px; }
-.card-info .name { color: var(--color-2); font-weight: 600; font-size: 16px; margin-bottom: 4px; }
-.card-info .amount { color: var(--color-75); font-size: 16px; }
-.check-ico { display: inline-block; width: 28px; height: 28px; background-color: #f2f2f2; border-radius: 50%; background-image: url("../images/svg/PAYM/PAYM_check.svg"); background-repeat: no-repeat; background-position: center; background-size: 12px auto; }
+
+/* 리스트 정렬 및 순서 제어 (Flexbox) */
+.drawer-card-list {display: flex; flex-direction: column; width: 100%;}
+.drawer-card-list li {order: 1; width: 100%;}
+.drawer-card-list li:has(input[type="radio"]:checked) {order: -1; }
+
+/* 라디오 버튼 기능형 디자인 */
+.card-radio-item {display: block; width: 100%; cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0.05);}
+.card-radio-item input[type="radio"] {position: absolute;width: 1px; height: 1px;padding: 0; margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;}
+
+/**/
+.card-radio-item .inner-box {display: flex; align-items: center; justify-content: space-between; padding-bottom: 30px; min-height: 60px;}
+.card-info { display: flex; align-items: center; gap: 14px;}
+
+/* span 태그들 강제 블록화 */
+.card-info .thumb { display: block; width: 40px; height: 60px; flex-shrink: 0; }
+.card-info .thumb img { width: 100%; height: 100%; border-radius: 4px; display: block; object-fit: cover; }
+
+.card-info .txt { display: block; text-align: left; }
+.card-info .name { display: block; color: var(--color-2, #222); font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+.card-info .amount { display: block; color: var(--color-75, #757575); font-size: 16px; }
+
+/* 체크 아이콘 */
+.check-ico { display: none; width: 28px; height: 28px; background-color: #f2f2f2; border-radius: 50%; background-image: url("../images/svg/PAYM/PAYM_check.svg"); background-repeat: no-repeat; background-position: center; background-size: 12px auto; flex-shrink: 0;}
+
+/* 체크되었을 때만 아이콘 보이기 */
+.card-radio-item input[type="radio"]:checked ~ .inner-box .check-ico {display: inline-block;}
 
 /* 바코드 카드 박스 */
 .code-card-wrap {margin: 25px 0 0 0; }
@@ -365,7 +380,7 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 .sub-tab-content.on { display: block; }
 
 /* ========================================================================== PAYM 서브 탭 ========================================================================== */
-.type-segment.tab-wrap { background: #E4E4E4 !important; border-radius: 4px; padding: 4px; margin-top: 0; margin-bottom: 24px; position: static; }
+.type-segment.tab-wrap { background: #E4E4E4 !important; border-radius: 8px; padding: 4px; margin-top: 0; margin-bottom: 24px; position: static; }
 .type-segment .tab-list { display: flex; width: 100%; height: 36px; gap: 0; background: none; border: 0; padding: 0; }
 .type-segment .tab-list li { flex: 1; }
 .type-segment .tab-list li a { width: 100%; height: 100%; border-radius: 6px; padding: 8px; font-size: 14px; color: var(--color-75) !important; font-weight: 500; background: none;}
@@ -377,10 +392,10 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 .code-visual-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .barcode-img img { width: 100%; max-width: 304px; height: auto; }
 
-.qr-img img { width: 123px; height: 123px; }
+.qr-img img { width: 120px; height: 120px; }
 
 
-/* PAYM-00103 */
+/* ========================================================================== PAYM-00103 ========================================================================== */
 
 /* 스캔 가이드 */
 .type-pay-scan .scan-mode { display: flex; align-items: flex-start; justify-content: center;}
@@ -398,15 +413,16 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 .keypad-auth-top { text-align: center; margin-bottom: 50px;}
 .keypad-auth-top .txt { font-size: 16px; color: #222; margin-bottom: 20px; font-weight: 500; }
 
-/* paym-002 */
+/* ========================================================================== PAYM-002 ========================================================================== */
 /* 결제 상세 리스트 */
-.pay-detail-list {margin-bottom: 24px; }
+.pay-detail-list {margin-bottom: 28px; border-bottom: 1px solid var(--color-e);}
+.PAY-PAYM-002 .pay-detail-list {border-bottom: none;}
 .pay-detail-list li { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .pay-detail-list li:last-child {margin-bottom: 28px;}
 
 .pay-detail-list .label { font-size: 14px; color: var(--color-9); font-weight: 500; }
-.pay-detail-list .val { font-size: 16px; color: var(--color-45); font-weight: 500; }
-.pay-detail-list .val small { font-size: 12px; color: var(--color-9); margin-left: 5px; }
+.pay-detail-list .val { font-size: 16px; color: var(--color-45); font-weight: 400; }
+.pay-detail-list .val small { font-size: 12px; color: var(--color-9); font-weight: 400; margin-left: 5px; }
 
 /* 총 결제 금액 상자 */
 .pay-total-box { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; padding-bottom: 48px; border-top: 1px solid var(--color-2);}
@@ -426,7 +442,8 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 /* 라디오 버튼 간격 보정 */
 label.radio + label.radio { margin-left: 10px; }
 
-/* PAY-PAYM-003 */
+/* ========================================================================== PAYM-003 ========================================================================== */
 .PAY-PAYM-003 .section-jumbotron.auth-complete {padding-bottom: 26px; border-bottom: 1px solid var(--color-2);}
-.PAY-PAYM-003 .val.success {color: var(--success);}
-.PAY-PAYM-003 .contents-inner { display: flex; flex-direction: column; min-height: calc(100vh - 130px);}
+.PAY-PAYM-003 .val.success {color: var(--success); font-weight: 600;}
+.PAY-PAYM-003 .contents-inner { display: flex; flex-direction: column; min-height: calc(100vh - 110px);}
+
