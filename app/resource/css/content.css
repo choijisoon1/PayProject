@@ -75,8 +75,8 @@
 .PAY-OBNK-REG-002 .section-jumbotron,
 .PAY-OBNK-REG-003 .section-jumbotron,
 .PAY-OBNK-REG-004 .section-jumbotron,
-.PAY-PAYM-002 .section-jumbotron { padding:0; text-align:left; border-bottom:1px solid var(--color-e); padding-bottom:26px; margin-bottom:32px; }
-
+.PAY-PAYM-002 .section-jumbotron{ padding:0; text-align:left; border-bottom:1px solid var(--color-e); padding-bottom:26px; margin-bottom:32px; }
+.PAY-LOGN-001 .section-jumbotron {margin-bottom: 32px;}
 .PAY-AUTH-002 .section-jumbotron .tit-row,
 .PAY-AUTH-003 .section-jumbotron .tit-row,
 .PAY-AUTH-004 .section-jumbotron .tit-row,
@@ -259,13 +259,13 @@
 .search-bar-area {padding-top: 12px; margin-bottom: 32px; }
 
 /* 검색 인풋 박스 */
-.input-box.search { background-color: #f5f7f9; border: 0; height: 48px; border-radius: 8px; padding-left: 44px; position: relative; display: flex; align-items: center; }
+.input-box.search { background-color: #f5f7f9; border: 0; height: 52px; border-radius: 8px; padding-left: 44px; position: relative; display: flex; align-items: center; }
 .input-box.search input { background: transparent; font-size: 18px; height: 100%; }
 .input-box.search::before { content: ''; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; background: url("../../resource/images/svg/OBNK/search-line-20.svg") no-repeat center / contain; pointer-events: none; }
 
 /* 리스트 헤더 (은행 / 전체선택) */
 .list-header { display: flex; justify-content: space-between; align-items: center; padding: 32px 0 32px 0; }
-.list-header .tit { font-size: 20px; font-weight: 700; color: var(--color-2); }
+.list-header .tit { font-size: 20px; font-weight: 500; color: var(--color-2); }
 .check-all-label { cursor: pointer; display: flex; align-items: center; }
 .check-all-label input { display: none; }
 .check-all-label span { font-size: 14px; color: var(--color-75); }
@@ -408,10 +408,11 @@ button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 
 .scan-txt { color: #ebebeb; font-size: 16px; text-align: center; font-weight: 400; }
 
 /* 이 팝업에서만 레이어 높이 올라가도록 세팅*/
-.type-pay-scan .type-drawer .popup-layer { height: 520px !important; transform: translateY(340px); }
+.type-pay-scan .type-drawer .popup-layer { height: 540px !important; transform: translateY(330px); }
 /* 키패드 상단 텍스트 정렬 */
 .keypad-auth-top { text-align: center; margin-bottom: 50px;}
 .keypad-auth-top .txt { font-size: 16px; color: #222; margin-bottom: 20px; font-weight: 500; }
+.layout-slide.type-drawer .popup-layer .secure-keypad {padding: 0;}
 
 /* ========================================================================== PAYM-002 ========================================================================== */
 /* 결제 상세 리스트 */
