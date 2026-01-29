@@ -234,7 +234,7 @@
 .btn-skip:active { color: var(--color-2); }
 
 /* ========================================================================== OBNK-002 ========================================================================== */
-.terms-pack + .terms-pack {margin-top: 42px;}
+.terms-pack + .terms-pack {margin-top: 28px;}
 .PAY-OBNK-REG-002 label.check{align-items: start;}
 
 .notice-pack { background-color: #f8fafb; border-radius: 8px; margin-top: 40px; overflow: hidden; }
