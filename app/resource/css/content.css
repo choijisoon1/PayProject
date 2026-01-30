@@ -271,7 +271,7 @@
 .check-all-label span { font-size: 14px; color: var(--color-75); }
 
 /* 은행 리스트 항목 */
-.bank-select-list li { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 0; }
+.bank-select-list li { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 0; cursor: pointer;}
 .bank-select-list li:last-child{ padding-bottom: 0;}
 .bank-info { display: flex; align-items: center; gap: 14px; }
 .bank-info::before { content: ''; width: 28px; height: 28px; border-radius: 50%; background-repeat: no-repeat; background-position: center; background-size: 28px; flex-shrink: 0; }

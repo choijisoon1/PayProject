@@ -283,10 +283,11 @@ var accord = (function() {
     }
 })();
 
-/* 체크박스 전체동의/전체선택 객체  */
+/* 체크박스 통합 */
 var chkAll = (function() {
     return {
         init: function() {
+            /* 전체동의/전체선택 클릭 시 */
             $(document).on('change', '.terms-head input[type="checkbox"], .all-check', function() {
                 var isChecked = $(this).prop('checked');
                 var $parent = $(this).closest('.terms-pack, .tab-content');
@@ -294,9 +295,9 @@ var chkAll = (function() {
                 chkAll.checkBtn(); 
             });
 
+            /* 개별 체크박스 클릭 시  */
             $(document).on('change', '.terms-body input[type="checkbox"], .unit-check, #payAgree', function() {
                 var $parent = $(this).closest('.terms-pack, .tab-content');
-
                 if($parent.length > 0) {
                     var $units = $parent.find('.terms-body input[type="checkbox"], .unit-check');
                     var total = $units.length;
@@ -304,8 +305,17 @@ var chkAll = (function() {
                     var $master = $parent.find('.terms-head input[type="checkbox"], .all-check');
                     $master.prop('checked', total === checked);
                 }
-
                 chkAll.checkBtn(); 
+            });
+
+            /* bank-select-list li 클릭 시 체크박스 토글  */
+            $(document).on('click', '.bank-select-list li', function(e) {
+                if ($(e.target).closest('label').length > 0) return;
+
+                var $chk = $(this).find('.unit-check');
+                var isNowChecked = $chk.prop('checked');
+                
+                $chk.prop('checked', !isNowChecked).trigger('change');
             });
         },
         
@@ -321,7 +331,6 @@ var chkAll = (function() {
             else if ($('.bank-select-list').length > 0) {
                 isFinalValid = ($('.unit-check:checked').length > 0);
             }
-            
             else if ($('.PAY-PAYM-002').length > 0) {
                 isFinalValid = $('#payAgree').is(':checked');
             }
