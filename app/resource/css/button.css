@@ -23,7 +23,6 @@ button:active, a[class*="btn-"]:active { transform:scale(0.98); opacity:0.9; }
 /* Disabled (비활성) */
 button:disabled, a[class*="btn-"].disabled, button.disabled { background-color:var(--btn-disabled-bg) !important; color:var(--btn-disabled-txt) !important; border-color:var(--btn-disabled-bg) !important; cursor:not-allowed; pointer-events:none; }
 
-
 /* Sticky / CTA */
 .button-group { display:flex; gap:10px; width:100%; }
 .btn-content.cta .button-group { display:flex; gap:10px; width:100%; }
@@ -40,7 +39,6 @@ button:disabled, a[class*="btn-"].disabled, button.disabled { background-color:v
 .button-group.ratio-3-7 > *:first-child { flex:3; }
 .button-group.ratio-3-7 > *:last-child { flex:7; }
 
-
 /* Popup & Alert Buttons */
 .pop-btn-area, .alert-btn-area { padding:20px; background:linear-gradient(0deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%); }
 .btn-pop-primary, .btn-pop-secondary, .btn-alert-primary, .btn-alert-secondary { font-size:18px; }
@@ -51,16 +49,49 @@ button:disabled, a[class*="btn-"].disabled, button.disabled { background-color:v
 .btn-pop-primary, .btn-alert-primary { background-color:var(--btn-popup-bg); color:var(--white); border-color:var(--btn-popup-bg); }
 .btn-pop-secondary, .btn-alert-secondary { background-color:var(--white); border:1px solid var(--color-d); color:var(--btn-dark-txt); }
 
-
 /* Form Button */
 .btn-form { width:auto; padding:6px 8px; font-size:12px; font-weight:500; background-color:#EAEBEF; color:var(--color-45); border-radius:var(--btn-radius); }
 .btn-form:disabled { background-color:#e4e4e4; color:#999999; }
-
 
 /* Tertiary Button */
 .btn-tertiary { width:auto; padding:12px 14px; font-size:14px; font-weight:400; background-color:var(--white); color:var(--color-3); border-radius:30px; border:1px solid var(--color-d); min-width:78px; }
 .btn-tertiary:disabled { background-color:#e4e4e4; color:#999999; }
 
-
 /* 버튼 하단 고정 */
 .btn-fixed-bottom { position:fixed; bottom:0; left:0; width:100%; padding:20px; box-sizing:border-box; background:linear-gradient(to top, #ffffff 80%, rgba(255,255,255,0) 100%); padding-bottom:calc(20px + env(safe-area-inset-bottom)); }
+
+/* 아코디언 접기, 확장 버튼 */
+.terms-head .btn-fold { margin-left:auto; width:24px; height:24px; background:transparent var(--ico-select) no-repeat center / 20px; border:0; padding:0; cursor:pointer; transition:transform 0.3s; }
+.terms-pack.on .terms-head .btn-fold { transform:rotate(180deg); }
+.terms-list .btn-detail { width:20px; height:20px; background:transparent var(--ico-select) no-repeat center / 16px; transform:rotate(-90deg); border:0; padding:0; opacity:0.4; cursor:pointer; }
+
+/* PAY-LOGN-001 li a 형식 버튼 스타일 */
+.btn-method { display: flex; align-items: center; justify-content: flex-start; width: 100%; padding: 24px 0; background: transparent; border: 0; cursor: pointer; text-align: left; text-decoration: none; color: var(--color-2); gap: 14px; }
+.btn-method:active { background-color: #f9f9f9; }
+.btn-method .name { font-size: 16px; font-weight: 500; color: inherit; }
+
+/* PAY-LOGN-001 다른 로그인 방법 선택  */
+.btn-text-arrow { display: inline-flex; width: auto; align-items: center; font-size: 14px; color: var(--color-45); background: transparent; border: 0; padding: 0; cursor: pointer; }
+.btn-text-arrow::after { content: ''; display: block; width: 16px; height: 16px; margin-left: 4px; background: var(--ico-select) no-repeat center/contain; }
+
+/* PAY-LOGN-002 등 키패드 버튼 스타일*/
+.secure-keypad { width: 100%; padding: 20px 0 40px 0; background-color: #fff; }
+.keypad-grid { display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 10px; }
+.keypad-btn { display: flex; align-items: center; justify-content: center; width: 100%; height: 65px; background: transparent; border: none; font-size: 24px; font-family: inherit; cursor: pointer; font-weight: 400; }
+.keypad-btn:active { background-color: #faf8fa; border-radius: 12px; }
+.keypad-btn.text-btn { font-size: 16px; color: #222; font-weight: 400; }
+.keypad-btn.back { background-image: url('../images/svg/LOGN/keypad-back.svg'); background-repeat: no-repeat; background-position: center; background-size: 28px auto; }
+
+/* 자산 추가 버튼  */
+.btn-add-asset { display: flex; align-items: center; justify-content: center; width: 100%; padding: 18px; height: 64px; border-radius: 12px; font-size: 16px; font-weight: 500; text-decoration: none; gap: 4px; }
+.btn-add-asset.type-line { border: 1px solid var(--primary); color: var(--primary); background: #fff; }
+.btn-add-asset.type-line::after { content: ''; width: 20px; height: 20px; background: url('../../resource/images/svg/OBNK/ico-plus-pill.svg') no-repeat center / contain; }
+.btn-add-asset.type-disabled { background-color: #Eee; color: var(--color-45); border: 0; pointer-events: none; cursor: default; }
+.btn-add-asset.type-disabled::after { content: ''; width: 20px; height: 20px; background: url('../../resource/images/svg/OBNK/ico-plus-45.svg') no-repeat center / contain; }
+/* 하단 스킵 링크 영역, 버튼 스타일 */
+.bottom-skip-area { position: fixed; bottom: 40px; left: 0; width: 100%; text-align: center; z-index: 10; }
+.btn-skip { font-size: 14px; color: var(--color-75); text-decoration: underline; text-underline-offset: 4px; transition: color 0.2s; }
+.btn-skip:active { color: var(--color-2); }
+/* > 버튼 color : #454545 */
+button.btn-link-arrow { display: inline-flex; justify-content: left; font-size: 16px; color: var(--color-45); background: none; border: 0; padding: 0; cursor: pointer; font-weight: 500; padding-top: 17px;}
+.btn-link-arrow::after { content: ''; display: inline-block; width: 20px; height: 20px; margin-left: 4px; background: url("../../resource/images/svg/OBNK/ico_right_45.svg") no-repeat center / contain;}
